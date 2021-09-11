@@ -10,6 +10,7 @@ import { DocumentSectionComponent } from './components/content-section/document-
 import { ApplyParalaxBgDirective } from './directives/apply-paralax-bg.directive';
 import { DocumentArticleComponent } from './components/content-section/document-section/document-article/document-article.component';
 import { DocumentImageComponent } from './components/content-section/document-section/document-image/document-image.component';
+import { GetNotepadContentService } from './services/content/get-notepad-content.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DocumentImageComponent } from './components/content-section/document-se
     AppRoutingModule
   ],
   providers: [
-    CommunicationService
+    CommunicationService,
+    GetNotepadContentService
   ],
   bootstrap: [AppComponent]
 })

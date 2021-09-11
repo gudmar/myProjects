@@ -1,1 +1,22 @@
-<p>document-section works!</p>
+<ng-container *ngFor="let item of contentList">
+    
+    <section *ngIf="item.type=='section'">
+        <h1>{{item.title}}</h1>
+        <document-section [contentList]="item.content"></document-section>
+    </section>
+
+    <article *ngIf="item.type=='article'">
+        <h2>{{item.title}}</h2>
+        <document-section [contentList]="item.content"></document-section>
+    </article>
+
+    <p *ngIf="item.type=='p'">{{item.content}}</p>
+
+    <ul *ngIf="item.type=='unordered-list'">
+        <li *ngFor="let el of item.content">{{el}}</li>
+    </ul>
+
+    <div *ngIf="item.type=='image'" class="document-image-wrapper center">
+            <img [src]="imagePath(item.imageName)" [alt]="item.imageAlt">
+    </div>
+</ng-container>
