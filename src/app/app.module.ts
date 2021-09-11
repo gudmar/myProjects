@@ -8,9 +8,8 @@ import { HeadSectionComponent } from './components/head-section/head-section.com
 import { ContentSectionComponent } from './components/content-section/content-section.component';
 import { DocumentSectionComponent } from './components/content-section/document-section/document-section.component';
 import { ApplyParalaxBgDirective } from './directives/apply-paralax-bg.directive';
-import { DocumentArticleComponent } from './components/content-section/document-section/document-article/document-article.component';
-import { DocumentImageComponent } from './components/content-section/document-section/document-image/document-image.component';
 import { GetNotepadContentService } from './services/content/get-notepad-content.service';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import { GetNotepadContentService } from './services/content/get-notepad-content
     ContentSectionComponent,
     DocumentSectionComponent,
     ApplyParalaxBgDirective,
-    DocumentArticleComponent,
-    DocumentImageComponent
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,

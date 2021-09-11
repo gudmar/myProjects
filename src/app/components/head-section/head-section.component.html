@@ -1,4 +1,10 @@
-<header class="paralax-bg">
+<header class="paralax-bg center" >
+    <div class="second-plan paralax-bg" [ngStyle]="{'background-image': 'url('+getImagePath(imageName)+')'}">
 
-
+    </div>
+    <div class="first-plan">
+            <h1>{{title}}</h1>
+            <h6>{{subtitle}}</h6>
+    </div>
 </header>
+<navigation [contentList] = "menuContent"></navigation>

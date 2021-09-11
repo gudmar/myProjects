@@ -1,0 +1,5 @@
+<nav>
+    <ul>
+        <li class="button" *ngFor="let item of contentList" (click)="switchToPage(item.content)">{{item.title}}</li>
+    </ul>
+</nav>
