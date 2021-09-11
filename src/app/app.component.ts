@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { GetNotepadContentService } from './services/content/get-notepad-content.service';
+import { GetMenuContentService } from './services/content/get-menu-content.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,15 @@ import { GetNotepadContentService } from './services/content/get-notepad-content
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private notePadContentProvider: GetNotepadContentService){
+  constructor(
+    private notePadContentProvider: GetNotepadContentService,
+    private menuContentGetter: GetMenuContentService
+  ){
   }
   notepadContent = this.notePadContentProvider.getContent();
-  title = 'myProjects';
+  title = 'Marek Gudalewicz';
+  subtitle = 'Becomming a front end developer'
+  getMenuContent(){
+    return this.menuContentGetter.getContent();
+  }
 }
