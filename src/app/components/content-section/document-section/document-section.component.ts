@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-document-section',
+  selector: 'document-section',
   templateUrl: './document-section.component.html',
   styleUrls: ['./document-section.component.scss']
 })
 export class DocumentSectionComponent implements OnInit {
-
+  @Input() contentList: any[]=[];
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  imagePath(imageName:string):string{
+    return `../../../assets/${imageName}`
+  }
 }
