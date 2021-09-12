@@ -24,7 +24,10 @@ export class RotateOnHoverDirective {
     return {x: -cords.x, y: cords.y} //x>=0 y>=0
    }
    let maxAngle = 30;
-   let elCords = {x: this.elRef.nativeElement.getBoundingClientRect().left, y: this.elRef.nativeElement.getBoundingClientRect().top};
+   let elCords = {
+     x: this.elRef.nativeElement.getBoundingClientRect().left + window.scrollX, 
+     y: this.elRef.nativeElement.getBoundingClientRect().top + window.scrollY
+    };
    let mousePosition = {x: event.pageX, y: event.pageY}
    let relativePosition = {x:mousePosition.x - elCords.x, y: mousePosition.y - elCords.y};
    let elementSize = {x: this.elRef.nativeElement.offsetWidth, y:this.elRef.nativeElement.offsetHeight};
