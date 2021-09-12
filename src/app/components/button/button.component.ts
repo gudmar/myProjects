@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef, Input } from '@angular/core';
 
 @Component({
-  selector: 'button',
+  selector: 'custom-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss']
 })
@@ -16,6 +16,10 @@ export class ButtonComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getImagePath(imageName:string){
+    return `../../../../assets/${imageName}`
   }
 
 }
