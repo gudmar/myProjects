@@ -10,6 +10,8 @@ import { DocumentSectionComponent } from './components/content-section/document-
 import { ApplyParalaxBgDirective } from './directives/apply-paralax-bg.directive';
 import { GetNotepadContentService } from './services/content/get-notepad-content.service';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { ButtonComponent } from './components/button/button.component';
+import { RotateOnHoverComponent } from './directives/rotate-on-hover/rotate-on-hover.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     DocumentSectionComponent,
     ApplyParalaxBgDirective,
     NavigationComponent,
+    ButtonComponent,
+    RotateOnHoverComponent,
   ],
   imports: [
     BrowserModule,

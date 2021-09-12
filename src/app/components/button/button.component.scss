@@ -1,0 +1,28 @@
+// <div class="custom-button">
+//     {{shortenedCaption}}
+//     <div *ngIf="tooLongCaption()" class="tool-tip">
+//         {{caption}}
+//     </div>
+// </div>
+:host{
+}
+.custom-button{
+    max-width: 100px;
+    min-width: 20px;
+    height: 40px;
+    font-size: 2rem;
+    padding: 5px;
+    background-color: rgb(200,200,200);
+    font-family: Arial, Helvetica, sans-serif;
+    perspective: 20px;
+    box-shadow: 0px 0px 21px 6px #000000;
+}
+.toot-tip{
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    background-color: white;
+    color: black;
+    transition: 0.2;
+    transition-delay: 0.5s;
+}
