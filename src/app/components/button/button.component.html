@@ -1,6 +1,8 @@
-<div class="custom-button center">
-    {{shortenedCaption}}
+<div class="perspective">
+<div rotateOnHover class="custom-button center">
+    <span>{{shortenedCaption}}</span>
     <div *ngIf="tooLongCaption()" class="tool-tip">
         {{caption}}
     </div>
+</div>
 </div>

@@ -6,6 +6,12 @@
 // </div>
 :host{
 }
+.perspective{
+    perspective: 100px;
+    position: relative;
+    max-width: 100px;
+    min-width: 20px;
+}
 .custom-button{
     max-width: 100px;
     min-width: 20px;
@@ -14,8 +20,12 @@
     padding: 5px;
     background-color: rgb(200,200,200);
     font-family: Arial, Helvetica, sans-serif;
-    perspective: 20px;
     box-shadow: 0px 0px 21px 6px #000000;
+    transform-origin: center center;
+    transition: 0.3s;
+    &:hover{
+        cursor: pointer;
+    }
 }
 .toot-tip{
     position: absolute;
