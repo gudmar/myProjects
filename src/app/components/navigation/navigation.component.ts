@@ -8,13 +8,25 @@ import { CommunicationService } from '../../services/communication-service.servi
 })
 export class NavigationComponent implements OnInit {
   @Input() contentList: any[] = [];
+  @Input() startPage: string = ''
+  currentlySelectedItem: string = this.startPage;
+
+  isButtonSelected(buttonLabel:string){
+    return (buttonLabel == this.currentlySelectedItem) ? true : false;
+  }
 
   constructor(private communicator: CommunicationService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.currentlySelectedItem = this.startPage;
+  }
 
   switchToPage(pageName: string){
     this.communicator.inform('switchPage', pageName)
+  }
+
+  selectButton(label: string){
+    this.currentlySelectedItem = label;
   }
   
 

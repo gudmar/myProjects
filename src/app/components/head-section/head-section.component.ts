@@ -11,6 +11,7 @@ export class HeadSectionComponent implements OnInit {
   @Input() subtitle:string = '';
   @Input() imageName:string = '';
   @Input() menuContent:any[] = [];
+  @Input() startPage:string = '';
   constructor() { }
 
   ngOnInit(): void {

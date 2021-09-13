@@ -7,6 +7,7 @@ import { Component, OnInit, Input, ElementRef } from '@angular/core';
 })
 export class NavButtonComponent implements OnInit {
   @Input() label: string = '';
+  @Input() isButtonPressed: boolean = false;
   constructor(private elRef: ElementRef) { }
 
   ngOnInit(): void {

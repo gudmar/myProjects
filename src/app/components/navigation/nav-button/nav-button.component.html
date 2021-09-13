@@ -1,3 +1,8 @@
 <div class="perspective">
-    <div rotateOnHover class="nav-button center">{{label}}</div>
+    <div rotateOnHover [isRotationEnabled] = !isButtonPressed 
+        [ngClass]="{'pressed': isButtonPressed}" 
+        class="nav-button center"
+    >
+        {{label}}
+    </div>
 </div>
