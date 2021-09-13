@@ -12,6 +12,7 @@ import { GetNotepadContentService } from './services/content/get-notepad-content
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ButtonComponent } from './components/button/button.component';
 import { RotateOnHoverDirective } from './directives/rotate-on-hover.directive';
+import { NavButtonComponent } from './components/navigation/nav-button/nav-button.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RotateOnHoverDirective } from './directives/rotate-on-hover.directive';
     NavigationComponent,
     ButtonComponent,
     RotateOnHoverDirective,
+    NavButtonComponent,
   ],
   imports: [
     BrowserModule,
