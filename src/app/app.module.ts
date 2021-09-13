@@ -13,6 +13,9 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { ButtonComponent } from './components/button/button.component';
 import { RotateOnHoverDirective } from './directives/rotate-on-hover.directive';
 import { NavButtonComponent } from './components/navigation/nav-button/nav-button.component';
+import { EmploymentEntryComponent } from './components/content-section/document-section/employment-entry/employment-entry.component';
+import { SkillListComponent } from './components/content-section/document-section/skill-list/skill-list.component';
+import { PortfolioEntryComponent } from './components/content-section/document-section/portfolio-entry/portfolio-entry.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { NavButtonComponent } from './components/navigation/nav-button/nav-butto
     ButtonComponent,
     RotateOnHoverDirective,
     NavButtonComponent,
+    EmploymentEntryComponent,
+    SkillListComponent,
+    PortfolioEntryComponent,
   ],
   imports: [
     BrowserModule,

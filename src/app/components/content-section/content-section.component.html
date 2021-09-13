@@ -1,1 +1,3 @@
-<p>content-section works!</p>
+<document-section *ngIf="currentlyDisplayed == 'About me'" [contentList]="getContent('About me')"></document-section>
+<document-section *ngIf="currentlyDisplayed == 'CV'" [contentList]="getContent('CV')"></document-section>
+<document-section *ngIf="currentlyDisplayed == 'Portfolio'" [contentList]="getContent('Portfolio')"></document-section>
