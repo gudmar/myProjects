@@ -11,61 +11,10 @@ export class GetCvContentService {
     return [
       {
         type: 'cv-employment-entry',
-        title: 'Univercity of Science, Wrocław',
-        subtitle: 'Automatic stearing and robotics, electronic dep.',
-        dates: '2003-2008',
-        content:[
-          {
-            type:'unordered-list',
-            content:[
-              'Programming',
-              'Optimalization algoritms',
-              'Robot construction'
-            ]
-          }
-        ]
-      },      
-      {
-        type: 'cv-employment-entry',
-        title: 'Bombardier Transportation',
-        subtitle: 'Production foreman',
-        dates: '2008-2010',
-        content:[
-          {
-            type:'unordered-list',
-            content:[
-              'Management over train carbody production nest',
-              'Responsiblity for quality, costs, over 50 subordinate workers'
-            ]
-          }
-        ]
-      },
-      {
-        type: 'cv-employment-entry',
-        title: 'Lorenz snack world',
-        subtitle: 'Continuous Improvement Specialist',
-        dates: '2010-2017',
-        content:[
-          {
-            type:'unordered-list',
-            content:[
-              'Production management - in subsitution',
-              'Leading investments projects',
-              'Implementation of lean tools like 5S, autonomus maitenance, preventive maitenance',
-              'Cordinator and head of Kaizen system',
-              'Implementation of KPI reporting system',
-              'Implementation of OEE reporting system',
-              'Implementation of tools needed for reporting systems in VB for Excel',
-              'Organising and leading trainings'
-            ]
-          }
-        ]        
-      },
-      {
-        type: 'cv-employment-entry',
         title: 'Nokia Solutions and Networks',
         subtitle: 'Software verification specialist',
         dates: '2017-now',
+        position: 'first',
         content:[
           {
             type:'unordered-list',
@@ -85,6 +34,62 @@ export class GetCvContentService {
         ]          
       },
       {
+        type: 'cv-employment-entry',
+        title: 'Lorenz snack world',
+        subtitle: 'Continuous Improvement Specialist',
+        dates: '2010-2017',
+        position: 'middle',
+        content:[
+          {
+            type:'unordered-list',
+            content:[
+              'Production management - in subsitution',
+              'Leading investments projects',
+              'Implementation of lean tools like 5S, autonomus maitenance, preventive maitenance',
+              'Cordinator and head of Kaizen system',
+              'Implementation of KPI reporting system',
+              'Implementation of OEE reporting system',
+              'Implementation of tools needed for reporting systems in VB for Excel',
+              'Organising and leading trainings'
+            ]
+          }
+        ]        
+      },    
+      {
+        type: 'cv-employment-entry',
+        title: 'Bombardier Transportation',
+        subtitle: 'Production foreman',
+        dates: '2008-2010',
+        position: 'middle',
+        content:[
+          {
+            type:'unordered-list',
+            content:[
+              'Management over train carbody production nest',
+              'Responsiblity for quality, costs, over 50 subordinate workers'
+            ]
+          }
+        ]
+      },
+
+      {
+        type: 'cv-employment-entry',
+        title: 'Univercity of Science, Wrocław',
+        subtitle: 'Automatic stearing and robotics, electronic dep.',
+        dates: '2003-2008',
+        position: 'last',
+        content:[
+          {
+            type:'unordered-list',
+            content:[
+              'Programming',
+              'Optimalization algoritms',
+              'Robot construction'
+            ]
+          }
+        ]
+      },  
+      {
         type: 'cv-additional-entry',
         title: 'Web developement',
         subtitle: 'Self learning',
@@ -93,13 +98,13 @@ export class GetCvContentService {
           {
             type:'skill-list',
             content:[
-              {title:'HTML', level: 4},
-              {title:'JS', level: 3},
-              {title:'CSS', level: 3},
-              {title:'SCSS', level: 2},
-              {title:'Angular', level: 3},
-              {title:'Gulp', level: 2},
-              {title:'React', level: 2},
+              {title:'HTML', level: 8, maxLevel: 10},
+              {title:'JS', level: 7, maxLevel: 10},
+              {title:'CSS', level: 6, maxLevel: 10},
+              {title:'SCSS', level: 4, maxLevel: 10},
+              {title:'Angular', level: 5, maxLevel: 10},
+              {title:'Gulp', level: 4, maxLevel: 10},
+              {title:'React', level: 3, maxLevel: 10},
             ]
           }
         ]          

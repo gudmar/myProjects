@@ -28,6 +28,10 @@ export class NavigationComponent implements OnInit {
   selectButton(label: string){
     this.currentlySelectedItem = label;
   }
+
+  informAboutPageTurning(pageTitle:string){
+    this.communicator.inform('turnThePage', pageTitle)
+  }
   
 
 }

@@ -1,0 +1,18 @@
+<div class="skill-list">
+    <div class="title">{{title}}</div>
+    <div class="subtitle">{{subtitle}}</div>
+    <div class="dates">{{dates}}</div>
+    <table>
+        <tr *ngFor="let skill of content">
+            <td>{{title}}</td>
+            <td>
+                <div 
+                    *ngFor="let star of getListFromNumber(skill.maxLevel); index as i" 
+                    [ngClass]="{'filled-star': isStarFilled(skill.level, i)}" 
+                    class="star"
+                >
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

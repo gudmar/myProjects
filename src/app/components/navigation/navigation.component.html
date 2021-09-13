@@ -8,6 +8,7 @@
             [label]="item.title"
             [isButtonPressed]="isButtonSelected(item.title)"
             (mousedown) = "selectButton(item.title)"
+            (click) = "informAboutPageTurning(item.title)"
         >
         </nav-button>
         

@@ -19,4 +19,32 @@
     <div *ngIf="item.type=='image'" class="document-image-wrapper center">
             <img [src]="imagePath(item.imageName)" [alt]="item.imageAlt">
     </div>
+
+    <employment-entry *ngIf="item.type=='cv-employment-entry'"
+        [title] = "item.title"
+        [content] = "item.content"
+        [subtitle] = "item.subtitle"
+        [dates] = "item.dates"
+        [position] = "item.position"
+    ></employment-entry>
+
+
+    <section *ngIf="item.type == 'cv-additional-entry'">
+        <div class="title">{{item.title}}</div>
+        <div class="subtitle">{{item.subtitle}}</div>
+        <div class="dates">{{item.dates}}</div>
+        <document-section [contentList]="item.content"></document-section>
+    </section>
+
+    <skill-list 
+        *ngIf="item.type=='skill-list'"
+        [title] = "item.title"
+        [subtitle] = "item.subtitle"
+        [dates] = "item.dates"
+        [content] = "item.content"
+    >
+    </skill-list>
+    
+
+
 </ng-container>
