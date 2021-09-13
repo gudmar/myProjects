@@ -1,5 +1,13 @@
 <nav>
-    <ul>
+    <!-- <ul>
         <li class="button" *ngFor="let item of contentList" (click)="switchToPage(item.content)">{{item.title}}</li>
-    </ul>
+    </ul> -->
+    <div class="nav-wrapper">
+        <nav-button *ngFor="let item of contentList" [label]="item.title"></nav-button>
+        
+
+    </div>
 </nav>
+
+<!-- [label]="item.title" (click)="switchToPage(item.content)"></nav-button> -->
+        <!-- <custom-button *ngFor="let item of contentList" [caption]="item.title" (click)="switchToPage(item.content)"></custom-button> -->

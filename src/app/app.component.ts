@@ -16,7 +16,11 @@ export class AppComponent {
   notepadContent = this.notePadContentProvider.getContent();
   title = 'Marek Gudalewicz';
   subtitle = 'Becomming a front end developer'
-  getMenuContent(){
-    return this.menuContentGetter.getContent();
+  menuContentList = this.menuContentGetter.getContent();
+  // getMenuContent(){
+  //   return this.menuContentGetter.getContent();
+  // }
+  ngOnInit(){
+
   }
 }

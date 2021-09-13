@@ -12,7 +12,6 @@ export class RotateOnHoverDirective {
   elRef: ElementRef;
   constructor(elRef: ElementRef, private renderer: Renderer2) { 
     this.elRef = elRef;
-    
   }
 
  @HostListener('mousemove', ['$event'])
@@ -23,7 +22,7 @@ export class RotateOnHoverDirective {
     if(cords.x < 0 && cords.y >= 0) return {x: -cords.x, y: cords.y}
     return {x: -cords.x, y: cords.y} //x>=0 y>=0
    }
-   let maxAngle = 30;
+   let maxAngle = 40;
    let elCords = {
      x: this.elRef.nativeElement.getBoundingClientRect().left + window.scrollX, 
      y: this.elRef.nativeElement.getBoundingClientRect().top + window.scrollY
@@ -35,6 +34,8 @@ export class RotateOnHoverDirective {
    let swing = attachCorrectSign({x: relativePosition.x - middlePosition.x, y: relativePosition.y - middlePosition.y});
    let swingPercentage = {x:swing.x/middlePosition.x, y:swing.y/middlePosition.y};
    let angles = {x: swingPercentage.y*maxAngle, y:swingPercentage.x*maxAngle}
+  //  console.log(this.targetElement)
+  //  debugger
   //  console.log(swingPercentage)
   // console.log(middlePosition)
   // console.log(elementSize)
@@ -45,10 +46,20 @@ export class RotateOnHoverDirective {
    this.renderer.setStyle(this.elRef.nativeElement, 'transform', `rotateX(${angles.x}deg) rotateY(${angles.y}deg)`)
  }
 
- @HostListener('mouseout', ['$event'])
+ @HostListener('mouseleave', ['$event'])
  onMouseOut(event:any){
-  this.renderer.setStyle(this.elRef.nativeElement, 'transition', `0.3s`)
-  this.renderer.setStyle(this.elRef.nativeElement, 'transform', ``)
+   event.stopPropagation();
+  console.log(this.elRef.nativeElement)  // right
+  console.log(event.target) // right after deleting span
+  //  console.error(`Here is the problem. If this hostlistener is commeted, element can be found. 
+  //  Like mouse out causes element not to be found... Event target poited to span ..`)
+   let a = this.elRef.nativeElement;
+  //  debugger
+
+  this.renderer.setStyle(a, 'transition', `0.3s`)
+  
+  this.renderer.setStyle(a, 'transform', ``)
+  
  }
 
 }
