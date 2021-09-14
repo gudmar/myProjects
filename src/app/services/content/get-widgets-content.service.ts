@@ -8,6 +8,8 @@ export class GetWidgetsContentService {
   constructor() { }
 
   getContent(){
-    
+    return [
+      
+    ]
   }
 }
