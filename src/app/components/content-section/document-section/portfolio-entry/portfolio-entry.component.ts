@@ -1,21 +1,23 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-portfolio-entry',
+  selector: 'portfolio-entry',
   templateUrl: './portfolio-entry.component.html',
   styleUrls: ['./portfolio-entry.component.scss']
 })
 export class PortfolioEntryComponent implements OnInit {
-  title: string = '';
-  imageName: string = '';
-  content: string = '';
+  @Input() title: string = '';
+  @Input() imageName: string = '';
+  @Input() content: string = '';
+  imagePath:string = this.getImagePath(this.imageName)
   constructor() { }
 
   ngOnInit(): void {
+    this.imagePath = this.getImagePath(this.imageName)
   }
 
 
-  imagePath(imageName:string):string{
+  getImagePath(imageName:string):string{
     return `../../../../assets/${imageName}`
   }
 }

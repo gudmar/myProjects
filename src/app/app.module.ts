@@ -16,6 +16,7 @@ import { NavButtonComponent } from './components/navigation/nav-button/nav-butto
 import { EmploymentEntryComponent } from './components/content-section/document-section/employment-entry/employment-entry.component';
 import { SkillListComponent } from './components/content-section/document-section/skill-list/skill-list.component';
 import { PortfolioEntryComponent } from './components/content-section/document-section/portfolio-entry/portfolio-entry.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PortfolioEntryComponent } from './components/content-section/document-s
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [
     CommunicationService,
