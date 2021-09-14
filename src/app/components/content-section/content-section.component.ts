@@ -33,11 +33,7 @@ export class ContentSectionComponent implements OnInit {
     return this.getService.getServiceContentByDN(pageDN);
   }
 
-  aboutMe = this.getContent('About me')
-  portfolio = this.getContent('Portfolio')
-  cv = this.getContent('CV')
-
-  contentList:any[] = ['About me', 'Portfolio', 'CV', 'Calculator', 'Story dices', 'Tic-tac-toe', 'Widgets']
+  contentList:any[] = this.getService.getAllContent();
   
   
 
