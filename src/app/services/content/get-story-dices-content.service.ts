@@ -8,6 +8,8 @@ export class GetStoryDicesContentService {
   constructor() { }
 
   getContent(){
-    
+    return [
+      
+    ]
   }
 }
