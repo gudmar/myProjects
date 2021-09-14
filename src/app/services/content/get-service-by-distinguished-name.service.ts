@@ -25,7 +25,7 @@ export class GetServiceByDistinguishedNameService {
   ) { }
 
   allDNs = ['About me', 'Portfolio', 'CV', 'Calculator', 
-            'Story dices', 'Tic-tac-toe', 'Widgets', 'Note pad', 'Calculator']
+            'Story dices', 'Tic-tac-toe', 'Widgets', 'Note pad']
 
   getServiceContentByDN(serviceName:string){
     if(serviceName == 'About me') return this.aboutMe.getContent();

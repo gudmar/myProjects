@@ -57,4 +57,9 @@
     ></portfolio-entry>
 
 
+
+    <div *ngIf="item.type=='link'" class="link">
+        <a [href]="item.href">item.title</a>
+    </div>
+
 </ng-container>
