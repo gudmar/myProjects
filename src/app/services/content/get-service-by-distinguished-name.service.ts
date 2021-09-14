@@ -6,6 +6,7 @@ import { GetStoryDicesContentService } from './get-story-dices-content.service';
 import { GetTicTacToeContentService } from './get-tic-tac-toe-content.service';
 import { GetWidgetsContentService } from './get-widgets-content.service';
 import { GetNotepadContentService } from './get-notepad-content.service';
+import { GetCalculatorContentService } from './get-calculator-content.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,12 @@ export class GetServiceByDistinguishedNameService {
     private story: GetStoryDicesContentService,
     private tictactoe: GetTicTacToeContentService,
     private widgets: GetWidgetsContentService,
-    private notePad: GetNotepadContentService
+    private notePad: GetNotepadContentService,
+    private calculator: GetCalculatorContentService
   ) { }
+
+  allDNs = ['About me', 'Portfolio', 'CV', 'Calculator', 
+            'Story dices', 'Tic-tac-toe', 'Widgets', 'Note pad', 'Calculator']
 
   getServiceContentByDN(serviceName:string){
     if(serviceName == 'About me') return this.aboutMe.getContent();
@@ -30,7 +35,16 @@ export class GetServiceByDistinguishedNameService {
     if(serviceName == 'Tic-tac-toe') return this.tictactoe.getContent();
     if(serviceName == 'Widgets') return this.widgets.getContent();
     if(serviceName == 'Note pad') return this.notePad.getContent();
+    if(serviceName == 'Calculator') return this.calculator.getContent();
     return [];
+  }
+
+  getAllContent(){
+    let output: any[] = [];
+    for (let item of this.allDNs){
+      output.push({key:item,content:this.getServiceContentByDN(item)})
+    }
+    return output;
   }
 
 }
