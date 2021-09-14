@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
 h1,h6{
     margin:0;
 }
@@ -15,6 +16,7 @@ header{
 }
 .first-plan{
     transform: translateZ(3px);
+    font-family: 'Work Sans', sans-serif;
 }
 .second-plan{
     background-size: cover;

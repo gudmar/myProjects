@@ -5,6 +5,11 @@
         <document-section [contentList]="item.content"></document-section>
     </section>
 
+    <section *ngIf="item.type=='row-section'">
+        <h1>{{item.title}}</h1>
+        <document-section class="row wrap center" [contentList]="item.content"></document-section>
+    </section>
+
     <article *ngIf="item.type=='article'">
         <h2>{{item.title}}</h2>
         <document-section [contentList]="item.content"></document-section>
@@ -45,6 +50,11 @@
     >
     </skill-list>
     
+    <portfolio-entry *ngIf="item.type=='portfolio-entry'"
+        [title] = "item.title"
+        [imageName] = "item.imageName"
+        [content] = 'item.content'
+    ></portfolio-entry>
 
 
 </ng-container>

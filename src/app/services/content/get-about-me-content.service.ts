@@ -8,8 +8,7 @@ export class GetAboutMeContentService {
   constructor() { }
 
   getContent(){
-    return 
-    [
+    return [
       {
         type: 'section',
         title: 'About me',

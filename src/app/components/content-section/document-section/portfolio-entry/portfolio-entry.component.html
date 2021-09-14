@@ -1,11 +1,11 @@
 <section>
     <div class="row">
-        <div class="col">
-            <img src="getPath(imageName)" alt="title">
+        <div class="col perspective">
+            <img rotateOnHover [src]="imagePath" alt="title">
         </div>
         <div class="col">
             <div class="title">{{title}}</div>
-            <div class="content">{{content}}</div>
+            <div class="content" [innerHTML]="content"></div>
         </div>
     </div>
 </section>

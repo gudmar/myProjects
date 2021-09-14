@@ -41,6 +41,13 @@ export class RotateOnHoverDirective {
     let swing = attachCorrectSign({x: relativePosition.x - middlePosition.x, y: relativePosition.y - middlePosition.y});
     let swingPercentage = {x:swing.x/middlePosition.x, y:swing.y/middlePosition.y};
     let angles = {x: swingPercentage.y*maxAngle, y:swingPercentage.x*maxAngle}
+    if (angles.x > maxAngle) angles.x = maxAngle;
+    if (angles.y > maxAngle) angles.y = maxAngle;
+    if (angles.x < -maxAngle) angles.x = -maxAngle;
+    if (angles.y < -maxAngle) angles.y = -maxAngle;
+
+    // console.log(swingPercentage)
+    console.log(angles)
 
     this.renderer.setStyle(this.elRef.nativeElement, 'transform', `translateZ(20px) rotateX(${angles.x}deg) rotateY(${angles.y}deg)`)
   }
