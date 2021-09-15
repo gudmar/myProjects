@@ -19,6 +19,8 @@ export class RotateOnHoverDirective {
     this.onMouseOut(null);
   }
   get isRotationEnabled(){return this._isRotationEnabled}
+  @Input() zoomValue: number = 20;
+  @Input() transformatoinOrder:'translateThenRotate'|"rotateThenTranslate" = "rotateThenTranslate";
 
  @HostListener('mousemove', ['$event'])
  onMouseOver(event:any){
@@ -46,10 +48,28 @@ export class RotateOnHoverDirective {
     if (angles.x < -maxAngle) angles.x = -maxAngle;
     if (angles.y < -maxAngle) angles.y = -maxAngle;
 
-    // console.log(swingPercentage)
+    // console.log(elementSize)
     console.log(angles)
 
-    this.renderer.setStyle(this.elRef.nativeElement, 'transform', `translateZ(20px) rotateX(${angles.x}deg) rotateY(${angles.y}deg)`)
+    // this.renderer.setStyle(this.elRef.nativeElement, 'transform', `translateZ(20px)`);
+    // this.renderer.setStyle(this.elRef.nativeElement, 'transform',`rotateX(${angles.x}deg) rotateY(${angles.y}deg)`)
+
+    if (this.transformatoinOrder == 'rotateThenTranslate'){
+      this.renderer.setStyle(this.elRef.nativeElement, 
+        'transform', 
+        ` rotateX(${angles.x}deg) rotateY(${angles.y}deg) translateZ(${this.zoomValue}px)`
+      )  
+    } else {
+      this.renderer.setStyle(this.elRef.nativeElement, 
+        'transform', 
+        `translateZ(${this.zoomValue}px) rotateX(${angles.x}deg) rotateY(${angles.y}deg)`
+      )
+  
+    }
+    // this.renderer.setStyle(this.elRef.nativeElement, 'transformation-origin', `center center`)
+    // this.renderer.setStyle(this.elRef.nativeElement, 'transform-style', `preserve-3d`)
+    // this.renderer.setStyle(this.elRef.nativeElement, 'transform', `translateZ(20px)`)
+    this.renderer.setStyle(this.elRef.nativeElement, 'transformation-origin', `50% 50%`)
   }
  }
 
