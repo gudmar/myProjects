@@ -1,7 +1,9 @@
 <section>
     <div class="row">
         <div class="col perspective">
-            <img rotateOnHover [src]="imagePath" alt="title" (click)="switchToPage(title)">
+            <img rotateOnHover [transformatoinOrder]="'translateThenRotate'" [zoomValue] = '100' 
+                [src]="imagePath" alt="title" (click)="switchToPage(title)"
+            >
         </div>
         <div class="col">
             <div class="title">{{title}}</div>
