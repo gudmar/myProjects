@@ -1,0 +1,80 @@
+$timeline-width: 40px;
+$dot-margin: 10px;
+$timeline-color: gray;
+$dot-size: $timeline-width/2;
+
+// @function getBorderHeight(){
+//     @return calc( 100% - $dot-size )/2
+// }
+:host{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+// .row{position: relative; height: 100%; display: table-row;}
+
+section{
+    width: 70%;
+    min-width: 400px;
+}
+.content{
+    padding-left: 1rem;
+}
+
+.row{
+    // align-items: stretch;
+}
+
+.timeline{
+    // flex: 0 0 auto;
+    // position: relative;
+    // align-items: stretch;
+    width: $timeline-width;
+    // height: 100%;
+    // max-height: 100%;
+    // align-self: center;
+    // margin-bottom: 0;
+    // margin-top: 0;
+    // align-content: stretch;
+    // align-items: stretch;
+    // justify-content: stretch;
+    // align-self: stretch;
+    // flex-grow: 1;
+    .row{
+        position: relative;
+        height: 100%;
+    }
+
+
+    .border{
+        position: relative;
+        width: $timeline-width/2;
+        height: calc( 100% - 25px);
+        height: 100%;
+    } 
+    .no-border{
+        position: relative;
+        width: $timeline-width/2;
+        height: calc( 100% - 25px);
+        height: 100%;
+    }
+    .border{
+        border-right: solid $timeline-color thin;
+    }
+    .dot{
+        position: relative;
+        width: $dot-size;
+        height: $dot-size;
+        border-radius: 50%;
+        border: solid thin $timeline-color;
+        margin: 0;
+        flex-grow: 0;
+        flex-shrink: 0;
+        align-self: center;
+        margin: $dot-margin;
+    }
+    .dot-filled{
+        background-color: $timeline-color;
+    }
+}
