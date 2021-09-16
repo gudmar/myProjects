@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { faFilm } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'employment-entry',
@@ -11,6 +12,7 @@ export class EmploymentEntryComponent implements OnInit {
   @Input() title: string = '';
   @Input() dates: string = '';
   @Input() subtitle: string = '';
+  filmIcon = faFilm;
   constructor() { }
 
   ngOnInit(): void {

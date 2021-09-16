@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MailToService } from '../../services/mail-to.service';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'head-section',
@@ -12,7 +14,8 @@ export class HeadSectionComponent implements OnInit {
   @Input() imageName:string = '';
   @Input() menuContent:any[] = [];
   @Input() startPage:string = '';
-  constructor() { }
+  envelope = faEnvelope;
+  constructor(private mailer: MailToService) { }
 
   ngOnInit(): void {
     let path = this.getImagePath(this.imageName)
@@ -20,5 +23,8 @@ export class HeadSectionComponent implements OnInit {
   }
   getImagePath(imageName:string){
     return `../../../../assets/${imageName}`
+  }
+  openEmailClient(){
+    return this.mailer.eMailMe('Hi, ')
   }
 }

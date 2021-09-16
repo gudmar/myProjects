@@ -2,6 +2,11 @@
     <div class="second-plan paralax-bg" [ngStyle]="{'background-image': 'url('+getImagePath(imageName)+')'}">
 
     </div>
+    <div class="icons">
+        <a [href]="openEmailClient()">
+            <fa-icon [icon]="envelope" [styles]="{'stroke':'white', 'color': 'white'}" size="2x"></fa-icon>
+        </a>
+    </div>
     <div class="first-plan">
             <h1>{{title}}</h1>
             <h6>{{subtitle}}</h6>
