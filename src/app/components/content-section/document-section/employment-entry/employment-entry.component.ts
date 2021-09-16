@@ -14,6 +14,7 @@ export class EmploymentEntryComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.position)
   }
 
 }
