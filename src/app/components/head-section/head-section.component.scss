@@ -28,3 +28,9 @@ header{
     height: 100%;
     transform: translateZ(-1px) scale(1.5);
 }
+.icons{
+    position: absolute;
+    right: 20px;
+    top:20px;
+    z-index: 1;
+}

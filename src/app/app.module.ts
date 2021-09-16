@@ -16,7 +16,10 @@ import { NavButtonComponent } from './components/navigation/nav-button/nav-butto
 import { EmploymentEntryComponent } from './components/content-section/document-section/employment-entry/employment-entry.component';
 import { SkillListComponent } from './components/content-section/document-section/skill-list/skill-list.component';
 import { PortfolioEntryComponent } from './components/content-section/document-section/portfolio-entry/portfolio-entry.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { faFilm } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   declarations: [
@@ -44,4 +47,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){
+    let faIcons = [faFilm, faEnvelope,]
+    library.add(...faIcons);
+  }
+}
