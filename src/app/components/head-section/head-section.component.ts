@@ -15,6 +15,7 @@ export class HeadSectionComponent implements OnInit {
   @Input() menuContent:any[] = [];
   @Input() startPage:string = '';
   envelope = faEnvelope;
+  envelopeColor = 'white';
   constructor(private mailer: MailToService) { }
 
   ngOnInit(): void {
@@ -27,4 +28,13 @@ export class HeadSectionComponent implements OnInit {
   openEmailClient(){
     return this.mailer.eMailMe('Hi, ')
   }
+  // getIconColor(){
+  //   return this.envelopeColor;
+  // }
+
+
+  // changeIconColor(){
+
+  github='github.png'
+  // }
 }

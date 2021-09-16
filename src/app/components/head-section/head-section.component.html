@@ -4,7 +4,15 @@
     </div>
     <div class="icons">
         <a [href]="openEmailClient()">
-            <fa-icon [icon]="envelope" [styles]="{'stroke':'white', 'color': 'white'}" size="2x"></fa-icon>
+            <fa-icon class="icon" 
+                [icon]="envelope" 
+                [styles]="{'stroke':'white', 'color': 'white'}" 
+                size="2x"
+            >
+            </fa-icon>
+    </a>
+        <a href = "https://github.com/gudmar" target="_blank">
+             <img [src] = "getImagePath('github.png')"/> 
         </a>
     </div>
     <div class="first-plan">

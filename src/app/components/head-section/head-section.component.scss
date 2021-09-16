@@ -30,7 +30,24 @@ header{
 }
 .icons{
     position: absolute;
+    display: flex;
     right: 20px;
     top:20px;
     z-index: 1;
+    &>a>img:hover{
+        transition: 0.3s;
+        transform: scale(1.5);
+    }
+}
+.icon{
+    position: relative;
+    margin: 10px;
+    transform: translateZ(20px);
+        color: green;
+    transition: 0.3s;
+    &:hover{
+        transform: translateZ(20px) scale(2);
+        color: green;
+        font-size: 1.4rem;
+    }
 }

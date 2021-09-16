@@ -21,6 +21,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
 
+
 @NgModule({
   declarations: [
     AppComponent,
