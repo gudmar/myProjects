@@ -1,0 +1,17 @@
+:host{
+    position: absolute;
+    z-index: 100;
+}
+.placeholder{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.rectangle-wrapper{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: felx;
+    flex-wrap: wrap;
+}

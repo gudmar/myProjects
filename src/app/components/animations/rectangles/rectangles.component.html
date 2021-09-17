@@ -1,0 +1,10 @@
+<div class="placeholder">
+    <div class="rectangle-wrapper">
+        <single-rectangle
+            *ngFor="let rectangle of rectangleList"
+            [size] = "singleRectangleSize"
+            [color] = "rectangle.color"
+            [shouldBlank] = "false"
+        ></single-rectangle>
+    </div>
+</div>

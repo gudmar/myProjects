@@ -21,6 +21,10 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { faUserGraduate } from '@fortawesome/free-solid-svg-icons';
+import { AnimationsComponent } from './components/animations/animations.component';
+import { RectanglesComponent } from './components/animations/rectangles/rectangles.component';
+import { SingleRectangleComponent } from './components/animations/rectangles/single-rectangle/single-rectangle.component';
+import { GetRandomColorService } from './services/get-random-color.service';
 
 
 @NgModule({
@@ -37,6 +41,9 @@ import { faUserGraduate } from '@fortawesome/free-solid-svg-icons';
     EmploymentEntryComponent,
     SkillListComponent,
     PortfolioEntryComponent,
+    AnimationsComponent,
+    RectanglesComponent,
+    SingleRectangleComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,8 @@ import { faUserGraduate } from '@fortawesome/free-solid-svg-icons';
   ],
   providers: [
     CommunicationService,
-    GetNotepadContentService
+    GetNotepadContentService,
+    GetRandomColorService
   ],
   bootstrap: [AppComponent]
 })
