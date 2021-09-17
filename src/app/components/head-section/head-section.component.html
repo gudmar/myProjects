@@ -3,17 +3,29 @@
 
     </div>
     <div class="icons">
-        <a [href]="openEmailClient()">
-            <fa-icon class="icon" 
-                [icon]="envelope" 
-                [styles]="{'stroke':'white', 'color': 'white'}" 
-                size="2x"
-            >
-            </fa-icon>
-    </a>
-        <a href = "https://github.com/gudmar" target="_blank">
+        <div class="font-a-wrapper center">
+            <a [href]="openEmailClient()" data-content="e-mail me">
+                <fa-icon class="icon" 
+                    [icon]="envelope" 
+                    [styles]="{'stroke':'white', 'color': 'white'}" 
+                    size="2x"
+                >
+                </fa-icon>
+            </a>
+        </div>
+        <a href = "https://github.com/gudmar" target="_blank" data-content="my github">
              <img [src] = "getImagePath('github.png')"/> 
         </a>
+        <div class="font-a-wrapper center">
+                <a [href]="getImagePath('CVMarekGudalewicz.pdf')" target='_blank' data-content="my resume">
+                    <fa-icon class="icon" 
+                        [icon]="cv" 
+                        [styles]="{'stroke':'white', 'color': 'white'}" 
+                        size="2x"
+                    >
+                    </fa-icon>
+                </a>
+            </div>
     </div>
     <div class="first-plan">
             <h1>{{title}}</h1>

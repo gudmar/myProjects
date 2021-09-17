@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MailToService } from '../../services/mail-to.service';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { faUserGraduate } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'head-section',
@@ -15,6 +16,7 @@ export class HeadSectionComponent implements OnInit {
   @Input() menuContent:any[] = [];
   @Input() startPage:string = '';
   envelope = faEnvelope;
+  cv = faUserGraduate;
   envelopeColor = 'white';
   constructor(private mailer: MailToService) { }
 

@@ -20,6 +20,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
+import { faUserGraduate } from '@fortawesome/free-solid-svg-icons';
 
 
 @NgModule({
@@ -50,7 +51,7 @@ import { faFilm } from '@fortawesome/free-solid-svg-icons';
 })
 export class AppModule { 
   constructor(){
-    let faIcons = [faFilm, faEnvelope,]
+    let faIcons = [faFilm, faEnvelope, faUserGraduate]
     library.add(...faIcons);
   }
 }
