@@ -14,18 +14,31 @@ export class SingleRectangleComponent implements OnInit {
     this._color  = val;
   }
   get color() {
-    console.log(this._color)
     return this._color
   }
   @Input() set shouldBlank(val: boolean){
     this._shouldBlank = val;
     if (val) this.blankThisRectangle();
   }
+  private _showHide: 'show'|'hide' = 'hide';
+  @Input() set showHide(val:'show'|'hide'){
+    // this._showHide = val;
+    if (val == "show") this.showThisRectangle();
+    if (val == "hide") this.blankThisRectangle();
+  };
+
+  delay:number = this.getRandomNumber(1000, 5000);
+  get showHide(){
+    return this._showHide;
+  }
   blankingDelay_us: number = this.getRandomNumber(1, 5);
   blankingPeriod_us: number = this.getRandomNumber(0, 3);
+  blankingFunction: boolean[] = [false, false, false, false];
   constructor(private elRef: ElementRef) { }
 
   ngOnInit(): void {
+    let chosenBlandingFunction = this.getRandomNumber(0, 4);
+    this.blankingFunction[chosenBlandingFunction] = true;
     
   }
 
@@ -35,13 +48,20 @@ export class SingleRectangleComponent implements OnInit {
     return min + Math.floor((max - min)*r);
   }
 
-  blankThisRectangle(){
-    this.elRef.nativeElement.style.transitionDelay = this.blankingDelay_us;
-    this.elRef.nativeElement.style.transitionDuration = this.blankingPeriod_us;
-    this.elRef.nativeElement.style.opacity = 0;
-    // let delay = setTimeout(()=>{
-
-    // }, this.blankingDelay_us)
+  showThisRectangle(){
+    let t = setTimeout(()=>{this._showHide = 'show'}, this.delay)
   }
+  blankThisRectangle(){
+    let t = setTimeout(()=>{this._showHide = 'hide'}, this.delay)
+  }
+
+  // blankThisRectangle(){
+  //   let chosenBlandingFunction = this.getRandomNumber(0, 4);
+  //   let that = this;
+  //   let t = setTimeout(()=>{
+  //     that.blankingFunction[chosenBlandingFunction] = true;
+  //     clearTimeout(t);
+  //   }, this.getRandomNumber(1000, 5000))
+  // }
 
 }
