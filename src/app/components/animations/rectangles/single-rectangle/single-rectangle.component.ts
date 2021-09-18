@@ -31,8 +31,8 @@ export class SingleRectangleComponent implements OnInit {
   get showHide(){
     return this._showHide;
   }
-  blankingDelay_us: number = this.getRandomNumber(1, 5);
-  blankingPeriod_us: number = this.getRandomNumber(0, 3);
+  blankingDelay_us: number = this.getRandomNumber(1, 3);
+  blankingPeriod_us: number = this.getRandomNumber(0, 2);
   blankingFunction: boolean[] = [false, false, false, false];
   constructor(private elRef: ElementRef) { }
 
