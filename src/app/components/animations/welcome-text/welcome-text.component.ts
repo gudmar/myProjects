@@ -17,7 +17,6 @@ export class WelcomeTextComponent implements OnInit {
   }
 
   welcomeTestAsArray(){
-    console.log(Array.from(this.welcomeText))
     return Array.from(this.welcomeText);
   }
 

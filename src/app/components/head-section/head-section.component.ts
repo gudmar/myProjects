@@ -12,16 +12,21 @@ import { faUserGraduate } from '@fortawesome/free-solid-svg-icons';
 export class HeadSectionComponent implements OnInit {
   @Input() title:string = '';
   @Input() subtitle:string = '';
-  @Input() imageName:string = '';
+  @Input() imageNameArray:string[] = [''];
   @Input() menuContent:any[] = [];
   @Input() startPage:string = '';
+  currentImageIndex = 0;
+  get imageName(){
+    return this.imageNameArray[this.currentImageIndex];
+  }
   envelope = faEnvelope;
   cv = faUserGraduate;
   envelopeColor = 'white';
   constructor(private mailer: MailToService) { }
 
   ngOnInit(): void {
-    let path = this.getImagePath(this.imageName)
+    let path = this.getImagePath(this.imageName);
+    this.switchCurrentImageIndex();
     // debugger
   }
   getImagePath(imageName:string){
@@ -30,12 +35,13 @@ export class HeadSectionComponent implements OnInit {
   openEmailClient(){
     return this.mailer.eMailMe('Hi, ')
   }
-  // getIconColor(){
-  //   return this.envelopeColor;
-  // }
-
-
-  // changeIconColor(){
+  switchCurrentImageIndex(){
+    let that = this;
+    setInterval(()=>{
+      that.currentImageIndex++;
+      if(that.currentImageIndex >= that.imageNameArray.length) that.currentImageIndex = 0;
+    }, 5000)
+  }
 
   github='github.png'
   // }
