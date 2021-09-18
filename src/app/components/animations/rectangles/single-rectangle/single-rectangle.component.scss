@@ -1,6 +1,31 @@
+$transition-duration: 1s;
 .rectangle{
     display: inline-block;
     position: relative;
     box-shadow: inset 0px 0px 31px -5px #000000;
     margin-bottom: -5px;
+}
+
+.timing1{
+    transition-duration: $transition-duration;
+    transition-timing-function: cubic-bezier(.29, 1.01, 1, -0.68);
+}
+.timing2{
+    transition-duration: $transition-duration;
+    transition-timing-function: linear;
+}
+.timing3{
+    transition-duration: $transition-duration;
+    transition-timing-function: steps(6, end);
+}
+.timing4{
+    transition-duration: $transition-duration;
+    transition-timing-function: ease-in-out;
+}
+
+.show{
+    opacity: 1;
+}
+.hide{
+    opacity: 0;
 }

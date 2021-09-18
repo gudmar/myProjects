@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, Input } from '@angular/core';
 import { CommunicationService } from '../../../services/communication-service.service';
 import { GetRandomColorService } from '../../../services/get-random-color.service';
 import { timingSafeEqual } from 'crypto';
+import { AnimateQueueService } from '../../../services/animate-queue.service';
 
 @Component({
   selector: 'rectangles',
@@ -16,7 +17,8 @@ export class RectanglesComponent implements OnInit {
   constructor(
     private communicator: CommunicationService,
     private elRef: ElementRef,
-    private colors: GetRandomColorService
+    private colors: GetRandomColorService,
+    private animator: AnimateQueueService
   ) { 
     communicator.subscribe(this.uniqueId, this.handleMessages.bind(this), ['displayRectangleAnimation'])
   }
@@ -28,7 +30,7 @@ export class RectanglesComponent implements OnInit {
 
   ngOnInit(): void {
     this.fillRectangleList();
-    this.animate();
+    this.showHideAnimation();
   }
 
   fillRectangleList(){
@@ -47,7 +49,44 @@ export class RectanglesComponent implements OnInit {
     return nrOfCols * nrOfRows * 1.5;
   }
 
+  showHide: 'show'|'hide' = 'show';
 
+  show(){
+    this.showHide= "show"
+    console.log('show')
+  }
+  hide(){
+    this.showHide= "hide"
+    console.log('hide')
+  }
+
+
+  showHideAnimation(){
+    this.animator.animate(
+      {fn: this.show.bind(this), delay: 1000},
+      {fn: this.hide.bind(this), delay: 6000}
+    )
+  }
+  // animateMessage(){
+  //   this.animator.animate(
+  //     {fn: this.displayMessage.bind(this), delay: 0},
+  //     {fn: this.animateBorder.bind(this), delay:10},
+  //     {fn: this.stopComponent.bind(this), delay: 2000},
+  //     {fn: this.clearAfterAnimation.bind(this), delay: 2100}
+  //   )
+  // }
+
+  // showHideTimer(){
+  //   let that = this;
+  //   let s = setTimeout(()=>{
+  //     that.showHide = 'show';
+  //     let h = setTimeout(()=>{
+  //       that.showHide = 'hide';
+  //       clearTimeout(h);
+  //     }, 6000)
+  //     clearTimeout(h)
+  //   }, 1000)
+  // }
 
   animate(){
 

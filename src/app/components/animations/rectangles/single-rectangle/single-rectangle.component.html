@@ -3,5 +3,13 @@
     [style.height] = "size + 'px'"
     [style.background-color] = "color"
     [ngStyle] = "{'background-color':color}"
+    [ngClass] = 
+        "{'timing1':blankingFunction[0], 
+        'timing2':blankingFunction[1], 
+        'timing3':blankingFunction[2], 
+        'timing4':blankingFunction[3],
+        'show': showHide == 'show',
+        'hide': showHide == 'hide'
+    }"
 >
 </div>
