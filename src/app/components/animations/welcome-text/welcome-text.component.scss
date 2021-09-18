@@ -1,0 +1,27 @@
+// <div class="shutter">
+//     <div class="text-area">
+//         <span *ngFor="let item of welcomeText, index as i" 
+//             class=".welcome-text" 
+//             [ngClass]="{'hidden': !shouldSymbolBeDisplayed(i), 'visible': shouldSymbolBeDisplayed(i)}"
+
+.shutter{
+    background-color: black;
+    z-index: 50;
+    overflow: hidden;
+}
+
+.text-area{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5rem;
+    width: 70%;
+}
+
+.hidden{
+    opacity: 0;
+    transition: 0.3s;
+}
+.visible{
+    opacity: 1;
+    transition: 0.3s;
+}

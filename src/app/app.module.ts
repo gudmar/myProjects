@@ -25,6 +25,7 @@ import { AnimationsComponent } from './components/animations/animations.componen
 import { RectanglesComponent } from './components/animations/rectangles/rectangles.component';
 import { SingleRectangleComponent } from './components/animations/rectangles/single-rectangle/single-rectangle.component';
 import { GetRandomColorService } from './services/get-random-color.service';
+import { WelcomeTextComponent } from './components/animations/welcome-text/welcome-text.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { GetRandomColorService } from './services/get-random-color.service';
     AnimationsComponent,
     RectanglesComponent,
     SingleRectangleComponent,
+    WelcomeTextComponent,
   ],
   imports: [
     BrowserModule,
