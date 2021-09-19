@@ -13,6 +13,7 @@ export class SkillListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // debugger
   }
   getListFromNumber(nrOfItems:number){
     let output = [];

@@ -10,6 +10,26 @@ export class GetCvContentService {
   getContent(){
     return [
       {
+        type: 'cv-additional-entry',
+        title: 'Web developement',
+        subtitle: 'Self learning',
+        dates: '2019-now',
+        content:[
+          {
+            type:'skill-list',
+            content:[
+              {title:'HTML', level: 8, maxLevel: 10},
+              {title:'JS', level: 7, maxLevel: 10},
+              {title:'CSS', level: 6, maxLevel: 10},
+              {title:'SCSS', level: 4, maxLevel: 10},
+              {title:'Angular', level: 5, maxLevel: 10},
+              {title:'Gulp', level: 4, maxLevel: 10},
+              {title:'React', level: 3, maxLevel: 10},
+            ]
+          }
+        ]          
+      },
+      {
         type: 'cv-employment-entry',
         title: 'Nokia Solutions and Networks',
         subtitle: 'Software verification specialist',
@@ -89,26 +109,7 @@ export class GetCvContentService {
           }
         ]
       },  
-      {
-        type: 'cv-additional-entry',
-        title: 'Web developement',
-        subtitle: 'Self learning',
-        dates: '2019-now',
-        content:[
-          {
-            type:'skill-list',
-            content:[
-              {title:'HTML', level: 8, maxLevel: 10},
-              {title:'JS', level: 7, maxLevel: 10},
-              {title:'CSS', level: 6, maxLevel: 10},
-              {title:'SCSS', level: 4, maxLevel: 10},
-              {title:'Angular', level: 5, maxLevel: 10},
-              {title:'Gulp', level: 4, maxLevel: 10},
-              {title:'React', level: 3, maxLevel: 10},
-            ]
-          }
-        ]          
-      },
+
       {
         type: 'cv-additional-entry',
         title: 'Interests',

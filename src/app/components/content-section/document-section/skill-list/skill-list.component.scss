@@ -1,0 +1,44 @@
+$star-color: gray;
+$font-size: 1.2rem;
+
+.skill-list{
+
+}
+.title{
+    font-size: $font-size;
+}
+.subtitle{
+
+}
+ .dates{
+
+ }
+
+ table{
+
+ }
+ tr{
+
+ }
+ td{
+    position: relative;
+    font-size: $font-size;
+    height: $font-size;
+    // border: solid thin black;
+    text-align: right;
+    &:last-child{
+        height: calc( #{$font-size} + 4px );
+        text-align: left;
+        padding-left: 5px;
+    }
+ }
+ .star{
+    position: relative;
+    border: thin $star-color solid;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+ }
+ .filled-star{
+    background-color: $star-color;
+ }
