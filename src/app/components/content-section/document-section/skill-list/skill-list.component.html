@@ -4,8 +4,8 @@
     <div class="dates">{{dates}}</div>
     <table>
         <tr *ngFor="let skill of content">
-            <td>{{title}}</td>
-            <td>
+            <td>{{skill.title}}</td>
+            <td class="row center">
                 <div 
                     *ngFor="let star of getListFromNumber(skill.maxLevel); index as i" 
                     [ngClass]="{'filled-star': isStarFilled(skill.level, i)}" 
