@@ -49,7 +49,7 @@ export class RotateOnHoverDirective {
     if (angles.y < -maxAngle) angles.y = -maxAngle;
 
     // console.log(elementSize)
-    console.log(angles)
+    // console.log(angles)
 
     // this.renderer.setStyle(this.elRef.nativeElement, 'transform', `translateZ(20px)`);
     // this.renderer.setStyle(this.elRef.nativeElement, 'transform',`rotateX(${angles.x}deg) rotateY(${angles.y}deg)`)

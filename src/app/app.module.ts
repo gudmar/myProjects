@@ -26,6 +26,8 @@ import { RectanglesComponent } from './components/animations/rectangles/rectangl
 import { SingleRectangleComponent } from './components/animations/rectangles/single-rectangle/single-rectangle.component';
 import { GetRandomColorService } from './services/get-random-color.service';
 import { WelcomeTextComponent } from './components/animations/welcome-text/welcome-text.component';
+import { CvEntrySectionComponent } from './components/content-section/document-section/cv-entry-section/cv-entry-section.component';
+import { CvDocumentComponent } from './components/content-section/document-section/cv-document/cv-document.component';
 
 
 @NgModule({
@@ -46,6 +48,8 @@ import { WelcomeTextComponent } from './components/animations/welcome-text/welco
     RectanglesComponent,
     SingleRectangleComponent,
     WelcomeTextComponent,
+    CvEntrySectionComponent,
+    CvDocumentComponent,
   ],
   imports: [
     BrowserModule,

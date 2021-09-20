@@ -10,6 +10,7 @@ export class DocumentSectionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.dir(this.contentList)
   }
 
   imagePath(imageName:string):string{

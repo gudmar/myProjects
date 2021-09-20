@@ -1,6 +1,6 @@
+@import '../../../../../styles.scss';
 
-
-$timeline-width: 40px;
+// $timeline-width: 40px;
 $dot-margin: 10px;
 $timeline-color: gray;
 $dot-size: $timeline-width/2;
@@ -9,15 +9,15 @@ $dot-size: $timeline-width/2;
 //     @return calc( 100% - $dot-size )/2
 // }
 :host{
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-content: center;
+    // align-items: center;
+    // justify-content: center;
 }
 // .row{position: relative; height: 100%; display: table-row;}
 
 section{
-    width: 70%;
+    // width: 70%;
     min-width: 400px;
 }
 .content{
