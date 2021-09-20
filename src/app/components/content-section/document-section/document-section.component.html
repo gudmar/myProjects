@@ -25,21 +25,34 @@
             <img [src]="imagePath(item.imageName)" [alt]="item.imageAlt">
     </div>
 
-    <employment-entry *ngIf="item.type=='cv-employment-entry'"
+    <div class="col col-2">
+        <employment-entry *ngIf="item.type=='cv-employment-entry'"
+            [title] = "item.title"
+            [content] = "item.content"
+            [subtitle] = "item.subtitle"
+            [dates] = "item.dates"
+            [position] = "item.position"
+        ></employment-entry>
+    </div>
+
+    <div class="col col2">
+        <section *ngIf="item.type == 'cv-additional-entry'">
+            <div class="title">{{item.title}}</div>
+            <div class="subtitle">{{item.subtitle}}</div>
+            <div class="dates">{{item.dates}}</div>
+            <document-section [contentList]="item.content"></document-section>
+        </section>
+    </div>
+
+    <cv-document *ngIf="item.type == 'cv-document'"
+        [contentList] = "item.content"
+    ></cv-document>
+
+    <cv-entry-section *ngIf="item.type == 'cv-section-entry'"
         [title] = "item.title"
         [content] = "item.content"
-        [subtitle] = "item.subtitle"
-        [dates] = "item.dates"
-        [position] = "item.position"
-    ></employment-entry>
+    ></cv-entry-section>
 
-
-    <section *ngIf="item.type == 'cv-additional-entry'">
-        <div class="title">{{item.title}}</div>
-        <div class="subtitle">{{item.subtitle}}</div>
-        <div class="dates">{{item.dates}}</div>
-        <document-section [contentList]="item.content"></document-section>
-    </section>
 
     <skill-list 
         *ngIf="item.type=='skill-list'"
