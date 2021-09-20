@@ -10,8 +10,6 @@ export class CvDocumentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.dir(this.contentList)
-    console.error('Whole CV component management must be located here for display table to work, or I dont fuck know :(')
   }
 
 }
