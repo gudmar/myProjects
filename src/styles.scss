@@ -53,9 +53,10 @@ html,body{
 }
 .col-1{
     position: relative;
-    width: 200px;
+    width: 400px;
     flex-grow: 0;
     flex-shrink: 0;  
+    margin-right: 100px;
 }
 .title{
     // font-weight: bold;
@@ -79,6 +80,46 @@ html,body{
 .compensateTimeline{
     position: relative;
     width: calc( #{$timeline-width} * 1);
+}
+
+.card{
+    position: relative;
+    // border: solid rgb(50, 50, 50) thin;
+    font-size: 1.4rem;
+    max-width: 600px;
+    background-color: rgb(235, 235, 235);
+    margin-left: 50px;
+    .title{
+        font-weight: bold;
+    }
+    .subtitle{
+
+    }
+    @mixin pseudo-element-shadow{
+        position: absolute;
+        bottom: 20px;
+        width: 50%;
+        height: 50px;
+        box-shadow: -1px 45px 47px -2px #000000;
+        box-shadow: -1px 45px 47px -8px #000000;
+        content: '';
+        z-index: -1;
+    }
+
+    padding: 20px;
+    margin-bottom: 50px;
+    &:before{
+        @include pseudo-element-shadow();
+        left: 10px;
+        transform: rotate(-7deg); 
+        // box-shadow: -1px 31px 33px 7px #000000;
+    }
+    &:after{
+        @include pseudo-element-shadow();
+        right: 10px;
+        transform: rotate(7deg);
+        // box-shadow: -1px 31px 33px 7px #000000;
+    }
 }
 
 @media only screen and (max-width: 750px){
