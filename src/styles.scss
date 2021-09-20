@@ -53,10 +53,13 @@ html,body{
 }
 .col-1{
     position: relative;
-    width: 400px;
+    width: 290px;
     flex-grow: 0;
     flex-shrink: 0;  
     margin-right: 100px;
+    text-align: right;
+    font-size: 2rem;
+    font-weight: bold;
 }
 .title{
     // font-weight: bold;
@@ -87,6 +90,7 @@ html,body{
     // border: solid rgb(50, 50, 50) thin;
     font-size: 1.4rem;
     max-width: 600px;
+    width: 600px;
     background-color: rgb(235, 235, 235);
     margin-left: 50px;
     .title{
@@ -122,6 +126,41 @@ html,body{
     }
 }
 
+@media only screen and (max-width: 1225px){
+    .col-1{
+        position: relative;
+        width: 200px;
+        flex-grow: 0;
+        flex-shrink: 0;  
+        margin-right: 20px;
+        text-align: right;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+}
+
 @media only screen and (max-width: 750px){
     .row-scalable{flex-direction: column};
+}
+@media only screen and (max-width: 1025px){
+    .card{font-size: 1rem;}
+    .card{width: 400px;}
+}
+@media only screen and (max-width: 850px){
+    .timeline{
+        display: none;
+    }
+    .compensateTimeline {
+        display: none;
+    }
+    .card{
+        margin-left: 0px;
+    }
+}
+@media only screen and (max-width: 570px){
+    .content-section{
+        align-content: flex-start;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
 }
