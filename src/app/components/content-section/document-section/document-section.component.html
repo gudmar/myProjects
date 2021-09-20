@@ -25,7 +25,7 @@
             <img [src]="imagePath(item.imageName)" [alt]="item.imageAlt">
     </div>
 
-    <div class="col col-2">
+    <!-- <div class="col col-2"> -->
         <employment-entry *ngIf="item.type=='cv-employment-entry'"
             [title] = "item.title"
             [content] = "item.content"
@@ -33,16 +33,22 @@
             [dates] = "item.dates"
             [position] = "item.position"
         ></employment-entry>
-    </div>
+    <!-- </div> -->
 
-    <div class="col col2">
-        <section *ngIf="item.type == 'cv-additional-entry'">
-            <div class="title">{{item.title}}</div>
-            <div class="subtitle">{{item.subtitle}}</div>
-            <div class="dates">{{item.dates}}</div>
-            <document-section [contentList]="item.content"></document-section>
+    <!-- <div class="col col2"> -->
+        <section class="compensateTimelie" *ngIf="item.type == 'cv-additional-entry'">
+            <div class="row">
+                <div class="compensateTimeline">
+                </div>
+                <div class="content">
+                    <div class="title">{{item.title}}</div>
+                    <div class="subtitle">{{item.subtitle}}</div>
+                    <div class="dates">{{item.dates}}</div>
+                <document-section [contentList]="item.content"></document-section>
+                </div>
+            </div>
         </section>
-    </div>
+    <!-- </div> -->
 
     <cv-document *ngIf="item.type == 'cv-document'"
         [contentList] = "item.content"
