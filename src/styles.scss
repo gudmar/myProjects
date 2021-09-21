@@ -11,6 +11,30 @@ html,body{
     height: 100%;
     overflow-x: hidden;
 }
+
+p{
+    font-size: 1.4rem;
+    text-align: justify;
+    // width: 90%;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 40px;
+    display: inline-block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 800px;
+}
+section{
+    // width: 100vw;
+}
+h1{
+    font-size: 3.5rem;
+    font-weight: normal;
+}
+h2{
+    font-size: 2.5rem;
+    font-weight: normal;
+}
 .center{
     display: flex;
     align-content: center;
@@ -129,6 +153,18 @@ html,body{
     }
 }
 
+@media only screen and (max-width: 1350px){
+    p{
+        width: 700px;
+    }
+}
+
+@media only screen and (max-width: 1250px){
+    p{
+        width: 600px;
+    }
+}
+
 @media only screen and (max-width: 1225px){
     .col-1{
         position: relative;
@@ -141,6 +177,12 @@ html,body{
         font-weight: bold;
     }
 }
+
+// @media only screen and (max-width: 1130px){
+//     section{
+//         h1{font-size: 3rem; width: 220px;}
+//     }
+// }
 
 @media only screen and (max-width: 750px){
     .row-scalable{flex-direction: column};
@@ -160,6 +202,22 @@ html,body{
         margin-left: 0px;
     }
 }
+@media only screen and (max-width: 700px){
+    section{
+        p{width: 550px;}
+    }
+}
+@media only screen and (max-width: 640px){
+    section{
+        p{width: 500px;}
+    }
+}
+@media only screen and (max-width: 590px){
+    section{
+        p{width: 450px;}
+    }
+}
+
 @media only screen and (max-width: 570px){
     .content-section{
         align-content: flex-start;
@@ -167,19 +225,44 @@ html,body{
         justify-content: flex-start;
     }
 }
+@media only screen and (max-width: 539px){
+    section{
+        p{width: 400px;}
+    }
+}
 @media only screen and (max-width: 486px){
     .card{
         width: 300px
     }
 }
+@media only screen and (max-width: 480px){
+    section{
+        p{width: 350px;}
+    }
+}
+
+@media only screen and (max-width: 430px){
+    section{
+        p{width: 300px;}
+    }
+}
+
 @media only screen and (max-width: 400px){
     .card{
         width: 250px
     }
 }
+@media only screen and (max-width: 380px){
+    section{
+        p{width: 250px;}
+    }
+}
 @media only screen and (max-width: 330px){
     .card{
         width: 200px
+    }
+    section{
+        p{width: 200px;}
     }
 }
 @media only screen and (max-width: 283px){

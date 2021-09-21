@@ -5,7 +5,7 @@
         <document-section [contentList]="item.content"></document-section>
     </section>
 
-    <section *ngIf="item.type=='row-section'">
+    <section *ngIf="item.type=='row-section'" class="center">
         <h1>{{item.title}}</h1>
         <document-section class="row wrap center" [contentList]="item.content"></document-section>
     </section>
