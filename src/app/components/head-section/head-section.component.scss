@@ -17,6 +17,14 @@ header{
 .first-plan{
     transform: translateZ(3px);
     font-family: 'Work Sans', sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    // background: rgba(0, 0, 0, 0.9);
+    // box-shadow: 0px 10px 13px -7px #000000, 0px 0px 50px 41px rgba(0,0,0,0.5);
+    h1, h6{
+        text-shadow: 1px 0px 20px #000000;
+        text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px;
+    }
 }
 .second-plan{
     background-size: cover;
@@ -87,3 +95,12 @@ a{
         color: black;
     }
 }
+
+@media only screen and (max-width: 430px){
+    .first-plan{
+        align-self: flex-start;
+        position: relative;
+        top: 4rem;
+    }
+}
+

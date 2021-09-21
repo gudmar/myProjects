@@ -19,5 +19,16 @@ ul{
 }
 .nav-wrapper{
     display: flex;
-
+}
+@media only screen and (max-width: 430px){
+    nav{
+        top: -2rem;
+        display: flex;
+        align-content: flex-end;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+    .nav-wrapper{
+        flex-direction: column;
+    }
 }
