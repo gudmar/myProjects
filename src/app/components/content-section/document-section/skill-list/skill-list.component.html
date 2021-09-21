@@ -9,8 +9,11 @@
                 <div 
                     *ngFor="let star of getListFromNumber(skill.maxLevel); index as i" 
                     [ngClass]="{'filled-star': isStarFilled(skill.level, i)}" 
-                    class="star"
+                    class="star not-tiny-screen"
                 >
+                </div>
+                <div class = "tiny-screen">
+                    {{skill.level+'/'+skill.maxLevel}}
                 </div>
             </td>
         </tr>

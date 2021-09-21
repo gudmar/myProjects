@@ -42,3 +42,15 @@ $font-size: 1.2rem;
  .filled-star{
     background-color: $star-color;
  }
+ .tiny-screen{
+     display: none;
+ }
+
+ @media only screen and (max-width: 283px){
+    .tiny-screen{
+        display: inline-block;
+    }
+    .not-tiny-screen{
+        display: none;
+    }
+ }
