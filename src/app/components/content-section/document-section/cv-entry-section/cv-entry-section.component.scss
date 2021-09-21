@@ -1,5 +1,11 @@
 
-
-@media only screen and (max-width: 1225px){
-    
+@media only screen and (max-width: 750px){
+    .section-title{
+        text-align: left;
+    }
+}
+@media only screen and (max-width: 260px){
+    .section-title{
+        font-size: 1.5rem;
+    }
 }
