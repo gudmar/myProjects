@@ -1,3 +1,5 @@
+$link-animation-duration: 0.5s;
+
 section{
     display: flex;
     // border-top: solid black thin;
@@ -14,6 +16,70 @@ section{
 
 article{
     h2{padding-left: 30px;}
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    font-size: 1.4rem;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    &:before{
+        position: absolute;
+        display: inline-block;
+        overflow: hidden;
+        content: attr(data-content);
+        color: transparent;
+        border-bottom: black thin solid;
+        transition-timing-function: cubic-bezier(0.5, 0.5, 0.3, 1);
+        transition-duration: $link-animation-duration;
+
+        transform: translate(-100%);
+        height: calc(100% - 3px);
+        width: 0;
+    }
+    &:after{
+        position: relative;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: attr(data-content);
+        color: black;
+        transition-timing-function: cubic-bezier(0.5, 0.5, 0.3, 1);
+        transition-duration: $link-animation-duration;
+
+        right: -100%;
+        // transform: translate3d(150%, 0, 0);
+    }
+
+    &:hover span{
+        transform: translate3d(-150%, 0, 0);
+        transition-timing-function: cubic-bezier(0.5, 0.5, 0.3, 1);
+        transition-duration: $link-animation-duration;
+
+    }
+    &:hover{
+        &:after{
+            // transform: translate3d(0, 0, 0);
+            right: 0;
+            transition-timing-function: cubic-bezier(0.5, 0.5, 0.3, 1);
+            transition-duration: $link-animation-duration;
+        }
+        &:before{
+            transform: translate3d(0, 0, 0);
+            transition-timing-function: cubic-bezier(0.5, 0.5, 0.3, 1);
+            transition-duration: $link-animation-duration;
+
+            width: 100%;
+        }
+    }
+    span{
+        position: relative;
+        transition-timing-function: cubic-bezier(0.5, 0.5, 0.3, 1);
+        transition-duration: $link-animation-duration;
+        display: inline-block;
+    }
 }
 
 @media only screen and (max-width: 1130px){
