@@ -14,6 +14,11 @@ export class GetAboutMeContentService {
         title: 'About me',
         content: [
           {
+            type:'link',
+            href: '#',
+            title: 'Some test link'
+          },
+          {
             type: 'p',
             content:`
               Hi. My name is Marek, and I want to be a web developer. As learning, aspecially when one wants to 
