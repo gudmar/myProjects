@@ -18,6 +18,20 @@ article{
     h2{padding-left: 30px;}
 }
 
+a {
+    margin-left: 60px;
+    margin-right: 60px;
+    border-radius: 5px;
+    animation: blink-link 3s infinite;
+    padding: 3px;
+}
+
+@keyframes blink-link{
+    0% { color: rgb(120, 120, 50);}
+    50% {color:black; background-color: rgba(120, 120, 50, 0.2)}
+    100% { color: rgb(120, 120, 50);}
+}
+
 a{
     color: black;
     text-decoration: none;
@@ -36,7 +50,7 @@ a{
         transition-duration: $link-animation-duration;
 
         transform: translate(-100%);
-        height: calc(100% - 3px);
+        height: calc(100% - 5px);
         width: 0;
     }
     &:after{
