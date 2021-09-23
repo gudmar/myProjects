@@ -16,6 +16,7 @@ export class GetPortfolioContentService {
           {
             type: 'portfolio-entry',
             imageName: 'Calculator1.JPG',
+            imageNameArray: ['Calculator1.JPG', 'Calculator2.JPG'],
             title: 'Calculator',
             content: `
               Infix claculator, evaluating mathematical expression. Capable of calculating any deeply nested 
@@ -26,6 +27,7 @@ export class GetPortfolioContentService {
           {
             type: 'portfolio-entry',
             imageName: 'storyDices1.JPG',
+            imageNameArray: ['storyDices1.JPG', 'StoryDices2.JPG', 'storyDices3.JPG'],
             title: 'Story dices',
             content: `
               Are you a story teller? Draw random symbols and think of a story based on them. You may chose 
@@ -36,6 +38,8 @@ export class GetPortfolioContentService {
           {
             type: 'portfolio-entry',
             imageName: 'ticTacToe3.JPG',
+            imageNameArray: 
+              ['ticTacToe3.JPG', 'TicTacToe2.JPG','ticTacToe5.JPG', 'ticTacToe4.JPG', 'TicTacToeAbout.JPG'],
             title: 'Tic-tac-toe',
             content: `
               Play a set of tic-tac-toe game with computer of a friend on the same computer. You may chose to 
@@ -45,6 +49,7 @@ export class GetPortfolioContentService {
           {
             type: 'portfolio-entry',
             imageName: 'widgets2.JPG',
+            imageNameArray: ['widgets2.JPG', 'widgets1.JPG', 'widgets3.JPG'],
             title: 'Widgets',
             content: `
               A pure JavaScript page with different widgets like animated buttons, spinning circles, gauges or a 

@@ -25,9 +25,11 @@ import { AnimationsComponent } from './components/animations/animations.componen
 import { RectanglesComponent } from './components/animations/rectangles/rectangles.component';
 import { SingleRectangleComponent } from './components/animations/rectangles/single-rectangle/single-rectangle.component';
 import { GetRandomColorService } from './services/get-random-color.service';
+import { AnimateQueueService } from './services/animate-queue.service'
 import { WelcomeTextComponent } from './components/animations/welcome-text/welcome-text.component';
 import { CvEntrySectionComponent } from './components/content-section/document-section/cv-entry-section/cv-entry-section.component';
 import { CvDocumentComponent } from './components/content-section/document-section/cv-document/cv-document.component';
+import { SlideShowComponent } from './components/content-section/document-section/portfolio-entry/slide-show/slide-show.component';
 
 
 @NgModule({
@@ -50,6 +52,7 @@ import { CvDocumentComponent } from './components/content-section/document-secti
     WelcomeTextComponent,
     CvEntrySectionComponent,
     CvDocumentComponent,
+    SlideShowComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { CvDocumentComponent } from './components/content-section/document-secti
   providers: [
     CommunicationService,
     GetNotepadContentService,
-    GetRandomColorService
+    GetRandomColorService,
+    AnimateQueueService
   ],
   bootstrap: [AppComponent]
 })

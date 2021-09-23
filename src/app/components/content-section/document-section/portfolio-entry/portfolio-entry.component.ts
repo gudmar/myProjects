@@ -8,15 +8,16 @@ import { CommunicationService } from '../../../../services/communication-service
 })
 export class PortfolioEntryComponent implements OnInit {
   @Input() title: string = '';
-  @Input() imageName: string = '';
+  // @Input() imageName: string = '';
+  @Input() imageNameArray: string[] = [];
   @Input() content: string = '';
-  imagePath:string = this.getImagePath(this.imageName)
+  // imagePath:string = this.getImagePath(this.imageName)
   constructor(
     private communicator: CommunicationService
   ) { }
 
   ngOnInit(): void {
-    this.imagePath = this.getImagePath(this.imageName)
+    // this.imagePath = this.getImagePath(this.imageName)
   }
 
 

@@ -1,0 +1,53 @@
+
+$img-width: 200px;
+$img-height: 200px;
+
+.screen{
+    position: relative;
+    display: inline-block;
+    width: $img-width;
+    height: $img-height;
+    transition: 0.3s;
+    .slide{
+        position: absolute;
+        display: inline-block;
+        width: $img-width;
+        height: $img-height;        
+    }
+    .isBefore{
+        top: 0;
+        left: -150%;
+    }
+    .isAfter{
+        top: 0;
+        left: 150%;
+    }
+}
+.isAnimated{
+    transition: 0.3s;
+}
+
+.isDisplayed{
+    top:0;
+    left: 0;
+}
+
+.perspective{
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+img{
+    position: relative;
+    width: $img-width;
+    height: $img-height;
+    transform-origin: center center;
+    cursor: pointer;
+    border: solid medium red;
+    transition: 0.3s;
+    transform-style: preserve-3d;
+    &:hover{
+        // box-shadow: 0px 0px 20px 5px #000000;
+        transition: 0.3s;
+        transform-style: preserve-3d;
+    }
+}
