@@ -54,11 +54,13 @@ export class SlideShowComponent implements OnInit {
   switchToA(){
     this.beforeSlide = 'B';
     this.displayedSlide = 'A';
+    // debugger;
     console.log('A')
   }
   switchToB(){
     this.beforeSlide = 'A';
     this.displayedSlide = 'B';
+    // debugger
     console.log('B')
   }
   setSlidetoAfter(whatSlide: 'A'|'B'|null){
@@ -70,21 +72,26 @@ export class SlideShowComponent implements OnInit {
   }
   animateSwitchToA(){
     this.animator.animate(
-      {fn: this.animateOn, delay: 0},
-      {fn: this.switchToA, delay: 300},
-      {fn: this.animateOff, delay: 0},
-      {fn: this.setSlidetoAfter('B'), delay: 0}
+      {fn: this.animateOn.bind(this), delay: 0},
+      {fn: this.switchToA.bind(this), delay: 300},
+      {fn: this.animateOff.bind(this), delay: 0},
+      {fn: this.setSlidetoAfter('B').bind(this), delay: 0}
     )
     console.log('switchToA')
   }
   animateSwitchToB(){
     this.animator.animate(
-      {fn: this.animateOn, delay: 0},
-      {fn: this.switchToB, delay: 300},
-      {fn: this.animateOff, delay: 0},
-      {fn: this.setSlidetoAfter('A'), delay: 0}
+      {fn: this.animateOn.bind(this), delay: 0},
+      {fn: this.switchToB.bind(this), delay: 300},
+      {fn: this.animateOff.bind(this), delay: 0},
+      {fn: this.setSlidetoAfter('A').bind(this), delay: 0}
     )
     console.log('switchToB')
+  }
+
+  getDisplayedSlide(){
+    console.log(`In getDisplayedSlide returning ${this.displayedSlide}`)
+    return this.displayedSlide
   }
   
 
@@ -92,7 +99,8 @@ export class SlideShowComponent implements OnInit {
     let that = this;
     this.animationInterval = setInterval(
       ()=>{
-        if (this.displayedSlide == 'A') this.animateSwitchToB();
+        // debugger
+        if (this.getDisplayedSlide() == 'A') this.animateSwitchToB();
         else this.animateSwitchToA();
       }, 3000
     )
