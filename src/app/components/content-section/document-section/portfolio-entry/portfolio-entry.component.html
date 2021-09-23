@@ -1,9 +1,11 @@
 <section>
     <div class="row">
         <div class="col perspective">
-            <img rotateOnHover [transformatoinOrder]="'translateThenRotate'" [zoomValue] = '100' 
+
+            <!-- <img rotateOnHover [transformatoinOrder]="'translateThenRotate'" [zoomValue] = '100' 
                 [src]="imagePath" alt="title" (click)="switchToPage(title)"
-            >
+            > -->
+            <slide-show [imageArray] = "imageNameArray" [title] = "title"></slide-show>
         </div>
         <div class="col">
             <div class="title">{{title}}</div>
