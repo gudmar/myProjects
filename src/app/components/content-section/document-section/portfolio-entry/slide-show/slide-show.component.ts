@@ -12,8 +12,8 @@ export class SlideShowComponent implements OnInit {
   @Input() title: string = '';
   @Input() imageArray: string[] = [];
   displayedSlide: 'A' | 'B' | null = 'A';
-  beforeSlide: 'A' | 'B' | null = 'A';
-  afterSlide: 'A' | 'B' | null = 'A';
+  beforeSlide: 'A' | 'B' | null = null;
+  afterSlide: 'A' | 'B' | null = 'B';
   isAnimationPhase: boolean = false;
   currentImageIndex: number = 0;
   animationInterval: any;
@@ -30,6 +30,10 @@ export class SlideShowComponent implements OnInit {
     if (this.displayedSlide == 'B') return this.getImagePath(this.nextImageName);
     return this.getImagePath(this.currentImageName);
   }
+
+  // logAStates:any = [];
+  // logBStates:any = [];
+  // logStates:any = [];
 
   ngOnInit(): void {
     this.animate();
@@ -49,48 +53,80 @@ export class SlideShowComponent implements OnInit {
   getImagePath(imageName: string){
     return `../../../../../assets/${imageName}`
   }
-  animateOn(){this.isAnimationPhase = true;}
-  animateOff(){this.isAnimationPhase = false;}
+  animateOn(){
+    // this.logAStates.push('animate ON')
+    // this.logBStates.push('animate ON')
+    // this.logStates.push('animate ON')
+    this.isAnimationPhase = true;
+  }
+  animateOff(){
+    // this.logBStates.push('animate OFF')
+    // this.logAStates.push('animate OFF')
+    // this.logStates.push('animate OFF')
+    this.isAnimationPhase = false;
+  }
   switchToA(){
     this.beforeSlide = 'B';
+    // this.logAStates.push('switchTo A before to B')
+    // this.logBStates.push('switchTo A beforeTo B')
+    // this.logStates.push('switchTo A beforeTo B')
+    this.afterSlide = null;
     this.displayedSlide = 'A';
-    // debugger;
-    console.log('A')
+    // console.log('A')
   }
   switchToB(){
     this.beforeSlide = 'A';
+    // this.logAStates.push('switch to B, beforeTo A ')
+    // this.logBStates.push('switchTo B before to A')
+    // this.logStates.push('switchTo B before to A')
+    this.afterSlide = null;
     this.displayedSlide = 'B';
-    // debugger
-    console.log('B')
+    // console.log('B')
   }
   setSlidetoAfter(whatSlide: 'A'|'B'|null){
     let slide = whatSlide;
+    // console.log('set slide to after')
+    // this.logAStates.push(`set ${whatSlide} to after`)
+    // this.logBStates.push(`set ${whatSlide} to after`)
+    // this.logStates.push(`set ${whatSlide} to after`)
     return () => {
       this.beforeSlide = null;
       this.afterSlide = slide;  
     }
   }
+  setSlideAToAfter(){
+    // this.logAStates.push(`set A to after`)
+    // this.logBStates.push(`set A to after`)
+    // this.logStates.push(`set A to after`)    
+    this.beforeSlide = null;
+    this.afterSlide = 'A'    
+  }
+  setSlideBToAfter(){
+    // this.logAStates.push(`set B to after`)
+    // this.logBStates.push(`set B to after`)
+    // this.logStates.push(`set B to after`)    
+    this.beforeSlide = null;
+    this.afterSlide = 'B'    
+  }
+
   animateSwitchToA(){
     this.animator.animate(
       {fn: this.animateOn.bind(this), delay: 0},
-      {fn: this.switchToA.bind(this), delay: 300},
-      {fn: this.animateOff.bind(this), delay: 0},
-      {fn: this.setSlidetoAfter('B').bind(this), delay: 0}
+      {fn: this.switchToA.bind(this), delay: 3000},
+      {fn: this.animateOff.bind(this), delay: 3000},
+      {fn: this.setSlideBToAfter.bind(this), delay: 3000}
     )
-    console.log('switchToA')
   }
   animateSwitchToB(){
     this.animator.animate(
       {fn: this.animateOn.bind(this), delay: 0},
-      {fn: this.switchToB.bind(this), delay: 300},
-      {fn: this.animateOff.bind(this), delay: 0},
-      {fn: this.setSlidetoAfter('A').bind(this), delay: 0}
+      {fn: this.switchToB.bind(this), delay: 3000},
+      {fn: this.animateOff.bind(this), delay: 3000},
+      {fn: this.setSlideAToAfter.bind(this), delay: 3000}
     )
-    console.log('switchToB')
   }
 
   getDisplayedSlide(){
-    console.log(`In getDisplayedSlide returning ${this.displayedSlide}`)
     return this.displayedSlide
   }
   
@@ -99,10 +135,14 @@ export class SlideShowComponent implements OnInit {
     let that = this;
     this.animationInterval = setInterval(
       ()=>{
-        // debugger
         if (this.getDisplayedSlide() == 'A') this.animateSwitchToB();
         else this.animateSwitchToA();
-      }, 3000
+        // console.dir({
+        //   A: this.logAStates,
+        //   B: this.logBStates,
+        //   BOth: this.logStates
+        // })
+      }, 12000
     )
   }
 
@@ -125,3 +165,4 @@ export class SlideShowComponent implements OnInit {
 //             [src]="imageB" alt="image B">
 //     </div>
 // </div>
+
