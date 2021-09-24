@@ -1,3 +1,5 @@
+
+
 .row{}
 .col:last-child{
     margin-left: 1rem;
@@ -12,7 +14,6 @@ img{
     height: 200px;
     transform-origin: center center;
     cursor: pointer;
-    border: solid medium red;
     transition: 0.3s;
     transform-style: preserve-3d;
     &:hover{
@@ -20,7 +21,6 @@ img{
         transition: 0.3s;
         transform-style: preserve-3d;
     }
-    
 }
 .title{
     text-align: center;
@@ -31,7 +31,7 @@ img{
 section{
     position: relative;
     max-width: 700px;
-    border: solid thin rgb(50, 50, 50);
+    // border: solid thin rgb(50, 50, 50);
     padding: 0.4rem;
     margin:0.7rem;
 }
