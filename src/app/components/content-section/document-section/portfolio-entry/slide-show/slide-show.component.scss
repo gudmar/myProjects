@@ -1,7 +1,15 @@
 
 $img-width: 200px;
 $img-height: 200px;
-
+// :host{
+//     &:hover{
+//         transform-style: preserve-3d;
+//         border: solid red thick;
+//     }
+//     section{
+//         transform: translateZ(1px);
+//     }
+// }
 .screen{
     position: relative;
     display: inline-block;
@@ -22,6 +30,10 @@ $img-height: 200px;
     .after{
         top: 0;
         transform: translate3d(120%, 0, 0);
+    }
+    :hover{
+        
+        z-index: 1000;
     }
 }
 .animated{
@@ -44,11 +56,13 @@ img{
     height: $img-height;
     transform-origin: center center;
     cursor: pointer;
-    border: solid medium red;
     transition: 0.3s;
     transform-style: preserve-3d;
+    object-fit: contain;
     &:hover{
         transition: 0.3s;
         transform-style: preserve-3d;
+        z-index: 1000;
+        position: absolute;
     }
 }

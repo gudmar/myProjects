@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, HostListener, Host } from '@angular/core';
 
 @Component({
   selector: 'document-section',
@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DocumentSectionComponent implements OnInit {
   @Input() contentList: any[]=[];
-  constructor() { }
+  constructor( private elRef: ElementRef) { }
 
   ngOnInit(): void {
     console.dir(this.contentList)
@@ -16,4 +16,19 @@ export class DocumentSectionComponent implements OnInit {
   imagePath(imageName:string):string{
     return `../../../assets/${imageName}`
   }
+  // @HostListener('mouseover')
+  // increaseZ(){
+  //   this.elRef.nativeElement.style.zIndex = '10000';
+  // }
+  increaseZ(data:any){
+    data.target.style.zIndex = '10000';
+  }
+  decreaseZ(data:any){
+    data.target.style.zIndex = '0';
+  }
+
+  // @HostListener('mouseleave')
+  // decreaseZ(){
+  //   this.elRef.nativeElement.style.zIndex = '';
+  // }
 }
