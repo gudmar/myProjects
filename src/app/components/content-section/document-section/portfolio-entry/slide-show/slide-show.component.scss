@@ -21,7 +21,7 @@ $img-height: 200px;
         position: absolute;
         display: inline-block;
         width: $img-width;
-        height: $img-height;        
+        height: $img-height; 
     }
     .before{
         top: 0;
@@ -49,6 +49,7 @@ $img-height: 200px;
 .perspective{
     perspective: 1000px;
     transform-style: preserve-3d;
+    transform-origin: center center;
 }
 img{
     position: relative;

@@ -20,6 +20,7 @@ export class RotateOnHoverDirective {
   }
   get isRotationEnabled(){return this._isRotationEnabled}
   @Input() zoomValue: number = 20;
+  @Input() perspectiveValue: number = 100;
   @Input() transformatoinOrder:'translateThenRotate'|"rotateThenTranslate" = "rotateThenTranslate";
 
  @HostListener('mousemove', ['$event'])
@@ -36,10 +37,15 @@ export class RotateOnHoverDirective {
       x: this.elRef.nativeElement.getBoundingClientRect().left + window.scrollX, 
       y: this.elRef.nativeElement.getBoundingClientRect().top + window.scrollY
       };
+    // let scaleFactor = this.perspectiveValue/(this.perspectiveValue - this.zoomValue)
     let mousePosition = {x: event.pageX, y: event.pageY}
     let relativePosition = {x:mousePosition.x - elCords.x, y: mousePosition.y - elCords.y};
-    let elementSize = {x: this.elRef.nativeElement.offsetWidth, y:this.elRef.nativeElement.offsetHeight};
-    let middlePosition = {x:elementSize.x/2, y:elementSize.y/2};
+    let elementSize = {x: this.elRef.nativeElement.offsetWidth , y:this.elRef.nativeElement.offsetHeight};
+    // let middlePosition = {x:elementSize.x/2, y:elementSize.y/2};
+    let middlePosition = {
+      x: parseInt(this.elRef.nativeElement.getBoundingClientRect().width)/2,
+      y: parseInt(this.elRef.nativeElement.getBoundingClientRect().height)/2
+    }
     let swing = attachCorrectSign({x: relativePosition.x - middlePosition.x, y: relativePosition.y - middlePosition.y});
     let swingPercentage = {x:swing.x/middlePosition.x, y:swing.y/middlePosition.y};
     let angles = {x: swingPercentage.y*maxAngle, y:swingPercentage.x*maxAngle}
@@ -49,7 +55,12 @@ export class RotateOnHoverDirective {
     if (angles.y < -maxAngle) angles.y = -maxAngle;
 
     // console.log(elementSize)
+    console.log(swingPercentage)
+    // console.log(scaleFactor)
+    // console.log(elementSize)
+    // console.log(this.elRef.nativeElement.getBoundingClientRect().width)
     // console.log(angles)
+    // console.log(elCords)
 
     // this.renderer.setStyle(this.elRef.nativeElement, 'transform', `translateZ(20px)`);
     // this.renderer.setStyle(this.elRef.nativeElement, 'transform',`rotateX(${angles.x}deg) rotateY(${angles.y}deg)`)
@@ -64,12 +75,17 @@ export class RotateOnHoverDirective {
         'transform', 
         `translateZ(${this.zoomValue}px) rotateX(${angles.x}deg) rotateY(${angles.y}deg)`
       )
-  
+      // this.renderer.setStyle(this.elRef.nativeElement, 
+      //   'transform', 
+      //   `translateZ(${this.zoomValue}px)`
+      // )
     }
     // this.renderer.setStyle(this.elRef.nativeElement, 'transformation-origin', `center center`)
     // this.renderer.setStyle(this.elRef.nativeElement, 'transform-style', `preserve-3d`)
     // this.renderer.setStyle(this.elRef.nativeElement, 'transform', `translateZ(20px)`)
-    this.renderer.setStyle(this.elRef.nativeElement, 'transformation-origin', `50% 50%`)
+
+    // this.renderer.setStyle(this.elRef.nativeElement, 'transformation-origin', `50% 50%`)
+    this.renderer.setStyle(this.elRef.nativeElement, 'transformation-origin', `center center`)
   }
  }
 

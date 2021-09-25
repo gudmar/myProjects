@@ -1,5 +1,6 @@
  <div class = "perspective">
-<div class="screen" rotateOnHover [transformatoinOrder]="'translateThenRotate'" [zoomValue] = '300' >
+<!-- <div class="screen" rotateOnHover [transformatoinOrder]="'translateThenRotate'" [zoomValue] = '300' > -->
+<div class="screen" rotateOnHover [transformatoinOrder]="'translateThenRotate'" [zoomValue] = '300' [perspectiveValue] = '1000' >
     <div class="slide" 
         [ngClass]="{'displayed': isDisplayed('A'), 'before': isBefore('A'), 'after': isAfter('A'), 'animated': isAnimated('A')}">
         <img   *ngIf="isImageReady()"
