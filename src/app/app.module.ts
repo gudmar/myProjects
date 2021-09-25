@@ -30,6 +30,7 @@ import { WelcomeTextComponent } from './components/animations/welcome-text/welco
 import { CvEntrySectionComponent } from './components/content-section/document-section/cv-entry-section/cv-entry-section.component';
 import { CvDocumentComponent } from './components/content-section/document-section/cv-document/cv-document.component';
 import { SlideShowComponent } from './components/content-section/document-section/portfolio-entry/slide-show/slide-show.component';
+import { ImagePathGettingService } from './services/image-path-getting.service';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { SlideShowComponent } from './components/content-section/document-sectio
     CommunicationService,
     GetNotepadContentService,
     GetRandomColorService,
-    AnimateQueueService
+    AnimateQueueService,
+    ImagePathGettingService,
   ],
   bootstrap: [AppComponent]
 })
