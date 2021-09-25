@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ElementRef, HostListener, Host } from '@angular/core';
+import { ImagePathGettingService } from '../../../services/image-path-getting.service';
 
 @Component({
   selector: 'document-section',
@@ -7,14 +8,18 @@ import { Component, OnInit, Input, ElementRef, HostListener, Host } from '@angul
 })
 export class DocumentSectionComponent implements OnInit {
   @Input() contentList: any[]=[];
-  constructor( private elRef: ElementRef) { }
+  constructor( 
+    // private elRef: ElementRef,
+    private imagePathGetter: ImagePathGettingService
+  ) { }
 
   ngOnInit(): void {
-    console.dir(this.contentList)
+    // console.dir(this.contentList)
   }
 
-  imagePath(imageName:string):string{
-    return `../../../assets/${imageName}`
+  async imagePath(imageName:string){
+    return await this.imagePathGetter.getImageRootPath(imageName, 3)
+    // return `../../../assets/${imageName}`
   }
   // @HostListener('mouseover')
   // increaseZ(){

@@ -2,11 +2,12 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MailToService } from '../../services/mail-to.service';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faUserGraduate } from '@fortawesome/free-solid-svg-icons';
+import { ImagePathGettingService } from '../../services/image-path-getting.service';
 
 @Component({
   selector: 'head-section',
   templateUrl: './head-section.component.html',
-  styleUrls: ['./head-section.component.scss'], //, '../../../styles.scss'
+  styleUrls: ['./head-section.component.scss'],
   
 })
 export class HeadSectionComponent implements OnInit {
@@ -22,15 +23,28 @@ export class HeadSectionComponent implements OnInit {
   envelope = faEnvelope;
   cv = faUserGraduate;
   envelopeColor = 'white';
-  constructor(private mailer: MailToService) { }
+  imageRootPath:any = '';
+  constructor(
+    private mailer: MailToService,
+    private imagePathGetter: ImagePathGettingService
+  ) { }
 
   ngOnInit(): void {
     let path = this.getImagePath(this.imageName);
     this.switchCurrentImageIndex();
-    // debugger
+    this.getImageRootPath('myPhoto.png');
   }
+  async getImageRootPath(imageName: string){
+    let _imageRootPath = await this.imagePathGetter.getImageRootPath(imageName, 4);
+    this.imageRootPath = _imageRootPath;
+  }
+
+  get isImageReady(){
+    return this.imageRootPath != '';
+  }
+
   getImagePath(imageName:string){
-    return `../../../../assets/${imageName}`
+    return this.imageRootPath + imageName;
   }
   openEmailClient(){
     return this.mailer.eMailMe('Hi, ')

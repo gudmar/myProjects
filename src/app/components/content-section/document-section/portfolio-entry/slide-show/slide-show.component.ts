@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { AnimateQueueService } from '../../../../../services/animate-queue.service';
+import { ImagePathGettingService } from '../../../../../services/image-path-getting.service';
 
 @Component({
   selector: 'slide-show',
@@ -8,7 +9,11 @@ import { AnimateQueueService } from '../../../../../services/animate-queue.servi
 })
 export class SlideShowComponent implements OnInit {
 
-  constructor(elRef: ElementRef, private animator: AnimateQueueService) { }
+  constructor(
+    elRef: ElementRef, 
+    private animator: AnimateQueueService,
+    private imagePathGetter: ImagePathGettingService
+  ) { }
   animationDelay = 500;
   @Input() title: string = '';
   @Input() imageArray: string[] = [];
@@ -25,6 +30,7 @@ export class SlideShowComponent implements OnInit {
   get nextImageName() { return this.imageArray[this.nextImageIndex]}
   imageA = this.getImagePath(this.currentImageName);
   imageB = this.imageArray.length == 0 ? null : this.getImagePath(this.nextImageName)
+  imageRootPath: any = '';
   changeImageA() {
     if (this.displayedSlide == 'B') this.imageA = this.getImagePath(this.nextImageName);
     else this.imageA = this.getImagePath(this.currentImageName);
@@ -48,9 +54,16 @@ export class SlideShowComponent implements OnInit {
   // logStates:any = [];
 
   ngOnInit(): void {
-    this.imageA = this.getImagePath(this.currentImageName);
-    this.imageB = this.imageArray.length == 0 ? null : this.getImagePath(this.nextImageName)
+    // this.getImageRootPath();
+    // this.imageA = this.getImagePath(this.currentImageName);
+    // this.imageB = this.imageArray.length == 0 ? null : this.getImagePath(this.nextImageName)
+    this.initializeImageShow();
     this.animate();
+  }
+  async initializeImageShow(){
+    await this.getImageRootPath();
+    this.imageA = this.getImagePath(this.currentImageName);
+    this.imageB = this.imageArray.length == 0 ? null : this.getImagePath(this.nextImageName)   
   }
   isDisplayed(whatSlide: 'A' | 'B' | null){
     return this.displayedSlide == whatSlide;
@@ -64,8 +77,24 @@ export class SlideShowComponent implements OnInit {
   isAnimated(whatSlide: 'A' | 'B' | null){
     return this.isAnimationPhase;
   }
+
+  isImageReady(){
+    return this.imageRootPath != '';
+  }
+
+  async getImageRootPath(){
+    let that = this;
+    return new Promise(async (resolve)=>{
+      that.imageRootPath = await this.imagePathGetter.getImageRootPath('myPhoto.png', 5);
+      resolve(true);
+    })
+    
+    // console.dir(this.imageRootPath)
+  }
+
   getImagePath(imageName: string){
-    return `../../../../../assets/${imageName}`
+    return this.imageRootPath + imageName;
+    // return `../../../../../assets/${imageName}`
   }
   animateOn(){
     // this.logAStates.push('animate ON')
