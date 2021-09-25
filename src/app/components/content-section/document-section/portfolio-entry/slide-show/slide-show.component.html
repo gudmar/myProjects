@@ -1,12 +1,14 @@
-<div class="screen perspective" rotateOnHover [transformatoinOrder]="'translateThenRotate'" [zoomValue] = '500' >
+ <div class = "perspective">
+<div class="screen" rotateOnHover [transformatoinOrder]="'translateThenRotate'" [zoomValue] = '300' >
     <div class="slide" 
         [ngClass]="{'displayed': isDisplayed('A'), 'before': isBefore('A'), 'after': isAfter('A'), 'animated': isAnimated('A')}">
         <img  
             [src]="imageA" alt="title">
     </div>
-    <div class="slide perspective" 
+    <div class="slide" 
         [ngClass]="{'displayed': isDisplayed('B'), 'before': isBefore('B'), 'after': isAfter('B'), 'animated': isAnimated('B')}">
         <img  
             [src]="imageB" alt="title">
     </div>
+</div>
 </div>
