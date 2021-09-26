@@ -20,13 +20,12 @@ img{
         // box-shadow: 0px 0px 20px 5px #000000;
         transition: 0.3s;
         transform-style: preserve-3d;
+        z-index: 10000;
     }
 }
+.small-screen{display: none;}
 .title{
     text-align: center;
-}
-.content{
-    cursor: default;
 }
 section{
     position: relative;
@@ -34,9 +33,102 @@ section{
     // border: solid thin rgb(50, 50, 50);
     padding: 0.4rem;
     margin:0.7rem;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    
+}
+.content{
+    text-align: center;
+    cursor: default;
+    padding: 10px;
 }
 .perspective{
     position: relative;
     width: 200px;
     height: 200px;
+}
+
+@media only screen and (max-width: 1700px){ //1025
+    .big-screen{display: none};
+    .small-screen{display: inline-block;}
+    .content{
+        text-align: unset;
+        // position: relative;
+    }
+    section{
+        width: 500px;
+    }
+    .col{
+        display: inline-block;
+    }
+    slide-show{
+        margin-right: 20px;
+        float: left;
+    }   
+}
+// @media only screen and (max-width: 1700px){
+//     section{
+//         width: 500px;
+//     }
+// }
+
+@media only screen and (max-width: 700px){
+    section{
+        width: 400px;
+    }
+    slide-show{
+        margin-right: 20px;
+        float: none;
+    }
+    .content{
+        display:flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .content>span{
+        display: inline-block;
+        text-align: center;
+        text-justify: inter-word;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .small-screen{
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    section{
+        width: 300px;
+    }
+    // slide-show{
+    //     margin-right: 20px;
+    //     float: none;
+    // }
+    // .content{
+    //     display:flex;
+    //     flex-direction: column;
+    //     align-content: center;
+    //     align-items: center;
+    //     justify-content: center;
+    // }
+    // .content>span{
+    //     display: inline-block;
+    //     text-align: center;
+    //     text-justify: inter-word;
+    // }
+}
+@media only screen and (max-width: 385px){
+    section{
+        width: 250px;
+    }
+}
+
+@media only screen and (max-width: 327px){
+    section{
+        width: 200px;
+    }
 }

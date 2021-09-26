@@ -1,4 +1,4 @@
-<section class = "card">
+<section class = "card big-screen">
     <div class="row">
         <div class="col perspective">
 
@@ -13,6 +13,22 @@
         <div class="col">
             <div class="title">{{title}}</div>
             <div class="content" [innerHTML]="content"></div>
+            <!-- <span class="content" [innerHTML]="content"></span> -->
+
+        </div>
+    </div>
+</section>
+
+<section class = "card small-screen">
+    <div class="col">
+        <div class="title">{{title}}</div>
+        <div class="content">
+            <slide-show (click)="switchToPage(title)"
+                [imageArray] = "imageNameArray" 
+                [title] = "title">
+            </slide-show>
+            <span [innerHTML]="content"></span>
+            <!-- {{content}} -->
         </div>
     </div>
 </section>
