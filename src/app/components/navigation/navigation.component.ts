@@ -54,6 +54,7 @@ export class NavigationComponent implements OnInit {
     }
     if (eventType == 'activeRoute'){
       if (this.isLabelInContentList(data)) this.currentlySelectedItem = data;
+      else this.currentlySelectedItem = '';
     }
   }
 
