@@ -1,4 +1,4 @@
-<ng-container *ngFor="let item of contentList">
+<ng-container  *ngFor="let item of contentList">
     
     <section *ngIf="item.type=='section'">
         <h1>{{item.title}}</h1>
@@ -71,6 +71,7 @@
     
     <portfolio-entry *ngIf="item.type=='portfolio-entry'"
         [title] = "item.title"
+        [route] = "item.route"
         [imageNameArray] = "item.imageNameArray"
         [content] = 'item.content'
         (mouseenter) = "increaseZ($event)"
@@ -86,3 +87,4 @@
     </div>
 
 </ng-container>
+

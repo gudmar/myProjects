@@ -31,6 +31,7 @@ import { CvEntrySectionComponent } from './components/content-section/document-s
 import { CvDocumentComponent } from './components/content-section/document-section/cv-document/cv-document.component';
 import { SlideShowComponent } from './components/content-section/document-section/portfolio-entry/slide-show/slide-show.component';
 import { ImagePathGettingService } from './services/image-path-getting.service';
+import { RouterOutputComponent } from './components/content-section/router-output/router-output.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { ImagePathGettingService } from './services/image-path-getting.service';
     CvEntrySectionComponent,
     CvDocumentComponent,
     SlideShowComponent,
+    RouterOutputComponent,
   ],
   imports: [
     BrowserModule,

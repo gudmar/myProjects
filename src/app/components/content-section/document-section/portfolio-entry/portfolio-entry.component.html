@@ -5,13 +5,15 @@
             <!-- <img rotateOnHover [transformatoinOrder]="'translateThenRotate'" [zoomValue] = '100' 
                 [src]="imagePath" alt="title" (click)="switchToPage(title)"
             > -->
-            <slide-show (click)="switchToPage(title)"
-                 [imageArray] = "imageNameArray" 
-                 [title] = "title">
-            </slide-show>
+            <a [routerLink] = "[route]">
+                <slide-show (click)="switchToPage(title)"
+                    [imageArray] = "imageNameArray" 
+                    [title] = "title">
+                </slide-show>
+            </a>
         </div>
         <div class="col">
-            <div class="title">{{title}}</div>
+                <a href='#' [routerLink] = "[route]"> <div class="title">{{title}}</div> </a>
             <div class="content" [innerHTML]="content"></div>
             <!-- <span class="content" [innerHTML]="content"></span> -->
 

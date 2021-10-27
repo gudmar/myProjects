@@ -55,7 +55,7 @@ export class RotateOnHoverDirective {
     if (angles.y < -maxAngle) angles.y = -maxAngle;
 
     // console.log(elementSize)
-    console.log(swingPercentage)
+    // console.log(swingPercentage)
     // console.log(scaleFactor)
     // console.log(elementSize)
     // console.log(this.elRef.nativeElement.getBoundingClientRect().width)
