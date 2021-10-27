@@ -16,7 +16,9 @@ export class AppComponent {
   notepadContent = this.notePadContentProvider.getContent();
   title = 'Marek Gudalewicz';
   subtitle = 'Becomming a front end developer'
-  menuContentList = this.menuContentGetter.getContent();
+  // menuContentList = this.menuContentGetter.getContent();
+  menuContentList = this.menuContentGetter.getRoutesNavigation();
+  portfolioContentList = this.menuContentGetter.getRoutesPortfolio();
   // getMenuContent(){
   //   return this.menuContentGetter.getContent();
   // }

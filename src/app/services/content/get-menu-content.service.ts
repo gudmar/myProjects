@@ -7,6 +7,28 @@ export class GetMenuContentService {
 
   constructor() { }
 
+  getRoutesNavigation(){
+    return [
+      {path: '/aboutMe', content:'About me'},
+      {path: '/cv', content:'CV'},
+      {path: '/portfolio', content:'Portfolio'},
+    ]
+  }
+  getRoutesPortfolio(){
+    return[
+      {path: '/notePad', content:'note Pad'},
+      {path: '/ticTacToe', content:'ticTacToe'},
+      {path: '/widgets', content:'widgets'},
+      {path: '/calculator', content:'calculator'},
+      {path: '/cv', content:'cv'},
+      {path: '/antyvirusGame', content:'antyvirus game'},
+      {path: '/storyDicesGame', content:'storyDicesGame'},
+      {path: '/paint', content:'paint'},
+      {path: '/deepObjectCopy', content:'deepObjectCopy'},
+      {path: '/spinningWheel', content:'spinningWheel'},
+    ]
+  }
+
   getContent(){
     return [
       {

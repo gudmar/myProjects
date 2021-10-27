@@ -8,8 +8,13 @@ import { CommunicationService } from '../../services/communication-service.servi
 })
 export class NavigationComponent implements OnInit {
   uniqueId = "navigationId"
+  private _startPage:string = '';
   @Input() contentList: any[] = [];
-  @Input() startPage: string = ''
+  @Input() set startPage(val:string){
+    this._startPage = val;
+    this.currentlySelectedItem = val;
+  }
+  get startPage() {return this._startPage;}
   get supportedMenuEntries(): string[] {
     let output: string[] = [];
     for (let item of this.contentList){
@@ -29,21 +34,43 @@ export class NavigationComponent implements OnInit {
   }
 
 
-  constructor(private communicator: CommunicationService) { }
+  constructor(
+    private communicator: CommunicationService,
+  ) { }
+
 
   ngOnInit(): void {
     this.currentlySelectedItem = this.startPage;
-    this.communicator.subscribe(this.uniqueId, this.messageHandler.bind(this), ['turnThePage'])
+    this.communicator.subscribe(this.uniqueId, this.messageHandler.bind(this), ['turnThePage', 'activeRoute'])
+  }
+
+  ngOnDestroy(): void {
+    this.communicator.unsubscribe(this.uniqueId);
   }
 
   messageHandler(eventType: string, data:any){
     if (eventType == 'turnThePage'){
       if (!this.isSupportedMenuEntry(data)) this.currentlySelectedItem = '';
     }
+    if (eventType == 'activeRoute'){
+      if (this.isLabelInContentList(data)) this.currentlySelectedItem = data;
+    }
+  }
+
+  isLabelInContentList(label:string){
+    let listOfLabels = this.getListOfLabels();
+    let singleMatch = function(element:string){return label == element}
+    return listOfLabels.findIndex(singleMatch) == -1?false:true;
+  }
+  getListOfLabels(){
+    let output = [];
+    for(let item of this.contentList) output.push(item.content)
+    return output;
   }
 
   switchToPage(pageName: string){
     this.communicator.inform('switchPage', pageName)
+    console.error('This does not do anything')
   }
 
   selectButton(label: string){

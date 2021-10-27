@@ -3,15 +3,19 @@
         <li class="button" *ngFor="let item of contentList" (click)="switchToPage(item.content)">{{item.title}}</li>
     </ul> -->
     <div class="nav-wrapper">
-        <nav-button 
+        <a 
             *ngFor="let item of contentList" 
-            [label]="item.title"
-            [isButtonPressed]="isButtonSelected(item.title)"
-            (mousedown) = "selectButton(item.title)"
-            (click) = "informAboutPageTurning(item.title)"
-        >
-        </nav-button>
-        
+            [routerLink]="[item.path]">
+            <nav-button 
+                
+                [label]="item.content"
+                [isButtonPressed]="isButtonSelected(item.content)"
+                (mousedown) = "selectButton(item.content)"
+                
+            >
+            </nav-button>
+        </a>
+        <!-- (click) = "informAboutPageTurning(item.title)" -->
 
     </div>
 </nav>
