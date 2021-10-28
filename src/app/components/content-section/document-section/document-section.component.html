@@ -18,7 +18,7 @@
     <p *ngIf="item.type=='p'" [innerHTML]="item.content"></p>
 
     <ul *ngIf="item.type=='unordered-list'">
-        <li *ngFor="let el of item.content">{{el}}</li>
+        <li *ngFor="let el of item.content" [innerHTML]="el"></li>
     </ul>
 
     <div *ngIf="item.type=='image'" class="document-image-wrapper center">
