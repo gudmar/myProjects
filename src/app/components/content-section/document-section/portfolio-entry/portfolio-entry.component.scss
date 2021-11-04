@@ -48,7 +48,7 @@ section{
     height: 200px;
 }
 
-@media only screen and (max-width: 1700px){ //1025
+@media only screen and (max-width: 4700px){ //1025
     .big-screen{display: none};
     .small-screen{display: inline-block;}
     .content{
@@ -121,14 +121,18 @@ section{
     //     text-justify: inter-word;
     // }
 }
-@media only screen and (max-width: 385px){
-    section{
-        width: 250px;
-    }
-}
+// @media only screen and (max-width: 385px){
+//     section{
+//         width: 250px;
+//     }
+// }
 
-@media only screen and (max-width: 327px){
+@media only screen and (max-width: 320px){
     section{
-        width: 200px;
+        // width: 200px;
+        margin: 0;
+    }
+    .col, .small-screen{
+        margin:0;
     }
 }

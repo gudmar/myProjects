@@ -25,10 +25,12 @@
     <div class="col">
         <div class="title">{{title}}</div>
         <div class="content">
-            <slide-show (click)="switchToPage(title)"
-                [imageArray] = "imageNameArray" 
-                [title] = "title">
-            </slide-show>
+            <a [routerLink] = "[route]">
+                <slide-show (click)="switchToPage(title)"
+                    [imageArray] = "imageNameArray" 
+                    [title] = "title">
+                </slide-show>
+            </a>
             <span [innerHTML]="content"></span>
             <!-- {{content}} -->
         </div>
