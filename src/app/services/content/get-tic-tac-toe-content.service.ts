@@ -9,12 +9,8 @@ export class GetTicTacToeContentService {
 
   getContent(){
     return [
-      {
-        type: "section",
-        title: 'Tic-tac-toe',
-        content: [
           {
-            type: "article",
+            type: "section",
             title: "About application",
             content: [
               {
@@ -26,6 +22,11 @@ export class GetTicTacToeContentService {
                 to create a game, where user may select board size.`
               },
               {
+                type:'image',
+                imageName:'TicTacToe2.JPG',
+                imageAlt: 'Tic tac toe board sellection'
+              },
+              {
                 type: 'p',
                 content: `
                   This is the first thing I wrote in Angular ever.
@@ -34,13 +35,18 @@ export class GetTicTacToeContentService {
             ]
           },
           {
-            type: "article",
+            type: "section",
             title: "Features",
             content: [
               {
                 type: 'article',
                 title: "Select a board",
                 content: [
+                  {
+                    type:'image',
+                    imageName:'ticTacToe5.JPG',
+                    imageAlt: 'Tic tac toe board sellection'
+                  },
                   {
                     type:'p',
                     content:'User may select one of games'
@@ -65,7 +71,7 @@ export class GetTicTacToeContentService {
                   {
                     type:'p',
                     content: `
-                    In case of too small screan there are less options of board to be chosen from. It would be anoying 
+                    In case of too small screen there are less options of board to be chosen from. It would be anoying 
                     to play on 12 x 12 board on tiny screen and scroll all the time.
                     `
                   }
@@ -76,10 +82,15 @@ export class GetTicTacToeContentService {
                 title: 'Select a opponent',
                 content: [
                   {
+                    type:'image',
+                    imageName:'TicTacToe4.JPG',
+                    imageAlt: 'Tic tac toe board sellection'
+                  },
+                  {
                     type:'p',
                     content: `
                       Main feature of this game is ability to play against computer, however after 
-                      clicking a <i>Oponint</i> button it may be chosen to play against human on the same computer.
+                      clicking a <i>Oponent</i> button it may be chosen to play against human on the same computer.
                       `
                   }
                 ]
@@ -92,7 +103,7 @@ export class GetTicTacToeContentService {
                     type:'p',
                     content: `
                         After clicking <i>You are</i> button it is possible to change a opponent. 
-                        As circle always winns, when computer is a oponent it is possible to change figure many 
+                        As circle always starts, when computer is a oponent it is possible to change figure many 
                         times to see computer play against its self.
                       `
                   }
@@ -123,7 +134,6 @@ export class GetTicTacToeContentService {
                   }
                 ]
               },   
-              ,  
               {
                 type: 'article',
                 title: 'Help button',
@@ -140,22 +150,39 @@ export class GetTicTacToeContentService {
                 ]
               },       
             ]
-          }
-        ]
-      },
-      {
-        type: "article",
-        title: 'Tests',
-        content: [
+          },
           {
-            type: 'p',
-            content: `
-              Testing can become very time consuming so due to a lot of activities not everything could have been tested. However I cannot image constructing a game like this without automatic regression strategy tests.
-              That is why all strategies used in this game have a very good level of test coverage.
-            `
-          }
+            type: "section",
+            title: 'Tests',
+            content: [
+              {
+                type: 'p',
+                content: `
+                  Testing can become very time consuming so due to a lack of time not everything could have been 
+                  tested. However I cannot imagine constructing a game like this without automatic regression 
+                  strategy tests. That is why all strategies used in this game have a very good level of 
+                  test coverage.
+                `
+              }
+            ]
+          },
+          {
+            type: 'section',
+            title: 'References',
+            content: [
+              {
+                type: 'link',
+                title: 'Github project link.',
+                href: 'https://github.com/gudmar/NGTicTacToe',
+              },
+              {
+                type: 'link',
+                title: 'Try it out',
+                href: 'https://gudmar.github.io/TicTacToe/',
+              },
+            ]
+          },
         ]
       }
-    ]
   }
-}
+
