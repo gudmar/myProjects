@@ -20,11 +20,17 @@ p{
     // width: 90%;
     margin-left: 20px;
     margin-right: 20px;
-    padding: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
     display: inline-block;
     flex-grow: 0;
     flex-shrink: 0;
     max-width: 800px;
+}
+ul{
+    font-size: 1.4rem;
+    padding-left: 80px;
+    margin: 0;
 }
 section{
     // width: 100vw;
