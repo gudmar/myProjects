@@ -21,9 +21,18 @@
         <li *ngFor="let el of item.content" [innerHTML]="el"></li>
     </ul>
 
-    <div *ngIf="item.type=='image'" class="document-image-wrapper center">
-            <img [src]="imagePath(item.imageName)" [alt]="item.imageAlt">
-    </div>
+    <!-- <div *ngIf="item.type=='image'" class="document-image-wrapper center">
+            <img [src]="getImagePath(item.imageName)" [alt]="item.imageAlt">
+    </div> -->
+
+    <image-component *ngIf="item.type=='image'" 
+        [imageName]="item.imageName"
+        [imageAlt]="item.imageAlt">
+    </image-component>
+    <images-in-a-row *ngIf="item.type=='images-in-a-row'"
+        [imageList]="item.imageList"
+    >
+    </images-in-a-row>
 
     <!-- <div class="col col-2"> -->
         <employment-entry *ngIf="item.type=='cv-employment-entry'"

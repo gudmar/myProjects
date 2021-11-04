@@ -1,0 +1,7 @@
+<div class="photos-in-row">
+    <image-component *ngFor="let image of imageList"
+        [imageName]="image.imageName"
+        [imageAlt] ="image.imageAlt"
+    >
+    </image-component>
+</div>

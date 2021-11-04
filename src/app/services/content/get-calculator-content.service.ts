@@ -100,7 +100,7 @@ export class GetCalculatorContentService {
                 content: `
                   Infix is the name of natural mathematical expression order people are used to <i>(a+b)*(c+d)</i>. 
                   For programmer it is easier to convert this to prefix notation <i>*+ab+cd</i>. 
-                  There i a simple algorithm that calculates result from prefix notation.
+                  There is a simple algorithm that calculates result from prefix notation.
                 `
               }
             ]
@@ -149,6 +149,19 @@ export class GetCalculatorContentService {
         ]
       },  
       {
+        type: 'images-in-a-row',
+        imageList:[
+          {        
+            imageName: 'Calculator1.JPG',
+            imageAlt: 'Calculator: bigger screen version'
+          },
+          {        
+            imageName: 'Calculator2.JPG',
+            imageAlt: 'Calculator: smaller screen version'
+          },          
+        ]
+      },       
+      {
         type: 'section',
         title: 'Testing',
         content: [
@@ -173,6 +186,11 @@ export class GetCalculatorContentService {
             type: 'link',
             title: 'Try it out',
             href: 'https://gudmar.github.io/calculator/',
+          },
+          {
+            type: 'link',
+            title: 'Calculator test results',
+            href: 'https://gudmar.github.io/calculator/tests',
           },
           {
             type: 'link',
