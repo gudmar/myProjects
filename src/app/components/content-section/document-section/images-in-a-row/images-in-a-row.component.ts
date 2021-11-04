@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ImagesInARowComponent implements OnInit {
   @Input() imageList:any;
+  @Input() maxHeight:string='';
   constructor() { }
 
   ngOnInit(): void {

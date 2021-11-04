@@ -2,6 +2,7 @@
     <image-component *ngFor="let image of imageList"
         [imageName]="image.imageName"
         [imageAlt] ="image.imageAlt"
+        [maxHeight] = "maxHeight"
     >
     </image-component>
 </div>

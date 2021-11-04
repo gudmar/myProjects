@@ -1,3 +1,6 @@
 <div *ngIf="isImageReady()" class="document-image-wrapper center">
-    <img [src]="getImagePath(imageName)" [alt]="imageAlt">
+    <img [src]="getImagePath(imageName)" 
+         [alt]="imageAlt"
+         [style.max-height] = "maxHeight"
+    >
 </div>
