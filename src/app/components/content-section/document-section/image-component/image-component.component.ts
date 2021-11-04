@@ -9,6 +9,7 @@ import { ImagePathGettingService } from '../../../../services/image-path-getting
 export class ImageComponentComponent implements OnInit {
   @Input() imageName: string = '';
   @Input() imageAlt: string = '';
+  @Input() maxHeight: string = '';
   constructor(
     private imagePathGetter: ImagePathGettingService
   ) { }

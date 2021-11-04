@@ -27,10 +27,13 @@
 
     <image-component *ngIf="item.type=='image'" 
         [imageName]="item.imageName"
-        [imageAlt]="item.imageAlt">
+        [imageAlt]="item.imageAlt"
+        [maxHeight] = "item.maxHeight!=undefined?item.maxHeight:''"
+    >
     </image-component>
     <images-in-a-row *ngIf="item.type=='images-in-a-row'"
         [imageList]="item.imageList"
+        [maxHeight]="item.maxHeight!=undefined?item.maxHeight:''"
     >
     </images-in-a-row>
 
