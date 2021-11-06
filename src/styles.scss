@@ -7,6 +7,7 @@ $timeline-width: 40px;
     font-family: 'Work Sans', sans-serif;
     // border: solid red thin;
     box-sizing: border-box;
+    --max-document-components-width: 800px;
 }
 html,body{
     height: 100%;
@@ -14,9 +15,14 @@ html,body{
     overflow-x: hidden;
 }
 
+.document-image-wrapper, p, ul, information-note{
+    max-width: var(--max-document-components-width);
+    text-align: justify;
+}
+
 p{
     font-size: 1.4rem;
-    text-align: justify;
+    
     // width: 90%;
     margin-left: 20px;
     margin-right: 20px;
@@ -25,7 +31,6 @@ p{
     display: inline-block;
     flex-grow: 0;
     flex-shrink: 0;
-    max-width: 800px;
 }
 ul{
     font-size: 1.4rem;
@@ -155,6 +160,7 @@ h2{
     .subtitle{
 
     }
+
     @mixin pseudo-element-shadow{
         position: absolute;
         bottom: 20px;
@@ -189,7 +195,7 @@ h2{
 //}
 
 @media only screen and (max-width: 1250px){
-    p{
+    p,{
         width: 600px;
         width: 100%;
         padding-right: 70px;
@@ -292,6 +298,13 @@ h2{
 //         p{width: 300px;}
 //     }
 // }
+@media only screen and (min-width: 1300px){
+    section{
+        .photos-in-row{
+            justify-content: flex-start;
+        }
+    }
+}
 
 @media only screen and (max-width: 400px){
     .card{

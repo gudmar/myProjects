@@ -1,0 +1,58 @@
+@mixin content($bgColor){
+    position: relative;
+    width: 100%;
+    padding-left: 4rem;
+    &::before{
+        position: absolute;
+        left: 1rem;
+        font-style: italic;
+        font-size: 1.7rem;
+        font-family: 'Times New Roman', Times, serif;
+        content:'i';
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+        color:white;
+        #{background-color}: $bgColor;
+    }
+}
+.wrapper{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1.5rem;
+    border-radius: 7px;
+    max-width: var(--max-document-components-width);
+    margin-left: 2rem;
+}
+.info{
+    $bgColor: green;
+    background-color: lighten($bgColor, 70%);
+    .content{
+        @include content($bgColor);
+    }    
+    border: thin solid $bgColor;
+    border-left: thick solid $bgColor;
+}
+.warn{
+    $bgColor: orange;
+    background-color: lighten($bgColor, 60%);
+    .content{
+        @include content($bgColor);
+    }
+    border-left: thick solid $bgColor;
+}
+.error{
+    $bgColor: red;
+    background-color: lighten($bgColor, 60%);
+    .content{
+        @include content($bgColor);
+    }
+    border-left: thick solid $bgColor;
+}
+
+.content{
+}
