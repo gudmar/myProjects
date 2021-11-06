@@ -11,15 +11,14 @@ export class GetNotepadContentService {
     return [
       {
         type: "section",
-        title: "About notePad",
+        title: "About",
         content: [
           {
             type: 'p',
             content: `
-              This application was created as my second angular exercise. As it is a bit complex, it allowed me to 
-              lear a lot about binding different application parts together into working application. I learned about
-              component communication and design patterns in angular. I also picked a bit of entity testing of 
-              services, directives and components in Jasmine
+              This application was created as my second angular exercise. As it is a bit more complex than tic-tac-toe game.
+              It allowed me to learn a lot about binding components into working application. Another purpose of this exercise
+              was to pick up Jasmine component and directive testing.
             `
           }
         ]
@@ -29,105 +28,153 @@ export class GetNotepadContentService {
         title: "Features",
         content: [
           {
-            type: 'p',
-            content: `
-              NotePad consists of two applicatoins: notaPad its self and a calendar app.
-              In notePad one may store notes that are organised in pages. Pages are organised in sheets.
-              Notes can be moved, resized, added and deleted. Pages and sheets can be renamed, added and deleted.
-              Colors for pages and sheets are generated automaticly, and font color is either white or black, depending
-              on page lightness. Content might be stored in browser localStorage or saved to a file. That file 
-              can be loaded by dropping it on page element. Notes positioning and sizes is saved with content.
-            `
+            type: 'article',
+            title: 'Notes',
+            content: [
+              {
+                type: 'p',
+                content: `
+                  <b>NotePad</b> allowes user to organise notes in pages, and to organise pages into sheets. Notes can be resized
+                  and moved in page components. New pages and sheets can be added, deleted, renamed. So this binds MicroSoft 
+                  sticky notes and oneNote functionalities, but can be used cross platform without installing anything. Content 
+                  is stored in browsers local stroage, so no need to register and send your data anywhere. 
+                `
+              },
+            ]
           },
           {
-            type: 'p',
-            content: `
-              Calendar is a simple time organiser. It generates year view with division to months calendar weeks and 
-              days. There is a week veiw and daily task view. Tasks can be added, moved, removed and editied. 
-              After launching calendar user sees current year, however there is possibility to switch to any 
-              year from 1000 to 3000. Years are created dynamicly. There is a little mark in day corner if there are 
-              any tasks for that day. Content of calendar is saved together with notepad content to local storage or file.
-              Backupped file can be uploaded by dropping it on claendar Year view.
-            `
+            type:'image',
+            imageName:'_notePad2.jpg',
+            imageAlt: 'Notes: overview'
           },
           {
             type: 'article',
-            title: 'Starting new document',
+            title: 'Calendar',
             content: [
               {
+                type: 'p',
+                content: `
+                  <b>Calendar</b> is a simple task organiser. It generates year view with division to months, calendar weeks and 
+                  days. There is a week veiw and daily task view. Tasks can be added, moved, removed and editied. 
+                  After launching calendar user sees current year, however there is possibility to switch to any 
+                  year from 1000 to 3000. Years are created dynamicly. There is a little mark in day corner if there are 
+                  any tasks for that day. The more tasks, the darker day background becomes.
+                `
+              },
+            ]
+          },
+          {
+            type:'image',
+            imageName:'_notePad4_calendar.jpg',
+            imageAlt: 'calendar: overview'
+          },
+          {
+            type: 'article',
+            title: 'Linker',
+            content: [
+              {
+                type: 'p',
+                content: `
+                <b>Linker</b> is a functionality allowing user to save a link, its title and description to a local storage.
+                There is a search box allowing quick search. Just click found link, and content will be oppened in a new 
+                tab. Very usefull in professional life, as I have over 100 links that are handy in my current job. But
+                how to efficiently find anything in that great number of links without this kind of searcher?
+                `
+              },
+            ]
+          },
+          {
+            type:'image',
+            imageName:'_notePad3_linker.jpg',
+            imageAlt: 'linker: overview'
+          },
+          {
+            type: 'article',
+            title: 'Saving content',
+            content: [
+              {
+                type: 'information-note',
+                severity: 'error',
+                content: `Content is not saved automaticly. Hit <b>Ctrl+s</b> to save, or <b>Menu/Save as</b> to 
+                select a name for current document`
+              },
+              {
                 type:'p',
-                content: `hover over menu in upper left corner and click 'New'`
-              }
+                content: `Whole application state is saved to a browser local storage. Thanks to this data is safe on users
+                computer, no need to send it anywhere and fear that it is processed or viewed by anyone. Drawback is, that 
+                this is only in one browsers memory, so will not be available in another browser on the same machine, or 
+                cross machines. There is a way around it: data may be backupped to a file, and later uploaded. Of course
+                this is not a great solution in case user is used to cloud, but this is only a front end application 
+                working in a browser.`
+              },
+              {
+                type:'image',
+                imageName:'_notePad7_saveAs.jpg',
+                imageAlt: 'save application state window'
+              },
             ]
           },
           {
             type: 'article',
-            title: 'Adding new note',
+            title: 'Help',
             content: [
               {
-                type:'p',
-                content: `Locate 'Options' button in upper right corner of notePad, hover over it and click 'Edit mode'
-                Now single click on page adds new note. If any note is focused, single click on page loses focus, and
-                second adds new note`
-              }
+                type: 'p',
+                content: `
+                Application usage should be understandable after reading a help section and trying it out.
+                `
+              },
+              {
+                type:'image',
+                imageName:'_notePad6_help.jpg',
+                imageAlt: 'help section'
+              },
             ]
           },
           {
             type: 'article',
-            title: 'Adding new page',
+            title: 'Some more features',
             content: [
               {
-                type:'p',
-                content: `Just click on '+' tab in upper tab section`
-              }
+                type:'unordered-list',
+                content:[
+                  `<code>Ctrl+l</code> makes a link out of selected notes content in edit mode`,
+                  `<code>Ctrl+m</code> makes a copyable item out of selected notes content in edit mode. Just click on 
+                  copyable item in non edit mode to have content in a clipboard. No need to highlight, right-click and 
+                  search menu,`,
+                  `<code>Ctrl+d</code> deletes highlighted content of note,`,
+                  `<code>Ctrl+e</code> toggles edit mode in notes application,`,
+                  `Font color is selected automaticly to fit backgorund. Background page color may be altered in 
+                  <i>Options</i> menu`
+                ]
+              },
             ]
           },
           {
-            type: 'article',
-            title: 'Renaming page',
-            content: [
-              {
-                type:'p',
-                content: `Double click on any tab`
-              }
-            ]
+            type: 'information-note',
+            severity: 'info',
+            content: `This application was and is being tested in every day work, however I can give no warranty something
+            goes wrong, so please concider entrusting really important data that is not backupped anywhere.`
           },
-          {
-            type: 'article',
-            title: 'In case of too many page tabs',
-            content: [
-              {
-                type:'p',
-                content: `Tabs that don't fit are boundled in to a single tab marked '...'. Hovering over this 
-                tab oppens menu where not fitting tabs can be selected and renamed`
-              }
-            ]
-          },
-          {
-            type: 'article',
-            title: 'Selecting next sheet',
-            content: [
-              {
-                type:'p',
-                content: `Click one of tabs in left side of application`
-              }
-            ]
-          },
-          {
-            type: 'article',
-            title: 'Saving into local storage',
-            content: [
-              {
-                type:'p',
-                content: `Hover menu button in upper left corner and select save as. Then key for local storage is 
-                selected. Note that saved data will not be visble in other browsers, and will be gone after 
-                history clearing. To backup data save it as a file. To have date in other browser upload backupped 
-                file in next browser. Hovewer there is no possiblity to synchronize this data`
-              }
-            ]
-          }
         ]
-      },     
+      },
+      {
+        type: 'section',
+        title: 'References',
+        content: [
+          {
+            type: 'link',
+            title: 'Github project link.',
+            href: 'https://github.com/gudmar/notePad/',
+          },
+          {
+            type: 'link',
+            title: 'Try it out',
+            href: 'https://gudmar.github.io/NotePad/',
+          },
+
+  ]
+  }
     ]
   }
 }

@@ -27,6 +27,7 @@
     border-radius: 7px;
     max-width: var(--max-document-components-width);
     margin-left: 2rem;
+    margin-bottom: 2rem;
 }
 .info{
     $bgColor: green;
@@ -39,18 +40,20 @@
 }
 .warn{
     $bgColor: orange;
-    background-color: lighten($bgColor, 60%);
+    background-color: lighten($bgColor, 45%);
     .content{
         @include content($bgColor);
     }
+    border: thin solid $bgColor;
     border-left: thick solid $bgColor;
 }
 .error{
     $bgColor: red;
-    background-color: lighten($bgColor, 60%);
+    background-color: lighten($bgColor, 45%);
     .content{
         @include content($bgColor);
     }
+    border: thin solid $bgColor;
     border-left: thick solid $bgColor;
 }
 
