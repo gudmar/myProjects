@@ -34,6 +34,7 @@ import { ImagePathGettingService } from './services/image-path-getting.service';
 import { RouterOutputComponent } from './components/content-section/router-output/router-output.component';
 import { ImageComponentComponent } from './components/content-section/document-section/image-component/image-component.component';
 import { ImagesInARowComponent } from './components/content-section/document-section/images-in-a-row/images-in-a-row.component';
+import { InformationNoteComponent } from './components/content-section/document-section/information-note/information-note.component';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { ImagesInARowComponent } from './components/content-section/document-sec
     RouterOutputComponent,
     ImageComponentComponent,
     ImagesInARowComponent,
+    InformationNoteComponent,
   ],
   imports: [
     BrowserModule,

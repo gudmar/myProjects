@@ -89,6 +89,10 @@
         (mouseenter) = "increaseZ($event)"
         (mouseleave) = "decreaseZ($event)"
     ></portfolio-entry>
+    <information-note *ngIf="item.type=='information-note'"
+        [severity]="item.severity"
+        [content]="item.content"
+    ></information-note>
 
 
 
