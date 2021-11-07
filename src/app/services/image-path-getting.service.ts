@@ -38,11 +38,9 @@ export class ImagePathGettingService {
       try{
         let img = new Image();
         img.onload = ()=>{
-          console.log(that.getImageRootPathInternal(0))
           resolve(that.getImageRootPathInternal(0))
         }
         img.onerror = () =>{
-          console.log(that.getImageRootPathInternal(nestingLevel))
           resolve(that.getImageRootPathInternal(nestingLevel))
         }
         img.src = that.getImageRootPathInternal(0) + imageName;

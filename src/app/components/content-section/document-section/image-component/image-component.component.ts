@@ -34,8 +34,6 @@ export class ImageComponentComponent implements OnInit {
   }
 
   getImagePath(imageName: string){
-    console.log(this.imageRootPath)
-    console.log(imageName)
     return this.imageRootPath + imageName;
     // return `../../../../../assets/${imageName}`
   }

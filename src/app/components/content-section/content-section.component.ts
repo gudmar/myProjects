@@ -38,6 +38,7 @@ export class ContentSectionComponent implements OnInit {
       this.startPage = data.startPage;
       this.communicator.inform('activeRoute', data.startPage);
     })
+    console.log(this.contentList)
   }
 
   getContent(pageDN:string){
