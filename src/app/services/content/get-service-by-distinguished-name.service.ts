@@ -7,6 +7,11 @@ import { GetTicTacToeContentService } from './get-tic-tac-toe-content.service';
 import { GetWidgetsContentService } from './get-widgets-content.service';
 import { GetNotepadContentService } from './get-notepad-content.service';
 import { GetCalculatorContentService } from './get-calculator-content.service';
+import { GetLotteryWheelContentService } from './get-lottery-wheel-content.service';
+import { GetObjectComparatorContentService } from './get-object-comparator-content.service';
+import { GetPaintContentService } from './get-paint-content.service';
+import { GetAntiVirusGameContentService } from './get-anti-virus-game-content.service';
+import { GetMixBlendModeContentService } from './get-mix-blend-mode-content.service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +26,12 @@ export class GetServiceByDistinguishedNameService {
     private tictactoe: GetTicTacToeContentService,
     private widgets: GetWidgetsContentService,
     private notePad: GetNotepadContentService,
-    private calculator: GetCalculatorContentService
+    private calculator: GetCalculatorContentService,
+    private spinningWheel: GetLotteryWheelContentService,
+    private objectComparator: GetObjectComparatorContentService,
+    private paint: GetPaintContentService,
+    private antiVirusGame: GetAntiVirusGameContentService,
+    private mixBlendMode: GetMixBlendModeContentService
   ) { }
 
   allDNs = ['About me', 'Portfolio', 'CV', 'Calculator', 
@@ -36,6 +46,11 @@ export class GetServiceByDistinguishedNameService {
     if(serviceName == 'Widgets') return this.widgets.getContent();
     if(serviceName == 'Note pad') return this.notePad.getContent();
     if(serviceName == 'Calculator') return this.calculator.getContent();
+    if(serviceName == 'Spinning Wheel') return this.spinningWheel.getContent();
+    if(serviceName == 'Deep Object Comparator') return this.objectComparator.getContent();
+    if(serviceName == 'Paint') return this.paint.getContent();
+    if(serviceName == 'Anti Virus Game') return this.antiVirusGame.getContent();
+    if(serviceName == 'Mix blend mode') return this.mixBlendMode.getContent();
     return [];
   }
 
