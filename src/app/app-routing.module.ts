@@ -21,6 +21,7 @@ const routes: Routes = [
      {path: 'paint',component:ContentSectionComponent,data:{startPage:'Paint'}},
      {path: 'deepObjectComparator',component:ContentSectionComponent,data:{startPage:'Deep Object Comparator'}},
      {path: 'spinningWheel',component:ContentSectionComponent,data:{startPage:'Spinning Wheel'}},
+     {path: 'blendMode', component:ContentSectionComponent, data:{startPage:'Mix blend mode'}}
      
    ]
   },

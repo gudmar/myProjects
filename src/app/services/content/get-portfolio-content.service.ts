@@ -73,6 +73,62 @@ export class GetPortfolioContentService {
               function based calculator
             `
           },
+          {
+            type: 'portfolio-entry',
+            imageName: 'LotteryWheel2.jpg',
+            imageNameArray: ['LotteryWheel2.jpg', 'LotteryWheel3.png', 'LotteryWheel5.jpg'],
+            title: 'Mediator - lottery wheel',
+            route: 'spinningWheel',
+            content: `
+              How to bind a lottery wheel that animates drawing a random winner with an editor or other multiple 
+              elements in pure JS using a HTML tag?
+            `
+          },
+          {
+            type: 'portfolio-entry',
+            imageName: 'ObjectComparator_code.png',
+            imageNameArray: ['ObjectComparator_code.png', 'ObjectComparator_tests.jpg'],
+            title: 'Deep object comparator',
+            route: 'deepObjectComparator',
+            content: `
+              No visualisation here. This is a well tested class letting deeply nested comparasion of 2 JS objects.
+              Supports strings, primitives, arrays, objects, maps and sets. Arrays items order may be or may be not taken 
+              into account
+            `
+          },
+          {
+            type: 'portfolio-entry',
+            imageName: 'Paint.JPG',
+            imageNameArray: ['Paint.JPG', 'Paint2.png'],
+            title: 'Paint',
+            route: 'paint',
+            content: `
+              Very simple paint script. Written from scratch in 5 hours. Makes an SVG. Save button allows to print ready 
+              SVG to browser console
+            `
+          },
+          {
+            type: 'portfolio-entry',
+            imageName: 'antiVirus_2.png',
+            imageNameArray: ['antiVirus_2.png', 'antiVirus_4.png', 'antiVirus_3.png', 'antiVirus_1.png'],
+            title: 'Virus hounting game',
+            route: 'antyvirusGame',
+            content: `
+              Inspired by one of GTA V plots. You have to shut all popping windows and launch anti-virus before your disc gets 
+              encripted. Game contains links to SVG elemets that were not created by me.
+            `
+          },
+          {
+            type: 'portfolio-entry',
+            imageName: 'mixBlendMode1.png',
+            imageNameArray: ['mixBlendMode2.png', 'mixBlendMode3.png'],
+            title: 'Blend mode presentation',
+            route: 'blendMode',
+            content: `
+              My very early mix-blend-mode test page. There is a drag-minimize color chooser for all mix-blend-mode samples. 
+              A responsive page.
+            `
+          },
         ]
       },
       
