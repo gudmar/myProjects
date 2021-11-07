@@ -99,7 +99,7 @@ export class GetPortfolioContentService {
           {
             type: 'portfolio-entry',
             imageName: 'Paint.JPG',
-            imageNameArray: ['Paint.JPG', 'Paint2.png'],
+            imageNameArray: ['Paint.JPG', 'Paint2.jpg'],
             title: 'Paint',
             route: 'paint',
             content: `
