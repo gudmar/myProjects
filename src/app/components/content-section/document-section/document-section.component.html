@@ -102,5 +102,11 @@
         </a>
     </div>
 
+    <image-paragraph *ngIf="item.type=='image-paragraph'"
+        [imageName]="item.imageName"
+        [imageAlt] ="item.imageAlt"
+        [content] = "item.content">
+    </image-paragraph>
+
 </ng-container>
 

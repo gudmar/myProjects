@@ -14,7 +14,9 @@ export class GetAboutMeContentService {
         title: 'About me',
         content: [
           {
-            type: 'p',
+            type: 'image-paragraph',
+            imageName: 'myPhotoTransparent.png',
+            imageAlt: 'My photo',
             content:`
               Hi. My name is Marek, and I want to be a web developer. As learning, aspecially when one wants to 
               gain real abilities, not just learn and forget, is very time consuming I decidet to start with 
