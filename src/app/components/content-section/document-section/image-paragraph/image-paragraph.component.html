@@ -1,0 +1,14 @@
+<div *ngIf="isImageReady()" class="wrapper paragraph">
+    <p>
+    <img [src] = "getImagePath(imageName)" 
+        [alt]="imageAlt"
+        [style.shape-outside] = "'url('+getImagePath(imageName)+')'" 
+        class = "image-big-screen"
+    >
+    <img [src] = "getImagePath(imageName)" 
+    [alt]="imageAlt"
+    class = "image-small-screen"
+>
+    {{content}}
+    </p>
+</div>

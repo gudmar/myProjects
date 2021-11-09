@@ -16,7 +16,7 @@ const routes: Routes = [
      {path: 'ticTacToe',component:ContentSectionComponent,data:{startPage:'Tic-tac-toe'}},
      {path: 'widgets',component:ContentSectionComponent,data:{startPage:'Widgets'}},
      {path: 'calculator',component:ContentSectionComponent,data:{startPage:'Calculator'}},
-     {path: 'antyvirusGame',component:ContentSectionComponent,data:{startPage:'Anty Virus Game'}},
+     {path: 'antyvirusGame',component:ContentSectionComponent,data:{startPage:'Anti Virus Game'}},
      {path: 'storyDices',component:ContentSectionComponent,data:{startPage:'Story dices'}},
      {path: 'paint',component:ContentSectionComponent,data:{startPage:'Paint'}},
      {path: 'deepObjectComparator',component:ContentSectionComponent,data:{startPage:'Deep Object Comparator'}},

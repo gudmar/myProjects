@@ -1,0 +1,44 @@
+:host{
+    position: relative;
+    width: 100%;
+    box-sizing: unset;
+}
+img{
+    float: left;
+    shape-margin: 1rem;
+}
+.image-small-screen{
+    display: none;
+}
+
+.wrapper{
+    position: relative;
+    
+}
+.paragraph{
+
+}
+
+p{
+    width: unset;
+    width: 100%;
+    // display: unset;
+    text-align: justify;
+    padding: unset;
+    margin: 0;
+    
+}
+@media only screen and (max-width: 550px){
+    .image-small-screen{
+        display: inline-block;
+        float: unset;
+    }
+    .wrapper{
+        padding:unset;
+        margin-right: 20px;
+        padding-right: 20px;
+    }
+    .image-big-screen{
+        display: none;
+    }
+}

@@ -35,6 +35,7 @@ import { RouterOutputComponent } from './components/content-section/router-outpu
 import { ImageComponentComponent } from './components/content-section/document-section/image-component/image-component.component';
 import { ImagesInARowComponent } from './components/content-section/document-section/images-in-a-row/images-in-a-row.component';
 import { InformationNoteComponent } from './components/content-section/document-section/information-note/information-note.component';
+import { ImageParagraphComponent } from './components/content-section/document-section/image-paragraph/image-paragraph.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { InformationNoteComponent } from './components/content-section/document-
     ImageComponentComponent,
     ImagesInARowComponent,
     InformationNoteComponent,
+    ImageParagraphComponent,
   ],
   imports: [
     BrowserModule,

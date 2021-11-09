@@ -15,33 +15,38 @@ export class GetMixBlendModeContentService {
           {
             type: 'p',
             content: `
+              My very early exercise showing how <code>mix-blend-mode</code> behaves when applied with
+              isolation or without isolation. There is an element with 3 overlapping wheels, a green one,
+              a blue one and a red one. Each element has a different <code>mix-blend-mode</code> value.
+              There is a color-chooser element somewhere in this web-site (left above mix-blend-mode elements
+              in a non-mobile device, and top of screen on a smaller viewport). User may choose a background
+              color moving one of sliders, to see how <code>mix-blend-mode</code> is applied to each element.
+
             `
-          }
+          },
+          {
+            type: 'image',
+            imageName: 'mixBlendMode2.png',
+            imageAlt: 'mix-blend-mode page'
+          }, 
         ]
       },
       {
-        type: "section",
-        title: "Features",
+        type: 'section',
+        title: 'References',
         content: [
           {
-            type: 'article',
-            title: 'Notes',
-            content: [
-              {
-                type: 'p',
-                content: `
-                `
-              },
-            ]
+            type: 'link',
+            title: 'Github link.',
+            href: 'https://github.com/gudmar/mix-blend-mode-notes/',
           },
           {
-            type:'image',
-            imageName:'',
-            imageAlt: ''
+            type: 'link',
+            title: 'Try it out',
+            href: 'https://gudmar.github.io/mix-blend-mode/',
           },
-    ]
-     }
+        ]
+      },
     ]
   }
-
 }
