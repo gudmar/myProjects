@@ -16,15 +16,33 @@ html,body{
 }
 
 .document-image-wrapper, p, ul, information-note{
-    max-width: var(--max-document-components-width);
+    // max-width: var(--max-document-components-width);
     text-align: justify;
 }
 
-
-p, .paragraph{
-    font-size: 1.4rem;
+.row-c{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-right: 150px;
+    margin-left:  -15px;
+}
+@for $i from 1 through 12 {
     
-    // width: 90%;
+        .col-lg-#{$i}{
+            flex: 0 0 calc( #{$i} * 8.33333% );
+            max-width: calc( #{$i} * 8.33333%)
+        }
+}
+section>h1{
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+
+.p, .paragraph{
+    font-size: 1.4rem;
     margin-left: 20px;
     margin-right: 20px;
     padding-left: 20px;
@@ -32,7 +50,9 @@ p, .paragraph{
     display: inline-block;
     flex-grow: 0;
     flex-shrink: 0;
+    max-width: 1200px;
 }
+
 ul{
     font-size: 1.4rem;
     padding-left: 80px;
@@ -115,7 +135,7 @@ h2{
     display: flex;
     flex-direction: column;
 }
-.col-1{
+.col--1{
     position: relative;
     width: 290px;
     flex-grow: 0;
@@ -191,147 +211,130 @@ h2{
     }
 }
 
-// @media only screen and (max-width: 1350px){
-//     p{
-//         width: 700px;
-//     }
-//}
 
-@media only screen and (max-width: 1250px){
-    p, .paragraph{
-        width: 600px;
-        width: 100%;
-        padding-right: 70px;
-    }
-}
-
-@media only screen and (max-width: 1225px){
-    .col-1{
-        position: relative;
-        width: 200px;
-        flex-grow: 0;
-        flex-shrink: 0;  
-        margin-right: 20px;
-        text-align: right;
-        font-size: 2rem;
-        font-weight: bold;
-    }
-    p,.paragraph{
-        max-width: unset;
-        width: 100%;
-        padding-right: 70px;
-    }
-}
-
-// @media only screen and (max-width: 1130px){
-//     section{
-//         h1{font-size: 3rem; width: 220px;}
-//     }
-// }
-
-@media only screen and (max-width: 750px){
-    .row-scalable{
-        flex-direction: column;
-        // align-content: center;
-        align-items: center;
-    };
-    .section-title{
-        align-self: flex-start;
-    }
-}
-@media only screen and (max-width: 1025px){
-    .card{font-size: 1rem;}
-    .card{width: 400px;}
-}
-@media only screen and (max-width: 850px){
-    .timeline{
-        display: none;
-    }
-    .compensateTimeline {
-        display: none;
-    }
-    .card{
-        margin-left: 0px;
-    }
-}
-@media only screen and (max-width: 700px){
-    section{
-        p,.paragraph{
-            width: 550px;
-            width: 100%;
+@media only screen and (max-width:1290px){
+    @for $i from 1 through 12 {
+        // .col-lg-#{$i}{
+        //     flex: 0 0 calc( #{$i} * 8.33333% );
+        //     max-width: calc( #{$i} * 8.33333%)
+        // }
+        .col-#{$i}{
+            position: relative; width: 100%; padding-right: 15px; padding-left: 15px;
+            flex: 0 0 calc( #{$i} * 8.33333333% );
+            max-width: calc( #{$i} * 8.3333333% );
         }
     }
-}
-// @media only screen and (max-width: 640px){
-//     section{
-//         p{width: 500px;}
-//     }
-// }
-// @media only screen and (max-width: 590px){
-//     section{
-//         p{width: 450px;}
-//     }
-// }
-
-@media only screen and (max-width: 570px){
-    .content-section{
-        align-content: flex-start;
-        align-items: flex-start;
-        justify-content: flex-start;
+    section>h1{
+        text-align: unset;
     }
-}
-// @media only screen and (max-width: 539px){
-//     section{
-//         p{width: 400px;}
-//     }
-// }
-@media only screen and (max-width: 486px){
-    .card{
-        width: 300px
-    }
-}
-// @media only screen and (max-width: 520px){
-//     section{
-//         p{width: 350px;}
-//     }
-// }
-
-// @media only screen and (max-width: 430px){
-//     section{
-//         p{width: 300px;}
-//     }
-// }
-@media only screen and (min-width: 1300px){
-    section{
-        .photos-in-row{
-            justify-content: flex-start;
-        }
+    .row-c{
+        margin-right: -15px;
     }
 }
 
-@media only screen and (max-width: 400px){
-    .card{
-        width: 250px
-    }
-}
-// @media only screen and (max-width: 380px){
-//     section{
-//         p{width: 250px;}
+
+// @media only screen and (max-width: 1250px){
+//     .p, .paragraph{
+//         width: 600px;
+//         width: 100%;
+//         padding-right: 70px;
 //     }
 // }
-@media only screen and (max-width: 330px){
-    .card{
-        width: 200px
-    }
-    // section{
-    //     p{width: 200px;}
-    // }
-}
-@media only screen and (max-width: 283px){
-    .card{
-        width: 150px;
-        .title{
-            font-size:1.5rem;
-        }
-    }
-}
+
+// @media only screen and (max-width: 1225px){
+//     .col--1{
+//         position: relative;
+//         width: 200px;
+//         flex-grow: 0;
+//         flex-shrink: 0;  
+//         margin-right: 20px;
+//         text-align: right;
+//         font-size: 2rem;
+//         font-weight: bold;
+//     }
+//     .p,.paragraph{
+//         max-width: unset;
+//         width: 100%;
+//         padding-right: 70px;
+//     }
+// }
+
+
+
+// @media only screen and (max-width: 750px){
+//     .row-scalable{
+//         flex-direction: column;
+//         // align-content: center;
+//         align-items: center;
+//     };
+//     .section-title{
+//         align-self: flex-start;
+//     }
+// }
+// @media only screen and (max-width: 1025px){
+//     .card{font-size: 1rem;}
+//     .card{width: 400px;}
+// }
+// @media only screen and (max-width: 850px){
+//     .timeline{
+//         display: none;
+//     }
+//     .compensateTimeline {
+//         display: none;
+//     }
+//     .card{
+//         margin-left: 0px;
+//     }
+// }
+// @media only screen and (max-width: 700px){
+//     section{
+//         .p, .paragraph{
+//             width: 550px;
+//             width: 100%;
+//         }
+//     }
+// }
+
+
+// @media only screen and (max-width: 570px){
+//     .content-section{
+//         align-content: flex-start;
+//         align-items: flex-start;
+//         justify-content: flex-start;
+//     }
+// }
+
+// @media only screen and (max-width: 486px){
+//     .card{
+//         width: 300px
+//     }
+// }
+
+// @media only screen and (min-width: 1300px){
+//     section{
+//         .photos-in-row{
+//             justify-content: flex-start;
+//         }
+//     }
+// }
+
+// @media only screen and (max-width: 400px){
+//     .card{
+//         width: 250px
+//     }
+// }
+
+// @media only screen and (max-width: 330px){
+//     .card{
+//         width: 200px
+//     }
+
+// }
+// @media only screen and (max-width: 283px){
+//     .card{
+//         width: 150px;
+//         .title{
+//             font-size:1.5rem;
+//         }
+//     }
+// }

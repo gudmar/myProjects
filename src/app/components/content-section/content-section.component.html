@@ -1,7 +1,3 @@
-<!-- <document-section *ngIf="currentlyDisplayed == 'About me'" [contentList]="aboutMe"></document-section>
-<document-section *ngIf="currentlyDisplayed == 'CV'" [contentList]="cv"></document-section>
-<document-section *ngIf="currentlyDisplayed == 'Portfolio'" [contentList]="portfolio"></document-section> -->
-
 <ng-container *ngFor="let item of contentList">
     <document-section *ngIf="currentlyDisplayed == item.key" [contentList]="item.content"></document-section>
 </ng-container>

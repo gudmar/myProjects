@@ -1,8 +1,11 @@
 <ng-container  *ngFor="let item of contentList">
     
-    <section *ngIf="item.type=='section'">
-        <h1>{{item.title}}</h1>
-        <document-section [contentList]="item.content"></document-section>
+    <!-- <section *ngIf="item.type=='section'"> -->
+    <section *ngIf="item.type=='section'" class="row-c">
+        <!-- <h1>{{item.title}}</h1> -->
+        <h1 class = "col-12 col-lg-4">{{item.title}}</h1>
+        <!-- <document-section [contentList]="item.content"></document-section> -->
+        <document-section class="col-12 col-lg-8" [contentList]="item.content"></document-section>
     </section>
 
     <section *ngIf="item.type=='row-section'" >
@@ -15,15 +18,11 @@
         <document-section [contentList]="item.content"></document-section>
     </article>
 
-    <p *ngIf="item.type=='p'" [innerHTML]="item.content"></p>
+    <p *ngIf="item.type=='p'" [innerHTML]="item.content" class="paragraph"></p>
 
-    <ul *ngIf="item.type=='unordered-list'">
+    <ul *ngIf="item.type=='unordered-list'" class="paragraph">
         <li *ngFor="let el of item.content" [innerHTML]="el"></li>
     </ul>
-
-    <!-- <div *ngIf="item.type=='image'" class="document-image-wrapper center">
-            <img [src]="getImagePath(item.imageName)" [alt]="item.imageAlt">
-    </div> -->
 
     <image-component *ngIf="item.type=='image'" 
         [imageName]="item.imageName"
@@ -37,30 +36,26 @@
     >
     </images-in-a-row>
 
-    <!-- <div class="col col-2"> -->
-        <employment-entry *ngIf="item.type=='cv-employment-entry'"
-            [title] = "item.title"
-            [content] = "item.content"
-            [subtitle] = "item.subtitle"
-            [dates] = "item.dates"
-            [position] = "item.position"
-        ></employment-entry>
-    <!-- </div> -->
+    <employment-entry *ngIf="item.type=='cv-employment-entry'"
+        [title] = "item.title"
+        [content] = "item.content"
+        [subtitle] = "item.subtitle"
+        [dates] = "item.dates"
+        [position] = "item.position"
+    ></employment-entry>
 
-    <!-- <div class="col col2"> -->
-        <section class="compensateTimelie" *ngIf="item.type == 'cv-additional-entry'">
-            <div class="row">
-                <div class="compensateTimeline">
-                </div>
-                <div class="content card">
-                    <div class="title">{{item.title}}</div>
-                    <div class="subtitle">{{item.subtitle}}</div>
-                    <div class="dates">{{item.dates}}</div>
-                <document-section [contentList]="item.content"></document-section>
-                </div>
+    <section class="compensateTimelie" *ngIf="item.type == 'cv-additional-entry'">
+        <div class="row">
+            <div class="compensateTimeline">
             </div>
-        </section>
-    <!-- </div> -->
+            <div class="content card">
+                <div class="title">{{item.title}}</div>
+                <div class="subtitle">{{item.subtitle}}</div>
+                <div class="dates">{{item.dates}}</div>
+            <document-section [contentList]="item.content"></document-section>
+            </div>
+        </div>
+    </section>
 
     <cv-document *ngIf="item.type == 'cv-document'"
         [contentList] = "item.content"
@@ -89,12 +84,11 @@
         (mouseenter) = "increaseZ($event)"
         (mouseleave) = "decreaseZ($event)"
     ></portfolio-entry>
+
     <information-note *ngIf="item.type=='information-note'"
         [severity]="item.severity"
         [content]="item.content"
     ></information-note>
-
-
 
     <div *ngIf="item.type=='link'" class="link">
         <a [href]="item.href" target="_blank" [attr.data-content]="item.title">
