@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
-
-$timeline-width: 40px;
-
+@import './variables.scss';
 *{
     font-family: 'Work Sans', sans-serif;
     // border: solid red thin;
@@ -28,11 +26,10 @@ html,body{
     margin-left:  -15px;
 }
 @for $i from 1 through 12 {
-    
-        .col-lg-#{$i}{
-            flex: 0 0 calc( #{$i} * 8.33333% );
-            max-width: calc( #{$i} * 8.33333%)
-        }
+    .col-lg-#{$i}{
+        flex: 0 0 calc( #{$i} * 8.33333% );
+        max-width: calc( #{$i} * 8.33333%)
+    }
 }
 section>h1{
     text-align: right;
@@ -214,10 +211,6 @@ h2{
 
 @media only screen and (max-width:1290px){
     @for $i from 1 through 12 {
-        // .col-lg-#{$i}{
-        //     flex: 0 0 calc( #{$i} * 8.33333% );
-        //     max-width: calc( #{$i} * 8.33333%)
-        // }
         .col-#{$i}{
             position: relative; width: 100%; padding-right: 15px; padding-left: 15px;
             flex: 0 0 calc( #{$i} * 8.33333333% );
@@ -231,110 +224,3 @@ h2{
         margin-right: -15px;
     }
 }
-
-
-// @media only screen and (max-width: 1250px){
-//     .p, .paragraph{
-//         width: 600px;
-//         width: 100%;
-//         padding-right: 70px;
-//     }
-// }
-
-// @media only screen and (max-width: 1225px){
-//     .col--1{
-//         position: relative;
-//         width: 200px;
-//         flex-grow: 0;
-//         flex-shrink: 0;  
-//         margin-right: 20px;
-//         text-align: right;
-//         font-size: 2rem;
-//         font-weight: bold;
-//     }
-//     .p,.paragraph{
-//         max-width: unset;
-//         width: 100%;
-//         padding-right: 70px;
-//     }
-// }
-
-
-
-// @media only screen and (max-width: 750px){
-//     .row-scalable{
-//         flex-direction: column;
-//         // align-content: center;
-//         align-items: center;
-//     };
-//     .section-title{
-//         align-self: flex-start;
-//     }
-// }
-// @media only screen and (max-width: 1025px){
-//     .card{font-size: 1rem;}
-//     .card{width: 400px;}
-// }
-// @media only screen and (max-width: 850px){
-//     .timeline{
-//         display: none;
-//     }
-//     .compensateTimeline {
-//         display: none;
-//     }
-//     .card{
-//         margin-left: 0px;
-//     }
-// }
-// @media only screen and (max-width: 700px){
-//     section{
-//         .p, .paragraph{
-//             width: 550px;
-//             width: 100%;
-//         }
-//     }
-// }
-
-
-// @media only screen and (max-width: 570px){
-//     .content-section{
-//         align-content: flex-start;
-//         align-items: flex-start;
-//         justify-content: flex-start;
-//     }
-// }
-
-// @media only screen and (max-width: 486px){
-//     .card{
-//         width: 300px
-//     }
-// }
-
-// @media only screen and (min-width: 1300px){
-//     section{
-//         .photos-in-row{
-//             justify-content: flex-start;
-//         }
-//     }
-// }
-
-// @media only screen and (max-width: 400px){
-//     .card{
-//         width: 250px
-//     }
-// }
-
-// @media only screen and (max-width: 330px){
-//     .card{
-//         width: 200px
-//     }
-
-// }
-// @media only screen and (max-width: 283px){
-//     .card{
-//         width: 150px;
-//         .title{
-//             font-size:1.5rem;
-//         }
-//     }
-// }
