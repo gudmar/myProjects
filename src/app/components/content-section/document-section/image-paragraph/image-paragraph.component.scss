@@ -15,9 +15,6 @@ img{
     position: relative;
     
 }
-.paragraph{
-
-}
 
 p{
     width: unset;
@@ -28,17 +25,28 @@ p{
     margin: 0;
     
 }
-@media only screen and (max-width: 550px){
-    .image-small-screen{
-        display: inline-block;
-        float: unset;
-    }
-    .wrapper{
-        padding:unset;
-        margin-right: 20px;
-        padding-right: 20px;
-    }
-    .image-big-screen{
-        display: none;
-    }
-}
+// @media only screen and (max-width: 550px){
+//     .image-small-screen{
+//         display: inline-block;
+//         float: unset;
+//     }
+//     .wrapper{
+//         padding:unset;
+//         margin-right: 20px;
+//         padding-right: 20px;
+//     }
+//     .image-big-screen{
+//         display: none;
+//     }
+// }
+// @media only screen and (max-width: 740px){
+//     section {
+//         .p, .paragraph{
+//             margin-left: 0;
+//             margin-right: 0;
+//             padding: 0px;
+//             padding-left: 20px;
+//             padding-right: 20px;
+//         }
+//     }
+// }

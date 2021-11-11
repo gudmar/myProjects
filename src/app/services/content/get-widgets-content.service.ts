@@ -178,7 +178,7 @@ export class GetWidgetsContentService {
                 type:'p',
                 content:`
                   This element is called a <code>slide-box</code> and takes <code>data-label</code> attribute as a string 
-                  describing what will be toggled when activated. There is a  <code>data-is-on</data> attribute 
+                  describing what will be toggled when activated. There is a  <code>data-is-on</code> attribute 
                   that is either <q>true</q> or <q>false</q> and describes current switch position. <code>stateOnChanged</code>
                   event is launched when switch is being toggled. This event passes <code>name</code> that is switch name and
                   <code>newStateOn</code>, that is a new switch position.

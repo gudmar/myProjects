@@ -1,48 +1,15 @@
 @import '../../../../../styles.scss';
 
-// $timeline-width: 40px;
 $dot-margin: 10px;
 $timeline-color: gray;
 $dot-size: $timeline-width/2;
 
-// @function getBorderHeight(){
-//     @return calc( 100% - $dot-size )/2
-// }
-:host{
-    // display: flex;
-    // align-content: center;
-    // align-items: center;
-    // justify-content: center;
-}
-// .row{position: relative; height: 100%; display: table-row;}
-
-section{
-    // width: 70%;
-    // min-width: 400px;
-}
 .content{
     padding-left: 1rem;
 }
 
-.row{
-    // align-items: stretch;
-}
-
 .timeline{
-    // flex: 0 0 auto;
-    // position: relative;
-    // align-items: stretch;
     width: $timeline-width;
-    // height: 100%;
-    // max-height: 100%;
-    // align-self: center;
-    // margin-bottom: 0;
-    // margin-top: 0;
-    // align-content: stretch;
-    // align-items: stretch;
-    // justify-content: stretch;
-    // align-self: stretch;
-    // flex-grow: 1;
     .row{
         position: relative;
         height: 100%;
