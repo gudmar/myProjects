@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
-
-$timeline-width: 40px;
-
+@import './variables.scss';
 *{
     font-family: 'Work Sans', sans-serif;
     // border: solid red thin;
