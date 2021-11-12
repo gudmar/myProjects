@@ -30,6 +30,11 @@ html,body{
     margin-right: 150px;
     margin-left:  -15px;
 }
+
+.no-right-margin{
+    margin-right: 0;
+}
+
 @for $i from 1 through 12 {
     .col-lg-#{$i}{
         flex: 0 0 calc( #{$i} * 8.33333% );
@@ -254,9 +259,12 @@ h2{
 @media only screen and (max-width: 400px){
     .card{
         width:100%;
-        // ul{
-        //     margin: 0;
-        // }
+    }
+    h1{
+        font-size: 2rem;
+    }
+    h2{
+        font-size: 1.5rem;
     }
 }
 @media only screen and (max-width: 330px){
