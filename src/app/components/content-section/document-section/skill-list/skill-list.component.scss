@@ -46,7 +46,7 @@ $font-size: 1.2rem;
      display: none;
  }
 
- @media only screen and (max-width: 283px){
+ @media only screen and (max-width: 330px){
     .tiny-screen{
         display: inline-block;
     }
@@ -54,3 +54,9 @@ $font-size: 1.2rem;
         display: none;
     }
  }
+
+//  @media only screen and (max-width: 1100px){
+//     :host{
+//         align-self: flex-end;
+//     }
+//  }

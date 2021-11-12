@@ -17,6 +17,11 @@ html,body{
     // max-width: var(--max-document-components-width);
     text-align: justify;
 }
+.card{
+    ul{
+        text-align: unset;
+    }
+}
 
 .row-c{
     display: flex;
@@ -166,6 +171,7 @@ h2{
     width: calc( #{$timeline-width} * 1);
 }
 
+
 .card{
     position: relative;
     // border: solid rgb(50, 50, 50) thin;
@@ -208,7 +214,14 @@ h2{
     }
 }
 
-
+@media only screen and (max-width:1450px){
+    h1{
+        font-size: 2.8rem;
+    }
+    h2{
+        font-size: 2.2rem;
+    }
+}
 @media only screen and (max-width:1290px){
     @for $i from 1 through 12 {
         .col-#{$i}{
@@ -222,5 +235,46 @@ h2{
     }
     .row-c{
         margin-right: -15px;
+    }
+}
+@media only screen and (max-width: 780px){.card{width:400px;}}
+
+@media only screen and (max-width: 580px){
+    .compensateTimeline{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 490px){
+    .card{
+        margin-left: 0;
+        // width:300px;
+    }
+}
+@media only screen and (max-width: 400px){
+    .card{
+        width:100%;
+        // ul{
+        //     margin: 0;
+        // }
+    }
+}
+@media only screen and (max-width: 330px){
+    .card{
+        // width:200px;
+        .title{
+            font-size: 1.5rem;
+        }
+    }
+}
+@media only screen and (max-width: 450px){
+    .p, .paragraph{
+        font-size: 1.1rem;
+    }
+    code{
+        font-size: 1.1rem;
+        padding: 0px;
+        padding-left: 2px;
+        padding-right: 2px;
     }
 }
