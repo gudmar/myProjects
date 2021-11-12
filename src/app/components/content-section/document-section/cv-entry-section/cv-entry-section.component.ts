@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 
 @Component({
   selector: 'cv-entry-section',
@@ -8,10 +8,21 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CvEntrySectionComponent implements OnInit {
   @Input() title: string = '';
   @Input() content: any;
+  isScreenSmall:boolean = false;
+  widthToApplyClass:number = 1100;
   constructor() { }
 
+  
   ngOnInit(): void {
     console.log(this.content)
+    this.setIsScreenSmall();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  setIsScreenSmall(){
+    let screenWidth = window.innerWidth;
+    if (screenWidth < this.widthToApplyClass) this.isScreenSmall = true;
+    else this.isScreenSmall = false;
   }
 
 }

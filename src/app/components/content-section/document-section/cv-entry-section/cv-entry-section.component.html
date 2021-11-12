@@ -1,11 +1,16 @@
 <!-- <div class="row row-scalable"> -->
 <div class="row-c">
     <!-- <div class="section-title tb-col tb-right col--1"> -->
-    <div class="col-12 col-lg-4">
+    <h1 class="col-lg-4"
+        [ngClass] = "{'col-12':isScreenSmall, 'h1-left':isScreenSmall}"
+    >
+        
         {{title}}
-    </div>
+    </h1>
     <!-- <div class="col"> -->
-    <div class="col-8">
+    <div class="col-8-lg"
+        [ngClass] = "{'col-12':isScreenSmall, 'center':isScreenSmall}"
+    >
         <document-section [contentList]="content"></document-section>
     </div>
 </div>

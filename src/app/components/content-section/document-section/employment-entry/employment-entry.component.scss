@@ -5,6 +5,7 @@
     padding-left: 1rem;
 }
 
+
 .timeline{
     width: $timeline-width;
     .row{
@@ -43,4 +44,8 @@
     .dot-filled{
         background-color: $timeline-color;
     }
+}
+
+@media only screen and (max-width: 580px){
+    .timeline{display: none;}
 }

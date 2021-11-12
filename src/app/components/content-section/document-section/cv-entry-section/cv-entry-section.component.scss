@@ -12,3 +12,40 @@
 :host{
     width: 100%;
 }
+h1{
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+.h1-left{
+    text-align: left;
+}
+.row-c{
+    margin-right: 15px;
+    margin-left: 15px;
+}
+document-section{
+    width: unset;
+}
+
+// @media only screen and (max-width:750px){
+//     document-section{
+//         width: 100%;
+//     }        
+// }
+
+// @media only screen and (min-width:1000px){
+//     @for $i from 1 through 12 {
+//         .col-#{$i}{
+//             position: initial; width: initial; padding-right: initial; padding-left: initial;
+//             flex: revert;
+//             max-width: revert;
+//         }
+//     }
+//     section>h1{
+//         text-align: unset;
+//     }
+//     .row-c{
+//         margin-right: -15px;
+//     }
+// }
