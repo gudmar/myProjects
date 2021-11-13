@@ -27,7 +27,7 @@ export class SingleRectangleComponent implements OnInit {
     if (val == "hide") this.blankThisRectangle();
   };
 
-  delay:number = this.getRandomNumber(1000, 5000);
+  delay:number = this.getRandomNumber(800, 1200);
   get showHide(){
     return this._showHide;
   }

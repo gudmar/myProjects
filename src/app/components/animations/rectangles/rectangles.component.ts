@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, ElementRef, Input} from '@angular/core';
 import { CommunicationService } from '../../../services/communication-service.service';
 import { GetRandomColorService } from '../../../services/get-random-color.service';
 import { timingSafeEqual } from 'crypto';
@@ -64,7 +64,7 @@ export class RectanglesComponent implements OnInit {
   showHideAnimation(){
     this.animator.animate(
       {fn: this.show.bind(this), delay: 1000},
-      {fn: this.hide.bind(this), delay: 6000}
+      {fn: this.hide.bind(this), delay: 2500}
     )
   }
   // animateMessage(){

@@ -36,6 +36,7 @@ import { ImageComponentComponent } from './components/content-section/document-s
 import { ImagesInARowComponent } from './components/content-section/document-section/images-in-a-row/images-in-a-row.component';
 import { InformationNoteComponent } from './components/content-section/document-section/information-note/information-note.component';
 import { ImageParagraphComponent } from './components/content-section/document-section/image-paragraph/image-paragraph.component';
+import { HideAnimationDirective } from './directives/hide-animation.directive';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { ImageParagraphComponent } from './components/content-section/document-s
     ImagesInARowComponent,
     InformationNoteComponent,
     ImageParagraphComponent,
+    HideAnimationDirective,
   ],
   imports: [
     BrowserModule,

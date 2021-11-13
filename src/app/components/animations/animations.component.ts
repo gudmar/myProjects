@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { AnimateQueueService } from '../../services/animate-queue.service';
+import { CommunicationService } from '../../services/communication-service.service';
 
 @Component({
   selector: 'animation',
@@ -10,26 +11,45 @@ export class AnimationsComponent implements OnInit {
   displayRectangles:boolean=false;
   displayWelcomeText:boolean = false;
   welcomeMessage: string = "Hello, welcome to my demo page."
-  displayNextInterval: number = 100;
-  constructor(private animator: AnimateQueueService) { }
+  displayNextInterval: number = 90;
+  shouldDisplay: boolean = true;
+  uniqueId: string = 'animationId';
+  constructor(
+    private animator: AnimateQueueService,
+    private communicator: CommunicationService
+  ) { 
+    this.communicator.subscribe(this.uniqueId, this.handleMessages.bind(this), ['hideAnimation'])
+  }
+  handleMessages(eventType: string, data:any){
+    this.shouldDisplay = false;
+  }
 
   ngOnInit(): void {
     this.manageAnimation();
   }
 
+  @HostListener('click')
+  hideAnimation(){
+    this.shouldDisplay = false;
+  }
+
   calculateWelcomeTextAnimationTime(){
     return this.welcomeMessage.length * this.displayNextInterval;
+
   }
   calcualteDiaplayTimeOfAllRectangles(){
-    return 5000
+    return 1700
   }
 
   manageAnimation(){
     this.animator.animate(
       {fn: this.showWelcomeText.bind(this), delay: 0},
-      {fn: this.showRectangles.bind(this), delay: 4000},
-      {fn: this.hideWelcomeText.bind(this), delay: this.calcualteDiaplayTimeOfAllRectangles() + this.calculateWelcomeTextAnimationTime()},
-      {fn: this.hideRectangles.bind(this), delay: 6000},
+      {fn: this.showRectangles.bind(this), delay: 2500},
+      {
+        fn: this.hideWelcomeText.bind(this), 
+        delay: this.calcualteDiaplayTimeOfAllRectangles() + this.calculateWelcomeTextAnimationTime()
+      },
+      {fn: this.hideRectangles.bind(this), delay: 1500},
       
     )
   }

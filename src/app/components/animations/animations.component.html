@@ -1,5 +1,7 @@
+<ng-container *ngIf="shouldDisplay">
 <welcome-text *ngIf="displayWelcomeText" 
     [welcomeText]="welcomeMessage"
     [displayNextInterval]="displayNextInterval"
 ></welcome-text>
 <rectangles *ngIf="displayRectangles"></rectangles>
+</ng-container>
