@@ -219,6 +219,13 @@ h2{
     }
 }
 
+// @media only screen and (max-width:$portfolio-big-screen-threshold){
+//     .card{
+//         max-width: 600px;
+//         width: 600px;
+//     }
+// }
+
 @media only screen and (max-width:1450px){
     h1{
         font-size: 2.8rem;
