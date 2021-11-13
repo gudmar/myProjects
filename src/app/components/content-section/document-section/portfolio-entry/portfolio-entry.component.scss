@@ -110,23 +110,10 @@ section{
     }
 }
 
-
-
-
-
-
-
-@keyframes blink-link{
-    // 0% { color: rgb(120, 120, 50);}
-    // 50% {color:black; background-color: rgba(120, 120, 50, 0.2)}
-    // 100% { color: rgb(120, 120, 50);}
-}
-
 $link-animation-duration: 0.5s;
 
 .link{
     border-radius: 5px;
-    animation: blink-link 3s infinite;
     padding: 3px;
     color: black;
     text-decoration: none;
