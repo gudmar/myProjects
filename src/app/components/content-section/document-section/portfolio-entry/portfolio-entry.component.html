@@ -1,10 +1,7 @@
-<section class = "card big-screen">
-    <div class="row">
-        <div class="col perspective">
+<!-- <section class = "card big-screen">
+    <div class="row-c">
+        <div class="c col-lg-3  perspective">
 
-            <!-- <img rotateOnHover [transformatoinOrder]="'translateThenRotate'" [zoomValue] = '100' 
-                [src]="imagePath" alt="title" (click)="switchToPage(title)"
-            > -->
             <a [routerLink] = "[route]">
                 <slide-show (click)="switchToPage(title)"
                     [imageArray] = "imageNameArray" 
@@ -12,18 +9,19 @@
                 </slide-show>
             </a>
         </div>
-        <div class="col">
+        <div class="co col-lg-9">
                 <a href='#' [routerLink] = "[route]"> <div class="title">{{title}}</div> </a>
             <div class="content" [innerHTML]="content"></div>
-            <!-- <span class="content" [innerHTML]="content"></span> -->
-
         </div>
     </div>
-</section>
+</section> -->
 
 <section class = "card small-screen">
-    <div class="col">
-        <div class="title">{{title}}</div>
+    <div class="col center">
+        <!-- <a href='#' [routerLink] = "[route]"> <div class="title">{{title}}</div> </a> -->
+        <a class="link" [attr.data-content]="title" href='#' [routerLink] = "[route]"> 
+            <span>{{title}}</span> 
+        </a>
         <div class="content">
             <a [routerLink] = "[route]">
                 <slide-show (click)="switchToPage(title)"

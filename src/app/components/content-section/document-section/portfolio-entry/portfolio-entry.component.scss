@@ -1,8 +1,17 @@
 
+:host{
+    flex-grow: 1;
+    flex-basis: 400px;
+    max-width: 700px;
+}
 
-.row{}
-.col:last-child{
-    margin-left: 1rem;
+
+.col{
+    position: relative;
+    // display: inline-block;
+    &:last-child{
+        margin-left: 1rem;
+    }
 }
 .perspective{
     perspective: 1000px;
@@ -17,20 +26,16 @@ img{
     transition: 0.3s;
     transform-style: preserve-3d;
     &:hover{
-        // box-shadow: 0px 0px 20px 5px #000000;
         transition: 0.3s;
         transform-style: preserve-3d;
         z-index: 10000;
     }
 }
-.small-screen{display: none;}
 .title{
     text-align: center;
 }
 section{
     position: relative;
-    max-width: 700px;
-    // border: solid thin rgb(50, 50, 50);
     padding: 0.4rem;
     margin:0.7rem;
     margin-bottom: 50px;
@@ -48,31 +53,27 @@ section{
     height: 200px;
 }
 
-@media only screen and (max-width: 4700px){ //1025
     .big-screen{display: none};
-    .small-screen{display: inline-block;}
+    .small-screen{
+        display: inline-block;
+        flex-basis: 400px;
+        flex-grow: 1;
+        max-width: unset;
+        width: unset;
+    }
     .content{
         text-align: unset;
-        // position: relative;
     }
-    section{
-        width: 500px;
-    }
-    .col{
-        display: inline-block;
-    }
+    // .col{
+    //     display: inline-block;
+    // }
     slide-show{
         margin-right: 20px;
         float: left;
     }   
-}
-// @media only screen and (max-width: 1700px){
-//     section{
-//         width: 500px;
-//     }
-// }
 
-@media only screen and (max-width: 700px){
+
+@media only screen and (max-width: 430px){
     section{
         width: 400px;
     }
@@ -86,11 +87,14 @@ section{
         align-content: center;
         align-items: center;
         justify-content: center;
+        font-size: 1.2rem;
     }
     .content>span{
         display: inline-block;
         text-align: center;
+        text-align: justify;
         text-justify: inter-word;
+        margin-top: -1rem;
     }
 }
 
@@ -104,35 +108,84 @@ section{
     section{
         width: 300px;
     }
-    // slide-show{
-    //     margin-right: 20px;
-    //     float: none;
-    // }
-    // .content{
-    //     display:flex;
-    //     flex-direction: column;
-    //     align-content: center;
-    //     align-items: center;
-    //     justify-content: center;
-    // }
-    // .content>span{
-    //     display: inline-block;
-    //     text-align: center;
-    //     text-justify: inter-word;
-    // }
 }
-// @media only screen and (max-width: 385px){
-//     section{
-//         width: 250px;
-//     }
-// }
 
-@media only screen and (max-width: 320px){
-    section{
-        // width: 200px;
-        margin: 0;
+
+
+
+
+
+
+@keyframes blink-link{
+    // 0% { color: rgb(120, 120, 50);}
+    // 50% {color:black; background-color: rgba(120, 120, 50, 0.2)}
+    // 100% { color: rgb(120, 120, 50);}
+}
+
+$link-animation-duration: 0.5s;
+
+.link{
+    border-radius: 5px;
+    animation: blink-link 3s infinite;
+    padding: 3px;
+    color: black;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    &:before{
+        position: absolute;
+        display: inline-block;
+        overflow: hidden;
+        content: attr(data-content);
+        color: transparent;
+        border-bottom: black thin solid;
+        transition-timing-function: cubic-bezier(0.5, 0.5, 0.3, 1);
+        transition-duration: $link-animation-duration;
+
+        transform: translate(-100%);
+        height: calc(100% - 5px);
+        width: 0;
     }
-    .col, .small-screen{
-        margin:0;
+    &:after{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: attr(data-content);
+        color: black;
+        
+        transition-timing-function: cubic-bezier(0.5, 0.5, 0.3, 1);
+        transition-duration: $link-animation-duration;
+
+        right: -100%;
+    }
+
+    &:hover span{
+        transform: translate3d(-150%, 0, 0);
+        transition-timing-function: cubic-bezier(0.5, 0.5, 0.3, 1);
+        transition-duration: $link-animation-duration;
+
+    }
+    &:hover{
+        &:after{
+            right: 0;
+            transition-timing-function: cubic-bezier(0.5, 0.5, 0.3, 1);
+            transition-duration: $link-animation-duration;
+        }
+        &:before{
+            transform: translate3d(0, 0, 0);
+            transition-timing-function: cubic-bezier(0.5, 0.5, 0.3, 1);
+            transition-duration: $link-animation-duration;
+
+            width: 100%;
+        }
+    }
+    span{
+        position: relative;
+        transition-timing-function: cubic-bezier(0.5, 0.5, 0.3, 1);
+        transition-duration: $link-animation-duration;
+        display: inline-block;
     }
 }

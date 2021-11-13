@@ -68,7 +68,7 @@ export class GetPortfolioContentService {
             title: 'Calculator',
             route: 'calculator',
             content: `
-              Infix claculator, evaluating mathematical expression. Capable of calculating any deeply nested 
+              Infix claculator, evaluating math expression. Capable of calculating any deeply nested 
               expression, supports brackets. Algorithm writtne from scratches. This is <b>not</b> a <code>exec</code>
               function based calculator
             `
