@@ -25,6 +25,7 @@ const routes: Routes = [
      
    ]
   },
+  {path:'cv', component: ContentSectionComponent, data: {startPage: 'CV'}},
 ];
 
 @NgModule({
