@@ -6,7 +6,7 @@ import { RouterOutputComponent } from './components/content-section/router-outpu
 const routes: Routes = [
   {path: '', redirectTo:'aboutMe', pathMatch:'full'},
   {path:'aboutMe', component: ContentSectionComponent, data: {startPage:'About me'}},
-  {path:'cv', component: ContentSectionComponent, data: {startPage: 'CV'}},
+  {path:'cv', component: ContentSectionComponent, data: {startPage: 'About me'}},
   {path:'portfolio', 
    component: RouterOutputComponent,
    data: {startPage:'Portfolio'},
