@@ -44,7 +44,7 @@ export class GetNotepadContentService {
           },
           {
             type:'image',
-            imageName:'_notePad2.jpg',
+            imageName:'notePad21.JPG',
             imageAlt: 'Notes: overview'
           },
           {
@@ -65,7 +65,7 @@ export class GetNotepadContentService {
           },
           {
             type:'image',
-            imageName:'_notePad4_calendar.jpg',
+            imageName:'notePad4_calendar.JPG',
             imageAlt: 'calendar: overview'
           },
           {
@@ -85,7 +85,7 @@ export class GetNotepadContentService {
           },
           {
             type:'image',
-            imageName:'_notePad3_linker.jpg',
+            imageName:'notePad3Linker.JPG',
             imageAlt: 'linker: overview'
           },
           {
