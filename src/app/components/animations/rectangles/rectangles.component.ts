@@ -11,6 +11,13 @@ import { AnimateQueueService } from '../../../services/animate-queue.service';
 })
 export class RectanglesComponent implements OnInit {
   @Input() singleRectangleSize: number = 100;
+  // @Input() showAllRectanglesAfter_us = 1000;
+  @Input() hideAllRectanglesAfter_us = 2500;
+  @Input() showHideAllDurationTimePeriod_us = {
+    start: 800, end: 1200
+  } // each rectangle has show/hide time randomly chosen from this period
+  
+
   shouldDisplay: boolean = true;
   uniqueId: string = 'rectanglesId'
   rectangleList: any[] = [];
@@ -53,18 +60,15 @@ export class RectanglesComponent implements OnInit {
 
   show(){
     this.showHide= "show"
-    console.log('show')
   }
   hide(){
     this.showHide= "hide"
-    console.log('hide')
   }
-
 
   showHideAnimation(){
     this.animator.animate(
-      {fn: this.show.bind(this), delay: 1000},
-      {fn: this.hide.bind(this), delay: 2500}
+      {fn: this.show.bind(this), delay: 0},  //this.showAllRectanglesAfter_us
+      {fn: this.hide.bind(this), delay: this.hideAllRectanglesAfter_us}
     )
   }
   // animateMessage(){

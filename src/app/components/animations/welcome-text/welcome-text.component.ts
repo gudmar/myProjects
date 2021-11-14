@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { AnimateQueueService } from '../../../services/animate-queue.service';
 
 @Component({
@@ -8,13 +8,19 @@ import { AnimateQueueService } from '../../../services/animate-queue.service';
 })
 export class WelcomeTextComponent implements OnInit {
   @Input() welcomeText: string = 'Hello, welcome to my demo page.';
-  @Input() displayNextInterval: number = 100;
+  @Input() displayNextLetterInterval: number = 100;
+  documentWidth: 'small' | 'large' = 'large';
   indexOfLastSymbolToBeDisplayed = 0;
   constructor(private animator: AnimateQueueService) { }
 
+
   ngOnInit(): void {
+    this.setDocumentWidth();
     this.animate();
   }
+
+  @HostListener('resize',[])
+  setDocumentWidth(){this.documentWidth = window.innerWidth > 450 ? 'large' : 'small'}
 
   welcomeTestAsArray(){
     return Array.from(this.welcomeText);
@@ -35,7 +41,7 @@ export class WelcomeTextComponent implements OnInit {
     let that = this;
     let interval = setInterval(()=>{
       that.indexOfLastSymbolToBeDisplayed++;
-    }, this.displayNextInterval)
+    }, this.displayNextLetterInterval)
     if (this.indexOfLastSymbolToBeDisplayed >= this.welcomeText.length) {
       clearInterval(interval);
       this.hideAllSymbols();
