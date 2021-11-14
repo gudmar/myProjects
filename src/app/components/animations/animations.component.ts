@@ -7,13 +7,34 @@ import { CommunicationService } from '../../services/communication-service.servi
   templateUrl: './animations.component.html',
   styleUrls: ['./animations.component.scss']
 })
+// @Input() singleRectangleSize: number = 100;
+// @Input() showAllRectanglesAfter_us = 1000;
+// @Input() hideAllRectanglesAfter_us = 2500;
+// @Input() showHideAllDurationTimePeriod_us = {
 export class AnimationsComponent implements OnInit {
   displayRectangles:boolean=false;
   displayWelcomeText:boolean = false;
+  rectangleSize: number = 100;
   welcomeMessage: string = "Hello, welcome to my demo page."
-  displayNextInterval: number = 90;
   shouldDisplay: boolean = true;
   uniqueId: string = 'animationId';
+
+  displayParameters = {
+    singleRectangleSize: 100,
+    // showAllRectanglesAfter_us: 1000, // NOT NEEDED, should start instantly, as it is controlled in chain of animations
+    hideAllRectanglesAfter_us: 2500,
+    showHideAllRectanglesDurationTimeStart_us: 800,
+    showHideAllRectanglesDurationTimeEnd_us: 1200,
+    displayNextLetterInterval: 90
+  }
+
+  get showHIdeAllRectanglesDurationPeriod() {
+    return {
+      start: this.displayParameters.showHideAllRectanglesDurationTimeStart_us,
+      end:   this.displayParameters.showHideAllRectanglesDurationTimeEnd_us
+    }
+  }
+
   constructor(
     private animator: AnimateQueueService,
     private communicator: CommunicationService
@@ -25,7 +46,15 @@ export class AnimationsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.setRectangleSize();
     this.manageAnimation();
+  }
+
+  @HostListener('resize',[])
+  setRectangleSize(){
+    if (window.innerWidth < 450) this.rectangleSize = 50
+    else if (window.innerWidth < 1000) this.rectangleSize = 100
+    else this.rectangleSize = 150;
   }
 
   @HostListener('click')
@@ -34,22 +63,29 @@ export class AnimationsComponent implements OnInit {
   }
 
   calculateWelcomeTextAnimationTime(){
-    return this.welcomeMessage.length * this.displayNextInterval;
+    return this.welcomeMessage.length * this.displayParameters.displayNextLetterInterval;
 
   }
   calcualteDiaplayTimeOfAllRectangles(){
-    return 1700
+    let cssTransitionDurationOfSingleRectangle = 1000;
+    let hardCodedOffsetForShowingRectanglesStart = 0;
+    let maxAnimationDurationOfSingleRectangle = this.showHIdeAllRectanglesDurationPeriod.end;
+    let additionalExperimentalDelay = 1200//800; // Rectangles are created slower than expected !! Angular or HW issue?
+                                          // size of rectangle 120 additionalExperimantalDelay = 300 is optimum
+    return cssTransitionDurationOfSingleRectangle + 
+           maxAnimationDurationOfSingleRectangle + 
+           hardCodedOffsetForShowingRectanglesStart + additionalExperimentalDelay;
   }
 
   manageAnimation(){
     this.animator.animate(
       {fn: this.showWelcomeText.bind(this), delay: 0},
-      {fn: this.showRectangles.bind(this), delay: 2500},
+      {fn: this.showRectangles.bind(this), delay: this.calculateWelcomeTextAnimationTime()}, //2500
       {
         fn: this.hideWelcomeText.bind(this), 
-        delay: this.calcualteDiaplayTimeOfAllRectangles() + this.calculateWelcomeTextAnimationTime()
+        delay: this.calcualteDiaplayTimeOfAllRectangles()// + this.calculateWelcomeTextAnimationTime()
       },
-      {fn: this.hideRectangles.bind(this), delay: 1500},
+      {fn: this.hideRectangles.bind(this), delay: this.displayParameters.hideAllRectanglesAfter_us + this.calculateWelcomeTextAnimationTime()}, // 1500
       
     )
   }
@@ -60,3 +96,9 @@ export class AnimationsComponent implements OnInit {
   hideWelcomeText(){this.displayWelcomeText=false;}
 
 }
+// singleRectangleSize: 100,
+// showAllRectanglesAfter_us: 1000,
+// hideAllRectanglesAfter_us: 2500,
+// showHideAllRectanglesDurationTimeStart_us: 800,
+// showHideAllRectanglesDurationTimeEnd_us: 1200,
+// displayNextLetterInterval: 90

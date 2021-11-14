@@ -3,6 +3,7 @@
         <single-rectangle
             *ngFor="let rectangle of rectangleList"
             [size] = "singleRectangleSize"
+            [showHideAllDurationTimePeriod_us] = 'showHideAllDurationTimePeriod_us'
             [color] = "rectangle.color"
             [showHide] = "showHide"
         ></single-rectangle>

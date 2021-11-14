@@ -7,12 +7,20 @@ import { Component, OnInit, Input, ElementRef } from '@angular/core';
 })
 export class SingleRectangleComponent implements OnInit {
   private _shouldBlank = false;
+  private _showHideDurationStart_us:number = 800;
+  private _showHideDurationEnd_us:number = 1200;
   @Input() size: number = 0;
   // @Input() color: string = 'rgb(200, 200, 0)'
   _color: string = '';
   @Input() set color (val:string) {
     this._color  = val;
   }
+  @Input() set showHideAllDurationTimePeriod_us(val:{start:number, end:number}){
+      this._showHideDurationStart_us = val.start;
+      this._showHideDurationEnd_us = val.end;
+  }
+  
+
   get color() {
     return this._color
   }
@@ -27,12 +35,12 @@ export class SingleRectangleComponent implements OnInit {
     if (val == "hide") this.blankThisRectangle();
   };
 
-  delay:number = this.getRandomNumber(800, 1200);
+  delay:number = this.getRandomNumber(this._showHideDurationStart_us, this._showHideDurationEnd_us);
   get showHide(){
     return this._showHide;
   }
-  blankingDelay_us: number = this.getRandomNumber(1, 3);
-  blankingPeriod_us: number = this.getRandomNumber(0, 2);
+  // blankingDelay_us: number = this.getRandomNumber(1, 3);
+  // blankingPeriod_us: number = this.getRandomNumber(0, 2);
   blankingFunction: boolean[] = [false, false, false, false];
   constructor(private elRef: ElementRef) { }
 

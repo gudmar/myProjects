@@ -1,7 +1,13 @@
 <ng-container *ngIf="shouldDisplay">
 <welcome-text *ngIf="displayWelcomeText" 
     [welcomeText]="welcomeMessage"
-    [displayNextInterval]="displayNextInterval"
+    [displayNextLetterInterval]="displayParameters.displayNextLetterInterval"
 ></welcome-text>
-<rectangles *ngIf="displayRectangles"></rectangles>
+<rectangles 
+    *ngIf="displayRectangles"
+    [singleRectangleSize] = "rectangleSize"
+    [hideAllRectanglesAfter_us] = "displayParameters.hideAllRectanglesAfter_us"
+    [showHideAllDurationTimePeriod_us] = "showHIdeAllRectanglesDurationPeriod"
+>
+</rectangles>
 </ng-container>
