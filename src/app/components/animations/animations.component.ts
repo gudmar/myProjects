@@ -14,6 +14,7 @@ import { CommunicationService } from '../../services/communication-service.servi
 export class AnimationsComponent implements OnInit {
   displayRectangles:boolean=false;
   displayWelcomeText:boolean = false;
+  rectangleSize: number = 100;
   welcomeMessage: string = "Hello, welcome to my demo page."
   shouldDisplay: boolean = true;
   uniqueId: string = 'animationId';
@@ -45,7 +46,15 @@ export class AnimationsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.setRectangleSize();
     this.manageAnimation();
+  }
+
+  @HostListener('resize',[])
+  setRectangleSize(){
+    if (window.innerWidth < 450) this.rectangleSize = 50
+    else if (window.innerWidth < 1000) this.rectangleSize = 100
+    else this.rectangleSize = 150;
   }
 
   @HostListener('click')
@@ -61,7 +70,7 @@ export class AnimationsComponent implements OnInit {
     let cssTransitionDurationOfSingleRectangle = 1000;
     let hardCodedOffsetForShowingRectanglesStart = 0;
     let maxAnimationDurationOfSingleRectangle = this.showHIdeAllRectanglesDurationPeriod.end;
-    let additionalExperimentalDelay = 800; // Rectangles are created slower than expected !! Angular or HW issue?
+    let additionalExperimentalDelay = 1200//800; // Rectangles are created slower than expected !! Angular or HW issue?
                                           // size of rectangle 120 additionalExperimantalDelay = 300 is optimum
     return cssTransitionDurationOfSingleRectangle + 
            maxAnimationDurationOfSingleRectangle + 
