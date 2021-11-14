@@ -16,7 +16,7 @@ export class GetPortfolioContentService {
           {
             type: 'portfolio-entry',
             imageName: '_notePad4_calendar.jpg',
-            imageNameArray: ['_notePad4_calendar.jpg', '_notePad2.jpg', '_notePad5_calendar_cw.jpg', '_notePad6_calendar_editor.jpg', '_notePad6_calendar_moveTo.jpg', '_notePad3_linker.jpg'],
+            imageNameArray: ['notePad4_calendar.JPG', 'notePad21.JPG', 'notePad5CalendarCw.JPG', 'notePad6CalendarEditor.JPG', 'notePad6CalendarMoveTo.JPG', 'notePad3Linker.JPG'],
             title: 'Notes',
             route:'notePad',
             content: `
