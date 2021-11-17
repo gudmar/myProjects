@@ -5,7 +5,7 @@
     font-family: 'Work Sans', sans-serif;
     // border: solid red thin;
     box-sizing: border-box;
-    --max-document-components-width: 800px;
+    --max-document-components-width: 1200px;
 }
 html,body{
     height: 100%;
@@ -58,6 +58,17 @@ section>h1{
     flex-grow: 0;
     flex-shrink: 0;
     max-width: 1200px;
+    max-width: var(--max-document-components-width);
+}
+
+strong {
+    color: #442; //f8f537
+    background: linear-gradient(100deg,#57f8f000 1%,#57f8f0 2.5%,#57f8f080 5%,#57f8f025 90%,#57f8f0b8 95%,#57f8f050 97.5%);
+    padding: .1em .4em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    margin: 0;
+    border-radius: 7px;
 }
 
 ul{

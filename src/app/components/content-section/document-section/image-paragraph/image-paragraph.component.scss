@@ -25,6 +25,23 @@ p{
     margin: 0;
     
 }
+@media only screen and (max-width: 410px){
+    .content{display: block;}
+    img{
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+    .wrapper{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+@media only screen and (max-width: 400px){
+    .wrapper{
+        margin: 0;
+    }
+}
 // @media only screen and (max-width: 550px){
 //     .image-small-screen{
 //         display: inline-block;

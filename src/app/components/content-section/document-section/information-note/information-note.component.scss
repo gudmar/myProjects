@@ -1,3 +1,6 @@
+:host{
+    box-sizing: border-box;
+}
 @mixin content($bgColor){
     position: relative;
     width: 100%;

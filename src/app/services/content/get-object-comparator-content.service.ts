@@ -16,24 +16,28 @@ export class GetObjectComparatorContentService {
             type: 'p',
             content: `
               Comparing objects in JS may seem easy. There can be a <code>===</code>, <code>==</code> or <code>Object.is()</code>
-              used for this task, but this only checks if objects are exectly the same instances, so if variables binded to 
-              objects point to the same place in memory. In real life it is more useful to check if objects contain the same
-              values under keys named in the same way. We could write a simple function for comparing all object keys and 
-              values holded under this keys, but JS objects are a bit more complex than that. In real life objects can hold 
-              all sort of variable types: primitives, strings, arrays, maps, sets, functions etc. In case of a pure object 
+              used for this task, but this only <strong>checks if objects are exectly the same instances</strong>, 
+              so if variables binded to 
+              objects point to the same place in memory. In real life it is <strong>more useful to check if objects contain the same
+              values under keys named in the same way</strong>. 
+              We could write a simple function for comparing all object keys and 
+              values holded under this keys, but JS objects are a bit more complex than that. 
+              In real life <strong>objects can hold all sort of variable types</strong>: 
+              primitives, strings, arrays, maps, sets, functions etc. In case of a pure object 
               key can be only of type string or symbol, but when it comes to a map object, everything may be a key. Even 
               a nested object. Moreover each JS object property has a descriptor, and this descriptor holds among others 
-              information if this property is enumerable or not. Enumerable properties will show up when iterated with 
-              a <code>in</code> operator, but not enumerable properties exist, but are inaccessable with <code>in</code> 
+              information if this property is <storng>enumerable</strong> or not. 
+              Enumerable properties will show up when iterated with 
+              a <code>in</code> operator, but not enumerable are inaccessable with <code>in</code> 
               or <code>Object.keys()</code>. 
             `
           },
           {
             type: 'p',
             content: `
-              What about arrays? We could compare length and check if each <code>item[index]</code> matches 
-              <code>item[index]</code> from second array. But what if we would like to check if arrays have the same 
-              values, no metter what is the index of those values?
+              <strong>What about arrays?</strong> We could compare length and check if each <code>item[index]</code> matches 
+              <code>item[index]</code> from second array. But what if <strong>we would like to check if arrays have the same 
+              values, no metter what is the index of those values</strong>?
             `
           },
           {

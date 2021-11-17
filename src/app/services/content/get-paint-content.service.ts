@@ -40,7 +40,7 @@ export class GetPaintContentService {
       },
       {
         type: "section",
-        title: "More about implementation",
+        title: "How it is made",
         content: [
           {
             type: 'article',
@@ -52,7 +52,7 @@ export class GetPaintContentService {
                   There is a <q>Shape</q> class, that knows that a shape can be drawn, deleted or modified. It knows nothing 
                   about how to create this shape, so it needs another class that has this knowledge. Shape class is a bridge 
                   class. It uses other classes and other class methods to draw specific shapes. This bridge class may be 
-                  used on canvas (raster images) or can draw vectro graphic (svg). It may draw a circle, triangle, path... It 
+                  used on canvas (raster images) or can draw vector graphic (svg). It may draw a circle, triangle, path... It 
                   may draw in red, green, with a stroke or without one. It does not metter, as it has no knowledge what it is doing.
                   The thing that is created by a bridge class depends on a class that is passed to it when it is being created.                  
                 `

@@ -31,12 +31,15 @@ export class GetCalculatorContentService {
           {
             type: 'p',
             content: `
-            Idea of comming back to calculator come to me after finishing training related to clean code. 
-            I decided to see how this code should look like. I used TDD for this project, and google calculator 
-            was a benchmark for me. TDD approach made this project possible to be finished, as automatic tests 
-            ensured me that changing code did not spoil anything. Moreover I was sure that all cases were covered. 
-            During cleaning process I always searched for better option. This resulted in for example changing 
-            whole validation function to one based on regular expression.
+            Idea of comming back to calculator come to me after finishing training related to <strong>clean code</strong>. 
+            I decided to see how this code should look like. I used <strong>TDD</strong> for this project, 
+            and google calculator was a benchmark for me. 
+            TDD approach made this project possible to be finished, as automatic tests 
+            ensured me that changing code did not spoil anything. 
+            Moreover I was sure that all cases were covered. 
+            During cleaning process I always searched for better option. 
+            This resulted in for example changing 
+            whole validation function to one based on <strong>regular expression</strong>.
             This approach turned out to be more readable and less error prone.
             `
           }
