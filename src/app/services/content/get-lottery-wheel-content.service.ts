@@ -32,7 +32,7 @@ export class GetLotteryWheelContentService {
               I decided to convert my old lottery wheel into a component, that could be easly used in my later projects. 
               Git repository linked at the bottom of this article is my final result. Demo page demonstrates a set of 20
               lottery wheels, a set of 20 wheel editors (nested in modals), everyting is binded together in a way, that 
-              editing one of elements changes all 40 elements at the same time
+              editing one of elements changes all 40 elements at the same time. This is pure <strong>Java Script</strong>
             `
           },
           {
@@ -46,22 +46,6 @@ export class GetLotteryWheelContentService {
         type: "section",
         title: "How this is done?",
         content: [
-          {
-            type: 'article',
-            title: 'Mediator pattern',
-            content: [
-              {
-                type: 'p',
-                content: `
-                  A mediator is a component, that passes information between other components. Each component 
-                  that wants to receive information from a mediator has to subscribe to it, and inform what sort of 
-                  information it is interested in. Element, that changes its state informs mediator about this, and
-                  mediator passes this piece of information to all interested components. Then each informed item may
-                  react to passed information in a desired way.
-                `
-              },
-            ]
-          },
           {
             type: 'article',
             title: 'Mediator pattern',

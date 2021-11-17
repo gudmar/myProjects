@@ -79,7 +79,7 @@ export class GetWidgetsContentService {
       },
       {
         type:'section',
-        title: 'Implementation',
+        title: 'Realization',
         content: [
           {
             type: 'information-note',
