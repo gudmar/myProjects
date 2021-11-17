@@ -30,7 +30,7 @@ export class GetCvContentService {
                         {title:'CSS', level: 6, maxLevel: 10},
                         {title:'SCSS', level: 4, maxLevel: 10},
                         {title:'Angular', level: 5, maxLevel: 10},
-                        {title:'Gulp', level: 4, maxLevel: 10},
+                        {title:'Jasmine', level: 4, maxLevel: 10},
                         {title:'React', level: 3, maxLevel: 10},
                       ]
                     }
@@ -53,15 +53,15 @@ export class GetCvContentService {
                       type:'unordered-list',
                       content:[
                         'Laboratory management',
-                        'Leading features from end to end',
-                        'Acting as Test leader in feature owner teams',
+                        'Leading features from early documentation stage to regression, test design, execution and automation',
+                        'Acting as Test leader in feature teams',
                         'Creating test strategies',
-                        'Creating test planes',
-                        'Designing and constructing testlines',
+                        'Creating test plans',
+                        'Designing and constructing testlines (eNB, gNB)',
                         'Creating fault reports',
-                        'Reporting test results, responsibility for test database',
-                        'Test automation: writing mainly in Robot framework wiht little help in python',
-                        'Regression maitenance'
+                        'Regression maitenance',
+                        'Managing teams part of laboratory',
+                        'Training new employees'
                       ]
                     }
                   ]          
@@ -76,14 +76,12 @@ export class GetCvContentService {
                     {
                       type:'unordered-list',
                       content:[
-                        'Production management - in subsitution',
                         'Leading investments projects',
-                        'Implementation of lean tools like 5S, autonomus maitenance, preventive maitenance',
+                        'Leading implementation of lean tools like 5S, autonomus maitenance, preventive maitenance',
                         'Cordinator and head of Kaizen system',
                         'Implementation of KPI reporting system',
                         'Implementation of OEE reporting system',
-                        'Implementation of tools needed for reporting systems in VB for Excel',
-                        'Organising and leading trainings'
+                        'Training employees'
                       ]
                     }
                   ]        
@@ -143,7 +141,8 @@ export class GetCvContentService {
                         'Web developement',
                         'Speaches: currently in Toastmasters club',
                         'Music: palying guitar',
-                        'Motorcycle'
+                        'Motorcycle',
+                        'Sailing'
                       ]
                     }
                   ]
