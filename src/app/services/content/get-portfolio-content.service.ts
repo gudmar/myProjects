@@ -20,9 +20,9 @@ export class GetPortfolioContentService {
             title: 'Notes',
             route:'notePad',
             content: `
-              Organize your notes in pages and sheets. Save your links and find them thanks to a search box. 
-              Manage your tasks with a calendar. Save everything in a local storage or backup file. Everything from 
-              this application.
+              Organize your notes in pages and sheets. Save your links and find them with a searcher. 
+              Manage your tasks with a calendar. Save everything in the local storage or to a backup file. Everything it 
+              just application.
             `
           },
           {
@@ -33,8 +33,8 @@ export class GetPortfolioContentService {
             title: 'Tic-tac-toe',
             route: 'ticTacToe',
             content: `
-              Play a set of tic-tac-toe game with computer of a friend on the same computer. You may chose to 
-              play on bigger boards with more figures in a row, or even see computer playing against its self.
+              Play a set of tic-tac-toe game with computer of a friend on the same machine. You may choose to 
+              play on bigger boards with more figures in a row, or even see a computer playing against its self.
             `
           },
           {
@@ -45,7 +45,7 @@ export class GetPortfolioContentService {
             route:'widgets',
             content: `
               A pure JavaScript page with different widgets like animated buttons, spinning circles, gauges or a 
-              spinning wheel. You may peek a code snippet, change color or size. Project is available on 
+              lottery wheel. You may peek a code snippet, change the color or the size. Project is available on the 
               github <i class="fab fa-github"></i>. Widgets are encapsulated as custom web components.
             `
           },
@@ -56,9 +56,9 @@ export class GetPortfolioContentService {
             title: 'Story dices',
             route:'storyDices',
             content: `
-              Are you a story teller? Draw random symbols and think of a story based on them. You may chose 
+              Are you a storyteller? Draw random symbols and think of a story based on them. You may choose a 
               number of dices, and select topics. You may change one dice if the image is not comfortable, 
-              of you may redraw all images
+              of you may redraw all images.
             `
           },
           {
@@ -68,9 +68,9 @@ export class GetPortfolioContentService {
             title: 'Calculator',
             route: 'calculator',
             content: `
-              Infix claculator, evaluating math expression. Capable of calculating any deeply nested 
-              expression, supports brackets. Algorithm writtne from scratches. This is <b>not</b> a <code>exec</code>
-              function based calculator
+              An infix calculator, evaluating math expression. Capable of calculating any deeply nested 
+              expression. Supports brackets. Algorithm written from scratches. This is <b>not</b> an <code>exec</code>
+              function based calculator.
             `
           },
           {
@@ -91,9 +91,9 @@ export class GetPortfolioContentService {
             title: 'Deep object comparator',
             route: 'deepObjectComparator',
             content: `
-              No visualisation here. This is a well tested class letting deeply nested comparasion of 2 JS objects.
+              No visualization here. This is a well tested class letting deeply nested comparison of 2 JS objects.
               Supports strings, primitives, arrays, objects, maps and sets. Arrays items order may be or may be not taken 
-              into account
+              into account.
             `
           },
           {
@@ -103,8 +103,7 @@ export class GetPortfolioContentService {
             title: 'Paint',
             route: 'paint',
             content: `
-              Very simple paint script. Written from scratch in 5 hours. Makes an SVG. Save button allows to print ready 
-              SVG to browser console
+              A very simple paint script. Written from scratch in 5 hours. Makes an SVG and allows to save it.
             `
           },
           {
@@ -114,8 +113,8 @@ export class GetPortfolioContentService {
             title: 'Virus hounting game',
             route: 'antyvirusGame',
             content: `
-              Inspired by one of GTA V plots. You have to shut all popping windows and launch anti-virus before your disc gets 
-              encripted. Game contains links to SVG elemets that were not created by me.
+              Inspired by one of the GTA V plots. You have to shut all popping windows and launch anti-virus before 
+              your disc gets encrypted. Game contains links to SVG elements that were not created by me.
             `
           },
           {

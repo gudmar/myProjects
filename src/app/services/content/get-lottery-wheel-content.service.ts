@@ -16,23 +16,23 @@ export class GetLotteryWheelContentService {
             type: 'p',
             content: `
               I saw a lottery wheel on one of online Toastmasters table topic contests. I immediately decided to create a 
-              similar wheel. It was my first typeScript exercise, and at that time I was before clean code training, so code
-              soon got a bit messy. I created 3 components: a lottery wheel, an editor and a widget, where I could hide or reveal
-              particular parts of the wheel without showing their hidden content to the public. At that time I discovered that 
-              binding 3 not encapsulated elements in one web page may be not an easy task...
+              similar wheel. It was my first typeScript exercise, and at that time I was before the clean code training, 
+              so the code soon got a bit messy. I created 3 components: a lottery wheel, an editor and a widget, where I 
+              could hide or reveal particular parts of the wheel without showing their hidden content to the public. 
+              At that time I discovered that binding 3 not encapsulated elements on one web page may be not an easy task...
             `
           },
           {
             type: 'p',
             content: `
-              A while later, after a <a href="https://www.youtube.com/watch?v=7EmboKQH8lM">clean code training</a>, after
-              learing about <a href="https://developers.google.com/web/fundamentals/web-components/customelements">
+              A while later, after the <a href="https://www.youtube.com/watch?v=7EmboKQH8lM">clean code training</a>, after
+              learning about the <a href="https://developers.google.com/web/fundamentals/web-components/customelements">
               custom web components</a> and after getting familiar with some of 
               <a href="https://dev.to/shijiezhou/top-10-javascript-patterns-every-developers-like-168p"> design patterns</a>
-              I decided to convert my old lottery wheel into a component, that could be easly used in my later projects. 
+              I decided to convert my old lottery wheel into a component, that could be easily used in my later projects. 
               Git repository linked at the bottom of this article is my final result. Demo page demonstrates a set of 20
-              lottery wheels, a set of 20 wheel editors (nested in modals), everyting is binded together in a way, that 
-              editing one of elements changes all 40 elements at the same time. This is pure <strong>Java Script</strong>
+              lottery wheels, a set of 20 wheel editors (nested in modals), everything is bound together in a way, that 
+              editting one of the elements changes all 40 elements at the same time. This is pure <strong>Java Script</strong>
             `
           },
           {
@@ -55,8 +55,8 @@ export class GetLotteryWheelContentService {
                 content: `
                   A mediator is a component, that passes information between other components. Each component 
                   that wants to receive information from a mediator has to subscribe to it, and inform what sort of 
-                  information it is interested in. Element, that changes its state informs mediator about this, and
-                  mediator passes this piece of information to all interested components. Then each informed item may
+                  information it is interested in. The element, that changes its state informs the mediator about it, and
+                  the mediator passes this piece of information to all interested components. Then each informed item may
                   react to passed information in a desired way.
                 `
               },
@@ -72,22 +72,24 @@ export class GetLotteryWheelContentService {
                   How to put a mediator into a web page? A mediator needs to be a sort of a singleton. I mean 
                   there may be a few instances of a mediator, however there will be no information flow between components
                   subscribed to different mediator instances. That is why a mediator could be an object, that would be 
-                  created before each component subscribes, and then each created element would receive instance of mediator
-                  and subscribe. However this solution in pure JS seems a bit complicated, and it would be difficult to 
-                  come back to such code after a while to reuse it in other project. That is why I created a custom web element
-                  named <code>wheel-alike-components-mediator</code>, that takes as a attribute <code>data-subscirbers-ids</code>
-                  with comma separated unique ids of subscribed elements. 
-                  If a subscribed element is changed it emits an event. If mediators innerHTML describes a different 
-                  state than changed element, mediator changes its own innerHTML, and adjust each subscribed elements 
-                  innerHTML, so all interested elements have aligned HTML content.
+                  created before each component subscribes, and then each created element would receive an instance of 
+                  the mediator and subscribe. However, this solution in pure JS seems a bit complicated, and it would be 
+                  difficult to come back to such a code after a while to reuse it in another project. 
+                  That is why I created a custom web element named a <code>wheel-alike-components-mediator</code>, 
+                  that takes as an attribute <code>data-subscirbers-ids</code> with comma separated unique ids of 
+                  subscribed elements. If a subscribed element is changed it emits an event. If mediators 
+                  <code>innerHTML</code> describe a different state than the changed element, the mediator changes 
+                  its own <code>innerHTML</code>, and 
+                  adjusts each subscribed elements <code>innerHTML</code>, so all interested elements have an 
+                  aligned HTML content.
                 `
               },
               {
                 type: 'p',
                 content: `
-                  Described behavoiur is slightly different than classical mediators behaviour, as classical mediators
-                  do not modify subscribed elements, but I wanted 
-                  wheel related elements to be edited by changing their inner HTML. This approach makes it
+                  The described behavoiur is slightly different than classical mediators behaviour, as classical mediators
+                  do not modify subscribed elements. They role is just to infrom. Hovever, I wanted 
+                  wheel related elements to be edited by changing their <code>innerHTML</code>. This approach makes it
                   very simple for future reuse of this component, and this is quite readable.
                 `
               },
@@ -116,14 +118,15 @@ export class GetLotteryWheelContentService {
         },
         {
           type: 'article',
-          title: 'Turning mediator off',
+          title: 'Turning the mediator off',
           content: [
             {
               type: 'p',
               content: `
-                User may disactivate mediator by clicking a <q>Del master mediator</q> button in upper section.
-                Now changing a single wheel state does not affect rest of elements on page. 
-                After mediator is turned on again it will allign all elements to its internal state (its innerHTML)
+                A user may disactivate the mediator by clicking a <q>Del master mediator</q> button in the upper section.
+                Now changing a single wheel state does not affect the rest of elements on the page. 
+                After the mediator is turned on again it will align all elements to its internal state 
+                (its <code>innerHTML</code>)
               `
             },
           ]
@@ -136,15 +139,15 @@ export class GetLotteryWheelContentService {
               type: 'p',
               content: `
                 This button will <b>set a random number of elements to mediators innerHTML</b>. So this feature 
-                needs mediator to be turned on. If mediator is activated, all wheels and editors will be filled with 
-                a random number of elements. If mediator is disactivated, this button has no effect. 
+                needs the mediator to be turned on. If the mediator is activated, all wheels and editors will be filled 
+                with a random number of elements. If the mediator is disactivated, this button has no effect. 
               `
             },
             {
               type: 'information-note',
               severity: 'warn',
-              content: `In case mediator is removed and Set random is clicked, no information will be presented to a 
-              user, as this page is only an exercise.`
+              content: `In case the mediator is removed and a <i>Set random</i> button is clicked, 
+              no information will be presented to a user, as this page is only an exercise.`
             },
           ]
         },
@@ -155,9 +158,9 @@ export class GetLotteryWheelContentService {
             {
               type: 'p',
               content: `
-                This button opens a dialog box, that allows user to spin an invisable wheel instance many times and 
+                This button opens a dialogue box, that allows user to spin an invisable wheel instance many times and 
                 test number of times each wheel part is selected. This was created to see if spinnings give equaly 
-                distirbuted results. 
+                distributed results. 
               `
             },
             {
@@ -174,7 +177,7 @@ export class GetLotteryWheelContentService {
             {
               type: 'p',
               content: `
-                This button is made to visualise wheel color generator results.
+                This button is made to visualize wheel color generator results.
               `
             },
           ]
@@ -186,7 +189,8 @@ export class GetLotteryWheelContentService {
             {
               type: 'p',
               content: `
-                As this is only an exercise, it is full of console prints. When page was tested this button was quite usefull.
+                As this is only an exercise, it is full of console prints. When the page was tested this button was quite 
+                useful.
               `
             },
           ]

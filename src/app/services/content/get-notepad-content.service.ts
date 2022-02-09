@@ -16,8 +16,8 @@ export class GetNotepadContentService {
           {
             type: 'p',
             content: `
-              This application was created as my second angular exercise. As it is a bit more complex than tic-tac-toe game.
-              It allowed me to learn a lot about binding components into working application. Another purpose of this exercise
+              This application was created as my second angular exercise. It is a bit more complex than the tic-tac-toe game.
+              It allowed me to learn a lot about binding components into a working application. Another purpose of this exercise
               was to pick up Jasmine component and directive testing.
             `
           }
@@ -34,10 +34,11 @@ export class GetNotepadContentService {
               {
                 type: 'p',
                 content: `
-                  <b>NotePad</b> allowes user to organise notes in pages, and to organise pages into sheets. Notes can be resized
-                  and moved in page components. New pages and sheets can be added, deleted, renamed. So this binds MicroSoft 
-                  sticky notes and oneNote functionalities, but can be used cross platform without installing anything. Content 
-                  is stored in browsers local stroage, so no need to register and send your data anywhere. 
+                  <b>NotePad</b> allows a user to organize notes in pages, and to organize pages into sheets. 
+                  Notes can be resized and moved in the page components. 
+                  New pages and sheets can be added, deleted or renamed. NotePad combines some of  Microsoft 
+                  sticky notes and oneNote functionalities, but can be used cross platform without installing anything. 
+                  Content is stored in browsers local storage, so no need to register and send your data anywhere. 
                 `
               },
             ]
@@ -54,11 +55,12 @@ export class GetNotepadContentService {
               {
                 type: 'p',
                 content: `
-                  <b>Calendar</b> is a simple task organiser. It generates year view with division to months, calendar weeks and 
-                  days. There is a week veiw and daily task view. Tasks can be added, moved, removed and editied. 
-                  After launching calendar user sees current year, however there is possibility to switch to any 
-                  year from 1000 to 3000. Years are created dynamicly. There is a little mark in day corner if there are 
-                  any tasks for that day. The more tasks, the darker day background becomes.
+                  <b>Calendar</b> is a simple task organizer. It generates year view with division to months, 
+                  calendar weeks and days. There is a week view and daily task view. 
+                  Tasks can be added, moved, removed and edited. After launching the calendar a user sees current year, 
+                  however, there is possibility to switch to any 
+                  year from 1000 to 3000. Years are created dynamically. There is a little mark in a day corner if there are 
+                  any tasks for that day. The more tasks, the darker day background of the day component becomes.
                 `
               },
             ]
@@ -75,9 +77,10 @@ export class GetNotepadContentService {
               {
                 type: 'p',
                 content: `
-                <b>Linker</b> is a functionality allowing user to save a link, its title and description to a local storage.
-                There is a search box allowing quick search. Just click found link, and content will be oppened in a new 
-                tab. Very usefull in professional life, as I have over 100 links that are handy in my current job. But
+                <b>Linker</b> is a functionality allowing a user to save a link, its title and description to the 
+                local storage.
+                There is a search box allowing quick search. Just click found link, and content will be opened in a new 
+                tab. Very useful in professional life, as I have over 100 links that are handy in my current job. But
                 how to efficiently find anything in that great number of links without this kind of searcher?
                 `
               },
@@ -95,16 +98,16 @@ export class GetNotepadContentService {
               {
                 type: 'information-note',
                 severity: 'error',
-                content: `Content is not saved automaticly. Hit <b>Ctrl+s</b> to save, or <b>Menu/Save as</b> to 
-                select a name for current document`
+                content: `Content is not saved automatically. Hit <b>Ctrl+s</b> to save, or <b>Menu/Save as</b> to 
+                select a name for current document.`
               },
               {
                 type:'p',
-                content: `Whole application state is saved to a browser local storage. Thanks to this data is safe on users
+                content: `Whole application state is saved to a browsers' local storage. Thanks to this data is safe on users'
                 computer, no need to send it anywhere and fear that it is processed or viewed by anyone. Drawback is, that 
                 this is only in one browsers memory, so will not be available in another browser on the same machine, or 
-                cross machines. There is a way around it: data may be backupped to a file, and later uploaded. Of course
-                this is not a great solution in case user is used to cloud, but this is only a front end application 
+                cross machines. There is a way around it: data may be backuped to a file, and later uploaded. Of course
+                this is not a great solution in a case user is used to cloud, but this is only a front end application 
                 working in a browser.`
               },
               {
@@ -144,8 +147,8 @@ export class GetNotepadContentService {
                   search menu,`,
                   `<code>Ctrl+d</code> deletes highlighted content of note,`,
                   `<code>Ctrl+e</code> toggles edit mode in notes application,`,
-                  `Font color is selected automaticly to fit backgorund. Background page color may be altered in 
-                  <i>Options</i> menu`
+                  `Font color is selected automatically to fit background. Background page color may be altered in 
+                  <i>Options</i> menu.`
                 ]
               },
             ]
@@ -153,8 +156,8 @@ export class GetNotepadContentService {
           {
             type: 'information-note',
             severity: 'info',
-            content: `This application was and is being tested in every day work, however I can give no warranty something
-            goes wrong, so please concider entrusting really important data that is not backupped anywhere.`
+            content: `This application was and is being tested in everyday work, however I can give no warranty something
+            goes wrong, so please consider entrusting really important data that is not backuped anywhere.`
           },
         ]
       },

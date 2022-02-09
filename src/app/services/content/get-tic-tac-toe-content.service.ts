@@ -16,15 +16,15 @@ export class GetTicTacToeContentService {
               {
                 type: 'p',
                 content: `
-                My dream to construct a game, where computer would make intelligent moves and play w winning 
-                algorithm finally come true. First idea was to create only 3x3 game version, but when I started 
-                coding I realised that this instance can be easly made more generic, and it is a lot more rewarding 
-                to create a game, where user may select board size.`
+                My dream to construct a game, where a computer would make intelligent moves and play with a winning 
+                algorithm finally come true. First idea was to create only a 3x3 game version, but when I started 
+                coding I realized, that this instance can be easily made more generic, and it is a lot more rewarding 
+                to create a game, where a user may select the board size.`
               },
               {
                 type:'image',
                 imageName:'TicTacToe2.JPG',
-                imageAlt: 'Tic tac toe board sellection'
+                imageAlt: 'Tic-tac-toe game won'
               },
               {
                 type: 'p',
@@ -45,11 +45,11 @@ export class GetTicTacToeContentService {
                   {
                     type:'image',
                     imageName:'ticTacToe5.JPG',
-                    imageAlt: 'Tic tac toe board sellection'
+                    imageAlt: 'Tic-tac-toe board sellection'
                   },
                   {
                     type:'p',
-                    content:'User may select one of games'
+                    content:'User may select one of games:'
                   },
                   {
                     type:'unordered-list',
@@ -63,16 +63,16 @@ export class GetTicTacToeContentService {
                   {
                     type:'p',
                     content:`
-                    Used algorithm should manage with more instances of boards and number of figures in a row, but not every 
-                    tic-tac-toe game makes sense. 
-                    If You are interested in detiales, everything is explained in game help section
+                    A used algorithm should manage with more instances of boards and number of figures in a row, 
+                    but not every tic-tac-toe game makes sense. If You are interested in detials, everything is 
+                    explained in game help section.
                     `
                   },
                   {
                     type:'p',
                     content: `
-                    In case of too small screen there are less options of board to be chosen from. It would be anoying 
-                    to play on 12 x 12 board on tiny screen and scroll all the time.
+                    In case of too small screen there are fewer options of board to be chosen from. It would be 
+                    annoying to play on 12 x 12 board on tiny screen and scroll all the time.
                     `
                   }
                 ]
@@ -84,13 +84,13 @@ export class GetTicTacToeContentService {
                   {
                     type:'image',
                     imageName:'TicTacToe4.JPG',
-                    imageAlt: 'Tic tac toe board sellection'
+                    imageAlt: 'Tic-tac-toe navigation pane.'
                   },
                   {
                     type:'p',
                     content: `
-                      Main feature of this game is ability to play against computer, however after 
-                      clicking a <i>Oponent</i> button it may be chosen to play against human on the same computer.
+                      Main feature of this game is ability to play against the computer, however after 
+                      clicking an <i>Opponent</i> button it may be chosen to play against human on the same machine.
                       `
                   }
                 ]
@@ -102,8 +102,8 @@ export class GetTicTacToeContentService {
                   {
                     type:'p',
                     content: `
-                        After clicking <i>You are</i> button it is possible to change a opponent. 
-                        As circle always starts, when computer is a oponent it is possible to change figure many 
+                        After clicking <i>You are</i> button it is possible to change an opponent. 
+                        As circle always starts, when computer is an oponent it is possible to change figure many 
                         times to see computer play against its self.
                       `
                   }
@@ -129,7 +129,7 @@ export class GetTicTacToeContentService {
                   {
                     type:'p',
                     content: `
-                      With rewind button
+                      With the rewind button.
                       `
                   }
                 ]
@@ -141,10 +141,10 @@ export class GetTicTacToeContentService {
                   {
                     type:'p',
                     content: `
-                    Marked as <i>?</i>. After clicking a window with information pops up. 
-                    One may learn some historical facts about Tic-tac-toe game, there is information about 
-                    used strategies, it is explained why certaing board sizes and numbers in a row were chosen. 
-                    There is a short description of application features, and a short note about me.
+                    After clicking a <i>?</i> button, an information window pops up.
+                    One may learn some historical facts about Tic-tac-toe game. There is some information about 
+                    used strategies. It is explained why specific board sizes and numbers in a row were chosen. 
+                    There is a short description of application features, and a note about me.
                       `
                   }
                 ]
@@ -158,8 +158,8 @@ export class GetTicTacToeContentService {
               {
                 type: 'p',
                 content: `
-                  Testing can become very time consuming so due to a lack of time not everything could have been 
-                  tested. However I cannot imagine constructing a game like this without automatic regression 
+                  Testing can become very time consuming so due to lack of time some tests were not written. 
+                  However, I cannot imagine constructing a game like this without automatic regression 
                   strategy tests. That is why all strategies used in this game have a very good level of 
                   test coverage.
                 `

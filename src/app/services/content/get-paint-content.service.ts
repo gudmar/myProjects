@@ -15,7 +15,7 @@ export class GetPaintContentService {
           {
             type: 'information-note',
             severity: 'warn',
-            content: `This is a very limited application, as it is only an exercise, thats implementatnio took about 5 hours.`
+            content: `This is a very limited application, as it is only an exercise, that implementation took about 5 hours.`
           },
           {
             type:'image',
@@ -25,15 +25,17 @@ export class GetPaintContentService {
           {
             type: 'p',
             content: `
-            I always dreamed of creating a program that would allow user to sketch something, but when I would start coding
-            it would turn out that there were a lot of things that needed binding, taking into concideration, code soon was 
-            becomming messy and I would drop the project. However once there was a slight difference. One day I was reading 
-            about <a href="https://dev.to/shijiezhou/top-10-javascript-patterns-every-developers-like-168p" target="_blank">
-            design patterns</a>. While reading I was making notes and thinking where I could use each of patters, and then 
-            it come. A bridge pattern seemed perfect to write a paint program. I started coding, and it turned out, that 
-            whole application was ready in ... 5 hours or so... Of course it is a very simple tool missing a lot of 
-            usefull features, like history, abbility to alter already created objects, but it is a good base to be 
-            developed, or a good starting point for writing more complex tool in future.
+            I always dreamed of creating a program that would allow a user to sketch something, but when I would start 
+            coding it would turn out that there were a lot of things that needed binding, taking into consideration, 
+            the code soon was 
+            becoming messy and I would drop the project. However, once there was a slight difference. One day I was reading 
+            about <a href="https://refactoring.guru/pl/design-patterns/bridge" target="_blank">
+            design patterns</a>. While reading I was making notes and thinking where I could use each of the patterns, 
+            and then 
+            it come. A bridge pattern seemed perfect to write a paint program. I started coding, and it turned out, 
+            that whole application was ready in ... 5 hours or so... Of course it is a very simple tool missing a 
+            lot of useful features, like history, an ability to alter already created objects, but it is a good base 
+            to be developed, or a good starting point for writing more complex tools in future.
             `
           }
         ]
@@ -49,23 +51,26 @@ export class GetPaintContentService {
               {
                 type: 'p',
                 content: `
-                  There is a <q>Shape</q> class, that knows that a shape can be drawn, deleted or modified. It knows nothing 
-                  about how to create this shape, so it needs another class that has this knowledge. Shape class is a bridge 
-                  class. It uses other classes and other class methods to draw specific shapes. This bridge class may be 
-                  used on canvas (raster images) or can draw vector graphic (svg). It may draw a circle, triangle, path... It 
-                  may draw in red, green, with a stroke or without one. It does not metter, as it has no knowledge what it is doing.
-                  The thing that is created by a bridge class depends on a class that is passed to it when it is being created.                  
+                  There is a <q>Shape</q> class, that knows that a shape can be drawn, deleted or modified. 
+                  It knows nothing about how to create this shape, so it needs another class that has this knowledge. 
+                  Shape class is a bridge class. It uses other classes and other class methods to draw specific shapes. 
+                  This bridge class may be used on canvas (raster images) or can draw a vector graphic (svg). 
+                  It may draw a circle, triangle, path... It 
+                  may draw in red, green, with a stroke or without one. It does not matter, as it has no knowledge 
+                  what it is doing.
+                  The thing that is created by a bridge class depends on a class that is passed to it when it is 
+                  being created.                  
                 `
               },
               {
                 type: 'p',
                 content: `
-                  Other usage of a bridge pattern is lets say creation of a button. Buttons may have different look or 
-                  behaviour on hover or on click. Common for buttons would be size, color theme, way they handle 
-                  overflow of too long label. There may be a generic class for common button behaviour and a set of 
+                  Another usage of a bridge pattern is lets say creation of a button. Buttons may have different look 
+                  or behaviour on hover or on click. Common for buttons would be the size, color theme, way they handle 
+                  overflow of a too long label. There may be a generic class for common button behaviour and a set of 
                   classes for specific buttons. To learn more about this please get familiar with my 
-                  <a href="https://gudmar.github.io/Widgets/" target="_blank">widgets</a> site. Both buttons and circles are
-                  implemented in this way.
+                  <a href="https://gudmar.github.io/Widgets/" target="_blank">widgets</a> site. Both buttons and 
+                  circles are implemented in this way.
                 `
               },
             ]
@@ -77,18 +82,19 @@ export class GetPaintContentService {
               {
                 type: 'p',
                 content: `
-                  <b>Figure</b> class knows how to set stroke and fill to created feagure, how figure should be deleted and
-                  how to calculate first point of figure. Deletion of figure is related to a dashed frame that is displayed
-                  on element creation. Each time element is resized this frame is deleted and recreated. Each time mouse button
-                  is released, this figure is deleted. This delation has nothing to do with obliteration of once painted 
-                  figure, as this tool has no such feature.
+                  <b>Figure</b> class knows how to set stroke and fill to created figure, how a figure should be 
+                  deleted and how to calculate first point of a figure. Deletion of a figure is related to a dashed 
+                  frame that is displayed on element creation. Each time an element is resized this frame is deleted 
+                  and recreated. Each time a mouse button
+                  is released, this figure is deleted. This deletion has nothing to do with obliteration of a once 
+                  painted figure, as this tool has no such feature.
                 `
               },
               {
                 type: 'p',
                 content: `
                   Now low layer classes, having knowledge how to create particular svg elements. Each of those classes 
-                  extend Figure class and each has methods named in the same way (the same interface), 
+                  extend a <code>Figure</code> class and each has methods named in the same way (the same interface), 
                   so more generic classes can use them not knowing what actualy they are drawing. 
                 `
               },
@@ -111,16 +117,15 @@ export class GetPaintContentService {
               {
                 type: 'p',
                 content: `
-                  <b>Mediator</b>. This class name is missleading, but at time of its creation I was still not aware of 
-                  importance of this. This class is responsible for handling drawing events like mousedown, mouseup or 
-                  mousemove.
+                  <b>Mediator</b>. This class name is misleading, but at time of its creation I was still not aware of 
+                  its importance of this. This class is responsible for handling drawing events like mousedown, 
+                  mouseup or mousemove.
                 `
               },
               {
                 type: 'p',
                 content: `
-                  To learn more please visit github project page (in reference section). Code is not very clean,
-                  but still it is understandable.
+                  To learn more please visit github project page (in reference section).
                 `
               },
             ]
@@ -143,7 +148,7 @@ export class GetPaintContentService {
             'Supported colors are: transparent, red, green, blue, yellow, brown and black,',
             `Save function, that prints ready svg content that can be saved in a text file with .svg extention into
             console.`,
-            'Resizeblity / responsivenes. Reacts to browser window being resized.'
+            'Resizablity / responsivenes. Reacts to the browser window being resized.'
           ]
         },
       ]
