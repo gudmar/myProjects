@@ -16,10 +16,10 @@ export class GetAntiVirusGameContentService {
           {
             type: 'p',
             content: `
-              A very simple game. Your computer was infected with viruses, and soon your disc will be encripted. You
+              A very simple game. Your computer was infected with viruses, and soon your disc will be encrypted. You
               have to launch an antivirus program before this happens. Antivirus is hidden in the start menu. But 
-              beware. All popup windows have to be closed when launching antivirus. More windows you shut before activating
-              antivirus, more score you get, but you are time limited.
+              beware. All popup windows have to be closed when launching antivirus. More windows you shut before 
+              activating antivirus, more score you get, but you are time limited.
             `
           },
           {
@@ -30,8 +30,8 @@ export class GetAntiVirusGameContentService {
           {
             type: 'p',
             content: `
-              There are 3 hardnes levels: easy (possible to complete), medium (possibly no human may winn this),
-              hard (for certain no human may winn this)
+              There are 3 hardness levels: easy (possible to complete), medium (possibly no human may win it),
+              hard (for certain no human may win it)
             `
           },
           {
@@ -50,8 +50,8 @@ export class GetAntiVirusGameContentService {
           {
             type: 'p',
             content: `
-            I am not an author of used SVG images. Pleas click a question mark in left top corner of hardnes level 
-            window to get source links. All SVGs were free to use in non commertial applications.
+            I am not an author of used SVG images. Please click a question mark in the left top corner of the hardnes 
+            level window to get source links. All SVGs were free to use in non commertial applications.
             `
           },
           {

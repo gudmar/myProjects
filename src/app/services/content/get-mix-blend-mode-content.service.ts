@@ -16,11 +16,11 @@ export class GetMixBlendModeContentService {
             type: 'p',
             content: `
               My very early exercise showing how <code>mix-blend-mode</code> behaves when applied with
-              isolation or without isolation. There is an element with 3 overlapping wheels, a green one,
-              a blue one and a red one. Each element has a different <code>mix-blend-mode</code> value.
+              isolation or without isolation. There is a set of elements with 3 overlapping wheels each: a green one,
+              a blue one and a red one. Each element from the set has a different <code>mix-blend-mode</code> value.
               There is a color-chooser element somewhere in this web-site (left above mix-blend-mode elements
               in a non-mobile device, and top of screen on a smaller viewport). User may choose a background
-              color moving one of sliders, to see how <code>mix-blend-mode</code> is applied to each element.
+              color moving one of sliders, to see how the <code>mix-blend-mode</code> is applied to each element.
 
             `
           },

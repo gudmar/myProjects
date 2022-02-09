@@ -16,12 +16,12 @@ export class GetStoryDicesContentService {
           {
             type: 'p',
             content: `
-              For one of online gatherings of Toastmasters I prepared a electronic version of story telling game, 
-              where user throws dices, and tells a story related to drawn images.
+              For one of online gatherings of Toastmasters I prepared an electronic version of a story telling game, 
+              where a user throws dices, and tells a story related to drawn images.
               In this application <strong>it is guaranteed that images will not repete</strong>. 
-              User may <strong>redraw an image</strong> that is 
+              A user may <strong>redraw an image</strong> that is 
               not comfortable by clicking a specific cube, or <strong>redraw all images</strong> 
-              with rewind button. After clicking a burger button user may <strong>select topics</strong>, 
+              with a rewind button. After clicking a burger button a user may <strong>select topics</strong>, 
               or <strong>number of cubes</strong> that will be displayed. 
               There is a menu for reminding Toastmasters Table Topic rules, 
               and informing that a story should have a structure. 
@@ -36,7 +36,7 @@ export class GetStoryDicesContentService {
             type: 'p',
             content: `
               This application is designed to <strong>look good on all types of devices</strong>. 
-              Especially mobils are important, as someone may want to practice somewhere far from a computer.
+              Especially mobiles are important, as someone may want to practise somewhere far from a computer.
             `
           },
           {
@@ -60,7 +60,7 @@ export class GetStoryDicesContentService {
               This application is constructed mainly in pure <strong>JavaScript</strong>. 
               <strong>Gulp</strong> was used to build it to a single file.
               For styling pure CSS, and HTML for loading pages.
-              Application uses custom web elements for encapsulation an reusebility. 
+              The application uses custom web elements for encapsulation an reusability. 
             `
           },
         ]
