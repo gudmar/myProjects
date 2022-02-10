@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
 @import './variables.scss';
 *{
     font-family: 'Work Sans', sans-serif;
@@ -21,7 +23,20 @@ html,body{
 .card{
     ul{
         text-align: unset;
+        font-size: 1.2rem;
+        font-family: 'Nunito', sans-serif;
+        li{
+            margin-top:3px;
+            font-family: 'Nunito','Work Sans', sans-serif;
+        }
     }
+}
+.subtitle{
+    font-weight: bold;    
+}
+.dates{
+    font-size: 1.2rem;
+    font-style: italic;
 }
 
 .row-c{
@@ -172,6 +187,11 @@ h2{
     color: black;
     // font-family: Arial, Helvetica, sans-serif;
     font-size: 1.4rem;
+}
+.card{
+    .content {
+        font-size: 1.2rem;
+    }
 }
 
 .shutter{
