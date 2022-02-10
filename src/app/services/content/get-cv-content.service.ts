@@ -14,11 +14,11 @@ export class GetCvContentService {
           content:[
             {
               type:'cv-section-entry',
-              title: 'web-developement',
+              title: 'web-development',
               content: [
                 {
                   type: 'cv-additional-entry',
-                  title: 'Web developement',
+                  title: 'Web development',
                   subtitle: 'Self learning',
                   dates: '2019-now',
                   content:[
@@ -26,12 +26,13 @@ export class GetCvContentService {
                       type:'skill-list',
                       content:[
                         {title:'HTML', level: 8, maxLevel: 10},
-                        {title:'JS', level: 7, maxLevel: 10},
-                        {title:'CSS', level: 6, maxLevel: 10},
+                        {title:'JS', level: 8, maxLevel: 10},
+                        {title:'TS', level: 7, maxLevel: 10},
+                        {title:'CSS', level: 7, maxLevel: 10},
                         {title:'SCSS', level: 4, maxLevel: 10},
-                        {title:'Angular', level: 5, maxLevel: 10},
+                        {title:'Angular', level: 6, maxLevel: 10},
+                        {title:'React', level: 5, maxLevel: 10},
                         {title:'Jasmine', level: 4, maxLevel: 10},
-                        {title:'React', level: 3, maxLevel: 10},
                       ]
                     }
                   ]          
@@ -52,15 +53,15 @@ export class GetCvContentService {
                     {
                       type:'unordered-list',
                       content:[
-                        'Laboratory management',
-                        'Leading features from early documentation stage to regression, test design, execution and automation',
+                        `Leading features from early documentation stage to regression: 
+                          test design, execution and automation`,
                         'Acting as Test leader in feature teams',
                         'Creating test strategies',
                         'Creating test plans',
-                        'Designing and constructing testlines (eNB, gNB)',
+                        'Designing and constructing test lines (eNB, gNB)',
                         'Creating fault reports',
-                        'Regression maitenance',
-                        'Managing teams part of laboratory',
+                        'Regression maintenance',
+                        'Managing laboratory area',
                         'Training new employees'
                       ]
                     }
@@ -68,7 +69,7 @@ export class GetCvContentService {
                 },
                 {
                   type: 'cv-employment-entry',
-                  title: 'Lorenz snack world',
+                  title: 'Lorenz Snack World',
                   subtitle: 'Continuous Improvement Specialist',
                   dates: '2010-2017',
                   position: 'middle',
@@ -77,8 +78,8 @@ export class GetCvContentService {
                       type:'unordered-list',
                       content:[
                         'Leading investments projects',
-                        'Leading implementation of lean tools like 5S, autonomus maitenance, preventive maitenance',
-                        'Cordinator and head of Kaizen system',
+                        'Leading implementation of lean tools like 5S, autonomous maintenance, preventive maintenance',
+                        'Coordinator and head of Kaizen system',
                         'Implementation of KPI reporting system',
                         'Implementation of OEE reporting system',
                         'Training employees'
@@ -96,8 +97,8 @@ export class GetCvContentService {
                     {
                       type:'unordered-list',
                       content:[
-                        'Management over train carbody production nest',
-                        'Responsiblity for quality, costs, over 50 subordinate workers'
+                        'Management over train car body production nest',
+                        'Responsibility for quality, costs, over 50 subordinate workers'
                       ]
                     }
                   ]
@@ -110,8 +111,8 @@ export class GetCvContentService {
               content:[
                 {
                   type: 'cv-additional-entry',
-                  title: 'Univercity of Science, Wrocław',
-                  subtitle: 'Automatic stearing and robotics, electronic dep.',
+                  title: 'University of Science, Wrocław',
+                  subtitle: 'Automatic steering and robotics, electronic',
                   dates: '2003-2008',
                   position: 'last',
                   content:[
@@ -119,8 +120,8 @@ export class GetCvContentService {
                       type:'unordered-list',
                       content:[
                         'Programming',
-                        'Optimalization algoritms',
-                        'Robot construction'
+                        'Optimization algorithms',
+                        'Robot construction and programming'
                       ]
                     }
                   ]
@@ -138,10 +139,11 @@ export class GetCvContentService {
                     {
                       type:'unordered-list',
                       content:[
-                        'Web developement',
-                        'Speaches: currently in Toastmasters club',
-                        'Music: palying guitar',
+                        'Web development',
+                        'Speeches: currently in Toastmasters club',
+                        'Music: playing guitar',
                         'Motorcycle',
+                        `Active recreation: mountain walks, cycling`,
                         'Sailing'
                       ]
                     }

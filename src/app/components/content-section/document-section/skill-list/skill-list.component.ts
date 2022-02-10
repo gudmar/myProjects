@@ -22,6 +22,6 @@ export class SkillListComponent implements OnInit {
   }
 
   isStarFilled(skillLevel:number,index:number){
-    return index<=skillLevel;
+    return index<skillLevel;
   }
 }
